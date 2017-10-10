@@ -1,0 +1,17 @@
+c:\users\guilhermemarques\source\repos\TestLogClass\TestLogClass\bin\Debug\TestLogClass.exe.config
+c:\users\guilhermemarques\source\repos\TestLogClass\TestLogClass\bin\Debug\TestLogClass.exe
+c:\users\guilhermemarques\source\repos\TestLogClass\TestLogClass\bin\Debug\TestLogClass.pdb
+c:\users\guilhermemarques\source\repos\TestLogClass\TestLogClass\obj\Debug\TestLogClass.csprojResolveAssemblyReference.cache
+c:\users\guilhermemarques\source\repos\TestLogClass\TestLogClass\obj\Debug\TestLogClass.csproj.CoreCompileInputs.cache
+c:\users\guilhermemarques\source\repos\TestLogClass\TestLogClass\obj\Debug\TestLogClass.exe
+c:\users\guilhermemarques\source\repos\TestLogClass\TestLogClass\obj\Debug\TestLogClass.pdb
+C:\Users\GuilhermeMarques\source\repos\TestLogClass\TestLogClass\bin\Debug\WindowsInput.dll
+C:\Users\GuilhermeMarques\source\repos\TestLogClass\TestLogClass\bin\Debug\Enigma.Memory.dll
+C:\Users\GuilhermeMarques\source\repos\TestLogClass\TestLogClass\bin\Debug\Enigma.D3.Core.dll
+C:\Users\GuilhermeMarques\source\repos\TestLogClass\TestLogClass\bin\Debug\WindowsInput.xml
+C:\Users\GuilhermeMarques\source\repos\TestLogClass\TestLogClass\bin\Debug\Enigma.D3.MemoryModel.pdb
+C:\Users\GuilhermeMarques\source\repos\TestLogClass\TestLogClass\bin\Debug\Enigma.Memory.pdb
+C:\Users\GuilhermeMarques\source\repos\TestLogClass\TestLogClass\bin\Debug\Enigma.D3.Core.pdb
+C:\Users\GuilhermeMarques\source\repos\TestLogClass\TestLogClass\bin\Debug\SimpleTCP.dll
+C:\Users\GuilhermeMarques\source\repos\TestLogClass\TestLogClass\bin\Debug\MultiBot.dll
+C:\Users\GuilhermeMarques\source\repos\TestLogClass\TestLogClass\bin\Debug\MultiBot.pdb
