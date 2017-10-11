@@ -10,11 +10,22 @@ using WindowsInput.Native;
 using EnvControllers;
 using SimpleTCP;
 using System.IO;
+using Enigma.D3.ApplicationModel;
+using Enigma.D3.Assets;
+using Enigma.D3.MemoryModel;
+using Enigma.D3.MemoryModel.Core;
+using Enigma.D3;
+using Enigma.D3.MemoryModel.Controls;
+using static Enigma.D3.MemoryModel.Core.UXHelper;
+using SlimDX.DirectInput;
+using System.Runtime.InteropServices;
 
 namespace TestLogClassl
 {
     class Program
     {
+       
+
         static void Main(string[] args)
         {
             string pathToFile = @"C:\Users\GuilhermeMarques\Documents\RoS-BoT\Logs\logs.txt";
@@ -26,7 +37,6 @@ namespace TestLogClassl
             server.Start();
             server.StartModules();
 
-
             //ClientController client = new ClientController();
             //client.serverip = "127.0.0.1";
             //client.serverport = 8910;
@@ -36,7 +46,7 @@ namespace TestLogClassl
                 server.gameState.UpdateGameState();
                 var newLogLines = server.rosController.rosLog.NewLines;
                 
-                if (LogFile.LookForString(newLogLines, "Vendor Loop Done") & server.rosController.vendorLoopDone) {
+                if (LogFile.LookForString(newLogLines, "Vendor Loop Done") & !server.rosController.vendorLoopDone) {
                     //pause after vendor loop done
                     server.rosController.vendorLoopDone = true;
                     server.rosController.enteredRift = false;
@@ -57,28 +67,29 @@ namespace TestLogClassl
                 }
 
                 if (server.gameState.acceptgrUiVisible & server.rosController.vendorLoopDone) {
-                    //click accept
+                    // click accept
                     server.rosController.enteredRift = false;
-                    var xCoord = server.gameState.acceptgrUiControl.uirect.Top;
-                    var yCoord = server.gameState.acceptgrUiControl.uirect.Left;
-                    server.rosController.inputSimulator.Mouse.MoveMouseTo(xCoord,yCoord);
+                    var xCoord = server.gameState.acceptgrUiControl.uirect.TranslateToClientRect(server.gameState.clientWidth, server.gameState.clientHeight).Left +
+                        (server.gameState.acceptgrUiControl.uirect.TranslateToClientRect(server.gameState.clientWidth, server.gameState.clientHeight).Width / 2);
+                    var yCoord = server.gameState.acceptgrUiControl.uirect.TranslateToClientRect(server.gameState.clientWidth, server.gameState.clientHeight).Top +
+                        (server.gameState.acceptgrUiControl.uirect.TranslateToClientRect(server.gameState.clientWidth, server.gameState.clientHeight).Height / 2);
+                    RosController.SetCursorPos((int)xCoord, (int)yCoord);
                     server.rosController.inputSimulator.Mouse.LeftButtonClick();                    
-                    Thread.Sleep(1500);
-                    server.sendMessage("Start");                    
-                    server.rosController.InitVariables();
-                    Thread.Sleep(100);
+                    Thread.Sleep(1500);                   
                 }
 
                 if (server.gameState.cancelgriftUiVisible)
                 {
                     //click cancel ok
                     server.rosController.Pause();
-                    var xCoord = server.gameState.acceptgrUiControl.uirect.Top;
-                    var yCoord = server.gameState.acceptgrUiControl.uirect.Left;
-                    server.rosController.inputSimulator.Mouse.MoveMouseTo(xCoord, yCoord);
+                    var xCoord = server.gameState.confirmationUiControl.uirect.TranslateToClientRect(server.gameState.clientWidth, server.gameState.clientHeight).Left +
+                        (server.gameState.confirmationUiControl.uirect.TranslateToClientRect(server.gameState.clientWidth, server.gameState.clientHeight).Width / 2);
+                    var yCoord = server.gameState.confirmationUiControl.uirect.TranslateToClientRect(server.gameState.clientWidth, server.gameState.clientHeight).Top +
+                        (server.gameState.confirmationUiControl.uirect.TranslateToClientRect(server.gameState.clientWidth, server.gameState.clientHeight).Height / 2);
+                    RosController.SetCursorPos((int)xCoord, (int)yCoord);
                     server.rosController.inputSimulator.Mouse.LeftButtonClick();
                     server.sendMessage("Start");
-                    Thread.Sleep(500);
+                    Thread.Sleep(1500);
                 }
 
                 if (server.gameState.firstlevelRift & !server.rosController.enteredRift)
@@ -87,6 +98,7 @@ namespace TestLogClassl
                     Thread.Sleep(1500);
                     server.rosController.enteredRift = true;
                     server.rosController.Unpause();
+                    server.rosController.InitVariables();
                     Thread.Sleep(500);
                 }
 

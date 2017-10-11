@@ -10,6 +10,16 @@ using EnvControllers;
 using SimpleTCP;
 using System.IO;
 using System.Threading;
+using Enigma.D3.ApplicationModel;
+using Enigma.D3.Assets;
+using Enigma.D3.AttributeModel;
+using Enigma.D3.DataTypes;
+using Enigma.D3.Enums;
+using Enigma.D3.MemoryModel;
+using Enigma.D3.MemoryModel.Core;
+using Enigma.D3;
+using Enigma.D3.MemoryModel.Controls;
+using static Enigma.D3.MemoryModel.Core.UXHelper;
 
 namespace EnvControllers
 {

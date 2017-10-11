@@ -5,6 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 using WindowsInput;
 using WindowsInput.Native;
+using Enigma.D3.ApplicationModel;
+using Enigma.D3.Assets;
+using Enigma.D3.AttributeModel;
+using Enigma.D3.DataTypes;
+using Enigma.D3.Enums;
+using Enigma.D3.MemoryModel;
+using Enigma.D3.MemoryModel.Core;
+using Enigma.D3;
+using Enigma.D3.MemoryModel.Controls;
+using static Enigma.D3.MemoryModel.Core.UXHelper;
+using System.Runtime.InteropServices;
 
 namespace EnvControllers
 {
@@ -41,7 +52,7 @@ namespace EnvControllers
             }
             else
             {
-                throw new System.ArgumentException("Trying to pause but already paused");
+                //throw new System.ArgumentException("Trying to pause but already paused");
             }
         }
         public void Unpause()
@@ -53,8 +64,10 @@ namespace EnvControllers
             }
             else
             {
-                throw new System.ArgumentException("Trying to unpause but already unpaused");
+                //throw new System.ArgumentException("Trying to unpause but already unpaused");
             }
         }
+        [DllImport("user32.dll")]
+        public static extern bool SetCursorPos(int X, int Y);
     }
 }

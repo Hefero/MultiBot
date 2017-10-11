@@ -59,6 +59,8 @@ namespace EnvControllers
             try
             {
                 _snapshot.Update();
+                clientWidth = _snapshot.Window.ClientRect.Width;
+                clientHeight = _snapshot.Window.ClientRect.Height;
                 inGame = true;
                 inMenu = false;
             }
@@ -77,6 +79,9 @@ namespace EnvControllers
             }
             this.snapshot = _snapshot;
         }
+
+        public float clientWidth { get; set; }
+        public float clientHeight { get; set; }
 
         public void UpdateGameState()
         {
@@ -115,7 +120,7 @@ namespace EnvControllers
             {
                 if (inMenu == false)
                 {
-                    acceptgrUiControl = UXHelper.GetControl<UXControl>("Root.NormalLayer.rift_join_party_main.stack.wrapper");
+                    acceptgrUiControl = UXHelper.GetControl<UXControl>("Root.NormalLayer.rift_join_party_main.stack.wrapper.Accept");
                     return acceptgrUiControl.IsVisible();
                 }
                 else
@@ -163,7 +168,7 @@ namespace EnvControllers
             {
                 if (inMenu == false)
                 {
-                    confirmationUiControl = UXHelper.GetControl<UXControl>("Root.TopLayer.confirmation.subdlg");
+                    confirmationUiControl = UXHelper.GetControl<UXControl>("Root.TopLayer.confirmation.subdlg.stack.wrap.button_cancel");
                     return confirmationUiControl.IsVisible();
                 }
                 else

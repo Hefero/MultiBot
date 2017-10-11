@@ -1,0 +1,345 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Dapplo.Windows.Messages</name>
+    </assembly>
+    <members>
+        <member name="T:Dapplo.Windows.Messages.WindowsMessage">
+            <summary>
+            Helper class to work with windows messages
+            </summary>
+        </member>
+        <member name="M:Dapplo.Windows.Messages.WindowsMessage.GetWindowsMessage(System.UInt32)">
+            <summary>
+            This returns the name of a windows message, which was registered with RegisterWindowMessage 
+            </summary>
+            <param name="messageId">uint with the id which was returned by RegisterWindowMessage</param>
+            <returns>string</returns>
+        </member>
+        <member name="M:Dapplo.Windows.Messages.WindowsMessage.RegisterWindowsMessage(System.String)">
+            <summary>
+            Register a windows message
+            </summary>
+            <param name="message">Windows message</param>
+            <returns>uint with the message ID</returns>
+        </member>
+        <member name="M:Dapplo.Windows.Messages.WindowsMessage.GetClipboardFormatName(System.UInt32,System.Text.StringBuilder,System.Int32)">
+            <summary>
+                See
+                <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms649040(v=vs.85).aspx">GetClipboardFormatName function</a>
+                Retrieves from the clipboard the name of the specified registered format.
+                The function copies the name to the specified buffer.
+            </summary>
+            <param name="format">int with the id of the format</param>
+            <param name="lpszFormatName">Name of the format</param>
+            <param name="cchMaxCount">Maximum size of the output</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dapplo.Windows.Messages.WindowsMessage.RegisterWindowMessageW(System.String)">
+            <summary>
+            Defines a new window message that is guaranteed to be unique throughout the system. The message value can be used when sending or posting messages.
+            </summary>
+            <param name="lpString">string with the message</param>
+            <returns>
+            If the message is successfully registered, the return value is a message identifier in the range 0xC000 through 0xFFFF.
+            If the function fails, the return value is zero. To get extended error information, call GetLastError.
+            </returns>
+        </member>
+        <member name="T:Dapplo.Windows.Messages.WindowsMessages">
+            <summary>
+                All possible windows messages
+            See also <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms644927(v=vs.85).aspx#system_defined">here</a>
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Messages.WindowsMessages.WM_CREATE">
+            <summary>
+            Sent when an application requests that a window be created by calling the CreateWindowEx or CreateWindow function. (The message is sent before the function returns.) The window procedure of the new window receives this message after the window is created, but before the window becomes visible.
+            A window receives this message through its WindowProc function.
+            <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms632619.aspx">WM_CREATE message</a>
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Messages.WindowsMessages.WM_DESTROY">
+            <summary>
+            Sent when a window is being destroyed. It is sent to the window procedure of the window being destroyed after the window is removed from the screen.
+            This message is sent first to the window being destroyed and then to the child windows (if any) as they are destroyed. During the processing of the message, it can be assumed that all child windows still exist.
+            A window receives this message through its WindowProc function.
+            <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms632620(v=vs.85).aspx">WM_DESTROY message</a>
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Messages.WindowsMessages.WM_ENABLE">
+            <summary>
+            Sent when an application changes the enabled state of a window. It is sent to the window whose enabled state is changing. This message is sent before the EnableWindow function returns, but after the enabled state (WS_DISABLED style bit) of the window has changed.
+            A window receives this message through its WindowProc function.
+            <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms632621(v=vs.85).aspx">WM_ENABLE message</a>
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Messages.WindowsMessages.WM_PAINT">
+            <summary>
+            The WM_PAINT message is sent when the system or another application makes a request to paint a portion of an application's window. The message is sent when the UpdateWindow or RedrawWindow function is called, or by the DispatchMessage function when the application obtains a WM_PAINT message by using the GetMessage or PeekMessage function.
+            A window receives this message through its WindowProc function.
+            <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd145213(v=vs.85).aspx">WM_PAINT message</a>
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Messages.WindowsMessages.WM_WININICHANGE">
+            <summary>
+            An application sends the WM_WININICHANGE message to all top-level windows after making a change to the WIN.INI file. The SystemParametersInfo function sends this message after an application uses the function to change a setting in WIN.INI.
+            Note: The WM_WININICHANGE message is provided only for compatibility with earlier versions of the system. Applications should use the WM_SETTINGCHANGE message.
+            <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms725499(v=vs.85).aspx">M_WININICHANGE message</a>
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Messages.WindowsMessages.WM_SETTINGCHANGE">
+            <summary>
+            A message that is sent to all top-level windows when the SystemParametersInfo function changes a system-wide setting or when policy settings have changed.
+            Applications should send WM_SETTINGCHANGE to all top-level windows when they make changes to system parameters. (This message cannot be sent directly to a window.) To send the WM_SETTINGCHANGE message to all top-level windows, use the SendMessageTimeout function with the hwnd parameter set to HWND_BROADCAST.
+            A window receives this message through its WindowProc function.
+            <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms725497(v=vs.85).aspx">WM_SETTINGCHANGE message</a>
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Messages.WindowsMessages.WM_DISPLAYCHANGE">
+            <summary>
+                See
+                <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd145210.aspx">WM_DISPLAYCHANGE message</a>
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Messages.WindowsMessages.WM_GETICON">
+            <summary>
+            Sent to a window to retrieve a handle to the large or small icon associated with a window. The system displays the large icon in the ALT+TAB dialog, and the small icon in the window caption.
+            A window receives this message through its WindowProc function.
+            <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms632625.aspx">WM_GETICON message</a>
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Messages.WindowsMessages.WM_NCCREATE">
+            <summary>
+            Sent prior to the WM_CREATE message when a window is first created.
+            A window receives this message through its WindowProc function.
+            <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms632635.aspx">WM_NCCREATE message</a>
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Messages.WindowsMessages.WM_INPUT_DEVICE_CHANGE">
+            <summary>
+            Sent to the window that registered to receive raw input.
+            A window receives this message through its WindowProc function.
+            wParam - This parameter can be one of the following values:
+            GIDC_ARRIVAL (1) : A new device has been added to the system.
+            GIDC_REMOVAL (2) : A device has been removed from the system.
+            lParam - The handle to the raw input device. Call GetRawInputDeviceInfo to get more information regarding the device.
+            Return value
+            If an application processes this message, it should return zero.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Messages.WindowsMessages.WM_INPUT">
+            <summary>
+            Sent to the window that is getting raw input.
+            Raw input is available only when the application calls RegisterRawInputDevices with valid device specifications
+            A window receives this message through its WindowProc function.
+            wParam - The input code. This parameter can be one of the following values:
+            RIM_INPUT (0) - Input occurred while the application was in the foreground. The application must call DefWindowProc so the system can perform cleanup.
+            RIM_INPUTSINK (1) - Input occurred while the application was not in the foreground. The application must call DefWindowProc so the system can perform the cleanup.
+            lParam - A handle to the RAWINPUT structure that contains the raw input from the device.
+            Return value
+            If an application processes this message, it should return zero.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Messages.WindowsMessages.WM_DPICHANGED">
+            <summary>
+            Sent when the effective dots per inch (dpi) for a window has changed. The DPI is the scale factor for a window. There are multiple events that can cause the DPI to change. The following list indicates the possible causes for the change in DPI.
+            * The window is moved to a new monitor that has a different DPI.
+            * The DPI of the monitor hosting the window changes.
+            The current DPI for a window always equals the last DPI sent by WM_DPICHANGED.
+            This is the scale factor that the window should be scaling to for threads that are aware of DPI changes.
+                See <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dn312083.aspx">WM_DPICHANGED message</a>
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Messages.WindowsMessages.WM_CUT">
+            <summary>
+            An application sends a WM_CUT message to an edit control or combo box to delete (cut) the current selection, if any, in the edit control and copy the deleted text to the clipboard in CF_TEXT format.
+            <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms649023.aspx">WM_CUT message</a>
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Messages.WindowsMessages.WM_COPY">
+            <summary>
+            An application sends the WM_COPY message to an edit control or combo box to copy the current selection to the clipboard in CF_TEXT format.
+            <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms649022.aspx">WM_COPY message</a>
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Messages.WindowsMessages.WM_PASTE">
+            <summary>
+            An application sends a WM_PASTE message to an edit control or combo box to copy the current content of the clipboard to the edit control at the current caret position. Data is inserted only if the clipboard contains data in CF_TEXT format.
+            <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms649028.aspx">WM_PASTE message</a>
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Messages.WindowsMessages.WM_CLEAR">
+            <summary>
+            An application sends a WM_CLEAR message to an edit control or combo box to delete (clear) the current selection, if any, from the edit control.
+            <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms649020.aspx">WM_CLEAR message</a>
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Messages.WindowsMessages.WM_UNDO">
+            <summary>
+            An application sends a WM_UNDO message to an edit control to undo the last operation. When this message is sent to an edit control, the previously deleted text is restored or the previously added text is deleted.
+            <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/bb761693.aspx">WM_UNDO message</a>
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Messages.WindowsMessages.WM_RENDERFORMAT">
+            <summary>
+            Sent to the clipboard owner if it has delayed rendering a specific clipboard format and if an application has requested data in that format. The clipboard owner must render data in the specified format and place it on the clipboard by calling the SetClipboardData function.
+            <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms649030.aspx">WM_RENDERFORMAT message</a>
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Messages.WindowsMessages.WM_RENDERALLFORMATS">
+            <summary>
+            Sent to the clipboard owner before it is destroyed, if the clipboard owner has delayed rendering one or more clipboard formats. For the content of the clipboard to remain available to other applications, the clipboard owner must render data in all the formats it is capable of generating, and place the data on the clipboard by calling the SetClipboardData function.
+            A window receives this message through its WindowProc function.
+            <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms649029.aspx">WM_RENDERALLFORMATS message</a>
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Messages.WindowsMessages.WM_DESTROYCLIPBOARD">
+             <summary>
+             Sent to the clipboard owner when a call to the EmptyClipboard function empties the clipboard.
+            A window receives this message through its WindowProc function.
+             <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms649024.aspx">WM_DESTROYCLIPBOARD message</a>
+             </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Messages.WindowsMessages.WM_DRAWCLIPBOARD">
+            <summary>
+            Sent to the first window in the clipboard viewer chain when the content of the clipboard changes. This enables a clipboard viewer window to display the new content of the clipboard.
+            A window receives this message through its WindowProc function.
+            <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms649025.aspx">WM_DRAWCLIPBOARD message</a>
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Messages.WindowsMessages.WM_PAINTCLIPBOARD">
+            <summary>
+            Sent to the clipboard owner by a clipboard viewer window when the clipboard contains data in the CF_OWNERDISPLAY format and the clipboard viewer's client area needs repainting.
+            <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms649027.aspx">WM_PAINTCLIPBOARD message</a>
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Messages.WindowsMessages.WM_VSCROLLCLIPBOARD">
+            <summary>
+            Sent to the clipboard owner by a clipboard viewer window when the clipboard contains data in the CF_OWNERDISPLAY format and an event occurs in the clipboard viewer's vertical scroll bar. The owner should scroll the clipboard image and update the scroll bar values.
+            <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms649032.aspx">WM_VSCROLLCLIPBOARD message</a>
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Messages.WindowsMessages.WM_SIZECLIPBOARD">
+            <summary>
+            Sent to the clipboard owner by a clipboard viewer window when the clipboard contains data in the CF_OWNERDISPLAY format and the clipboard viewer's client area has changed size.
+            <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms649031.aspx">WM_SIZECLIPBOARD message</a>
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Messages.WindowsMessages.WM_ASKCBFORMATNAME">
+            <summary>
+            Sent to the clipboard owner by a clipboard viewer window to request the name of a CF_OWNERDISPLAY clipboard format.
+            A window receives this message through its WindowProc function.
+            See <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms649018.aspx">WM_ASKCBFORMATNAME message</a>
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Messages.WindowsMessages.WM_CHANGECBCHAIN">
+            <summary>
+            Sent to the first window in the clipboard viewer chain when a window is being removed from the chain.
+            A window receives this message through its WindowProc function.
+            See <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms649019.aspx">WM_CHANGECBCHAIN message</a>
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Messages.WindowsMessages.WM_HSCROLLCLIPBOARD">
+            <summary>
+            Sent to the clipboard owner by a clipboard viewer window. This occurs when the clipboard contains data in the CF_OWNERDISPLAY format and an event occurs in the clipboard viewer's horizontal scroll bar. The owner should scroll the clipboard image and update the scroll bar values.
+            See <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms649026.aspx">WM_HSCROLLCLIPBOARD message</a>
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Messages.WindowsMessages.WM_PRINT">
+             <summary>
+             The WM_PRINT message is sent to a window to request that it draw itself in the specified device context, most commonly in a printer device context.
+            A window receives this message through its WindowProc function.
+             <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd145216.aspx">WM_PRINT message</a>
+             </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Messages.WindowsMessages.WM_PRINTCLIENT">
+            <summary>
+            The WM_PRINTCLIENT message is sent to a window to request that it draw its client area in the specified device context, most commonly in a printer device context.
+            Unlike WM_PRINT, WM_PRINTCLIENT is not processed by DefWindowProc. A window should process the WM_PRINTCLIENT message through an application-defined WindowProc function for it to be used properly.
+            <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd145217.aspx">WM_PRINTCLIENT message</a>
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Messages.WindowsMessages.WM_APPCOMMAND">
+            <summary>
+            Notifies a window that the user generated an application command event, for example, by clicking an application command button using the mouse or typing an application command key on the keyboard.
+            <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms646275.aspx">WM_APPCOMMAND message</a>
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Messages.WindowsMessages.WM_CLIPBOARDUPDATE">
+            <summary>
+            See <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms649021.aspx">WM_CLIPBOARDUPDATE message</a>
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Messages.WindowsMessages.MM_JOY1MOVE">
+            <summary>
+            See <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd757352.aspx">MM_JOY1MOVE message</a>
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Messages.WindowsMessages.MM_MCINOTIFY">
+            <summary>
+            See <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd757358.aspx">MM_MCINOTIFY message</a>
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Messages.WindowsMessages.WM_APPLICATION_STRING">
+            <summary>
+            From this value to 
+            </summary>
+        </member>
+        <member name="T:Dapplo.Windows.Messages.WinProcHandler">
+            <summary>
+                This can be used to handle WinProc messages, for instance when there is no running winproc
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Messages.WinProcHandler.Singleton">
+            <summary>
+                Hold the singeton
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Messages.WinProcHandler._hooks">
+            <summary>
+                Store hooks, so they can be removed
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Messages.WinProcHandler.MessageHandlerWindow">
+            <summary>
+                Special HwndSource which is only there for handling messages, is top-level (no parent) to be able to handle ALL windows messages
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Messages.WinProcHandler.Handle">
+            <summary>
+                The actual handle for the HwndSource
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Messages.WinProcHandler.Instance">
+            <summary>
+                Singleton instance of the WinProcHandler
+            </summary>
+        </member>
+        <member name="M:Dapplo.Windows.Messages.WinProcHandler.Subscribe(System.Windows.Interop.HwndSourceHook)">
+            <summary>
+                Subscribe a hook to handle messages
+            </summary>
+            <param name="hook">HwndSourceHook</param>
+            <returns>IDisposable which unsubscribes the hook when Dispose is called</returns>
+        </member>
+        <member name="M:Dapplo.Windows.Messages.WinProcHandler.Unsubscribe(System.Windows.Interop.HwndSourceHook)">
+            <summary>
+                Unsubscribe a hook
+            </summary>
+            <param name="hook">HwndSourceHook</param>
+        </member>
+        <member name="M:Dapplo.Windows.Messages.WinProcHandler.UnsubscribeAllHooks">
+            <summary>
+                Unsubscribe all current hooks
+            </summary>
+        </member>
+        <member name="M:Dapplo.Windows.Messages.WinProcHandler.CreateMessageWindow(System.IntPtr,System.String)">
+            <summary>
+            Creates a HwndSource to catch windows message
+            </summary>
+            <param name="parent">IntPtr for the parent, this should usually not be set</param>
+            <param name="title">Title of the window, a default is already set</param>
+            <returns>HwndSource</returns>
+        </member>
+    </members>
+</doc>

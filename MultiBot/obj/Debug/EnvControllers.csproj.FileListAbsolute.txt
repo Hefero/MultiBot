@@ -32,9 +32,9 @@ C:\Users\GuilhermeMarques\source\repos\MultiBot\MultiBot\bin\Debug\Enigma.D3.Mem
 C:\Users\GuilhermeMarques\source\repos\MultiBot\MultiBot\bin\Debug\Enigma.D3.MemoryModel.Caching.pdb
 C:\Users\GuilhermeMarques\source\repos\MultiBot\MultiBot\bin\Debug\Enigma.Memory.pdb
 C:\Users\GuilhermeMarques\source\repos\MultiBot\MultiBot\bin\Debug\WindowsInput.xml
-C:\Users\GuilhermeMarques\source\repos\MultiBot\MultiBot\obj\Debug\EnvControllers.csprojResolveAssemblyReference.cache
 C:\Users\GuilhermeMarques\source\repos\MultiBot\MultiBot\obj\Debug\EnvControllers.csproj.CoreCompileInputs.cache
 C:\Users\GuilhermeMarques\source\repos\MultiBot\MultiBot\bin\Debug\MultiBot.dll
 C:\Users\GuilhermeMarques\source\repos\MultiBot\MultiBot\bin\Debug\MultiBot.pdb
 C:\Users\GuilhermeMarques\source\repos\MultiBot\MultiBot\obj\Debug\MultiBot.dll
 C:\Users\GuilhermeMarques\source\repos\MultiBot\MultiBot\obj\Debug\MultiBot.pdb
+C:\Users\GuilhermeMarques\source\repos\MultiBot\MultiBot\obj\Debug\EnvControllers.csprojResolveAssemblyReference.cache
