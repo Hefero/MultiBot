@@ -43,6 +43,7 @@ namespace EnvControllers
             otherVendorLoopDone = false;
             didUrshi = false;
             sentUrshi = false;
+            Console.WriteLine("Restarting Variables");
         }
 
         public void Pause()

@@ -36,9 +36,10 @@ namespace EnvControllers
         public int serverport { get; set; }
 
         public override void sendMessage(string message)
-        {
+        {   
             lastSendMessage = message;
             tcpClient.WriteLine(message);
+            Console.WriteLine("Sending message: " + message);
         }
     }
 }

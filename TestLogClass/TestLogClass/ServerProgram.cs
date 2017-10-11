@@ -26,13 +26,16 @@ namespace MultibotPrograms
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Server Program Started: making RosbotController");
             string pathToFile = @"C:\Users\GuilhermeMarques\Documents\RoS-BoT\Logs\logs.txt";
             RosController rosCon = new RosController(pathToFile);
+            Console.WriteLine("Starting server");
             ServerController server = new ServerController();
             server.port = 8910;
             server.pathToLogFile = @"C:\Users\GuilhermeMarques\Documents\RoS-BoT\Logs\logs.txt";
             server.Start();
             server.StartModules();
+            Console.WriteLine("All modules started: reading game states");
             while (true) {
                 server.gameState.UpdateGameState();
                 var newLogLines = server.rosController.rosLog.NewLines;

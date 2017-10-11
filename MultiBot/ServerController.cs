@@ -20,6 +20,7 @@ using Enigma.D3.MemoryModel.Core;
 using Enigma.D3;
 using Enigma.D3.MemoryModel.Controls;
 using static Enigma.D3.MemoryModel.Core.UXHelper;
+using System.Net.Sockets;
 
 namespace EnvControllers
 {
@@ -30,6 +31,9 @@ namespace EnvControllers
             tcpServer = new SimpleTcpServer().Start(port);
             tcpServer.DelimiterDataReceived += (sender, msg) => {
                 ReceivedMessage(sender, msg);
+            };
+            tcpServer.ClientConnected += (sender, msg) => {
+                ClientConnected(sender, msg);
             };
         }
 
@@ -45,9 +49,12 @@ namespace EnvControllers
             rosController = new RosController(pathToLogFile);
             gameState = new GameState();
         }
+        public virtual void ClientConnected(object sender, TcpClient msg)
+        {
+            Console.WriteLine("Client Connected");
+        }
         public virtual void ReceivedMessage(object sender, Message msg)
         {
-            Console.WriteLine("Received: " + msg.MessageString.ToString());
             lastMessage = msg;
             switch (msg.MessageString.ToString())
             {
@@ -88,16 +95,19 @@ namespace EnvControllers
                         Console.WriteLine(msg.MessageString.ToString());
                     break;
             }
+            Console.WriteLine("Received: " + msg.MessageString.ToString());
             Console.WriteLine("\n");
         }
         public virtual void sendMessage(string message)
         {
             lastSendMessage = message;
             tcpServer.BroadcastLine(message);
+            Console.WriteLine("Sending message: " + message);
         }
         public void GoToMenu() {
             rosController.Pause();
             BlockInput();
+            Console.WriteLine("Go to menu routine started");
             for (int i = 0; i < 10; i++)
             {
                rosController.inputSimulator.Keyboard.KeyPress(VirtualKeyCode.ESCAPE);
@@ -110,16 +120,20 @@ namespace EnvControllers
                         (gameState.leavegameUiControl.uirect.TranslateToClientRect(gameState.clientWidth, gameState.clientHeight).Height / 2);
                     RosController.SetCursorPos((int)xCoord, (int)yCoord);
                     rosController.inputSimulator.Mouse.LeftButtonClick();
+                    Console.WriteLine("Clicked to leave");
                     System.Threading.Thread.Sleep(800);
                 }
                 if (gameState.inMenu == true)
                 {
-                    break;
+                    Console.WriteLine("In menu");
+                    break;                    
                 }
             }
+            Console.WriteLine("Sleeping 11s");
             Thread.Sleep(11000);
             UnBlockInput();
             rosController.Unpause();
+            Console.WriteLine("Go to menu routine finished");
         }
         public partial class NativeMethods
         {
@@ -135,6 +149,7 @@ namespace EnvControllers
             try
             {
                 NativeMethods.BlockInput(true);
+                Console.WriteLine("Blocking inputs");
             }
             catch { }
         }
@@ -143,6 +158,7 @@ namespace EnvControllers
             try
             {
                 NativeMethods.BlockInput(false);
+                Console.WriteLine("Unblocking inputs");
             }
             catch { }
         }
