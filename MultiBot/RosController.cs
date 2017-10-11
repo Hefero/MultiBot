@@ -17,6 +17,7 @@ using Enigma.D3.MemoryModel.Controls;
 using static Enigma.D3.MemoryModel.Core.UXHelper;
 using System.Runtime.InteropServices;
 using static EnvControllers.ServerController;
+using System.Threading;
 
 namespace EnvControllers
 {
@@ -24,12 +25,10 @@ namespace EnvControllers
     {
         public RosController(string logPath) {            
             rosLog = new LogFile(logPath);
-            inputSimulator = new InputSimulator();
             enteredRift = false;
             InitVariables();
         }
         public LogFile rosLog { get; set; }
-        public InputSimulator inputSimulator { get; set; }
         public bool paused { get; set; }
         public bool vendorLoopDone { get; set; }
         public bool otherVendorLoopDone { get; set; }
@@ -53,9 +52,9 @@ namespace EnvControllers
         {
             if (paused == false)
             {
-                inputSimulator.Keyboard.KeyPress(VirtualKeyCode.F6);
-                paused = true;
                 Console.WriteLine("Pausing");
+                SendF6();
+                paused = true;                
             }
             else
             {
@@ -66,9 +65,9 @@ namespace EnvControllers
         {
             if (paused == true)
             {
-                inputSimulator.Keyboard.KeyPress(VirtualKeyCode.F6);
-                paused = false;
                 Console.WriteLine("Unpausing");
+                SendF6();
+                paused = false;                
             }
             else
             {
@@ -112,12 +111,20 @@ namespace EnvControllers
         const int WM_KEYDOWN = 0x100;
         const int WM_KEYUP = 0x101;
         const int VK_ESCAPE = 0x1B;
+        const int VK_F6 = 0x75;
 
         public static void SendEscape()
         {
             IntPtr hWnd = GetForegroundWindow();
             SendMessage(hWnd, WM_KEYDOWN, VK_ESCAPE, IntPtr.Zero);
             SendMessage(hWnd, WM_KEYUP, VK_ESCAPE, IntPtr.Zero);
+        }
+        public static void SendF6()
+        {
+            IntPtr hWnd = GetForegroundWindow();
+            SendMessage(hWnd, WM_KEYDOWN, VK_F6, IntPtr.Zero);
+            Thread.Sleep(100);
+            SendMessage(hWnd, WM_KEYUP, VK_F6, IntPtr.Zero);
         }
     }
 }
