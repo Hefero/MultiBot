@@ -8,17 +8,7 @@ using System.Windows.Input;
 using WindowsInput;
 using WindowsInput.Native;
 using EnvControllers;
-using SimpleTCP;
 using System.IO;
-using Enigma.D3.ApplicationModel;
-using Enigma.D3.Assets;
-using Enigma.D3.MemoryModel;
-using Enigma.D3.MemoryModel.Core;
-using Enigma.D3;
-using Enigma.D3.MemoryModel.Controls;
-using static Enigma.D3.MemoryModel.Core.UXHelper;
-using SlimDX.DirectInput;
-using System.Runtime.InteropServices;
 using System.Diagnostics;
 
 namespace MultibotPrograms

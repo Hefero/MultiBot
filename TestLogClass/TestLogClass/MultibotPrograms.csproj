@@ -35,21 +35,6 @@
     <StartupObject>MultibotPrograms.ClientProgram</StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Dapplo.Log, Version=1.0.29.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Dapplo.Log.1.0.29\lib\net45\Dapplo.Log.dll</HintPath>
-    </Reference>
-    <Reference Include="Dapplo.Windows.Common, Version=0.5.30.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Dapplo.Windows.Common.0.5.30\lib\net45\Dapplo.Windows.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="Dapplo.Windows.Input, Version=0.5.30.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Dapplo.Windows.Input.0.5.30\lib\net45\Dapplo.Windows.Input.dll</HintPath>
-    </Reference>
-    <Reference Include="Dapplo.Windows.Messages, Version=0.5.30.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Dapplo.Windows.Messages.0.5.30\lib\net45\Dapplo.Windows.Messages.dll</HintPath>
-    </Reference>
-    <Reference Include="Dapplo.Windows.User32, Version=0.5.30.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Dapplo.Windows.User32.0.5.30\lib\net45\Dapplo.Windows.User32.dll</HintPath>
-    </Reference>
     <Reference Include="Enigma.D3.ApplicationModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
     <Reference Include="Enigma.D3.Assets">
       <HintPath>..\..\..\..\..\Documents\Enigma.D3-master\Enigma.D3.ApplicationModel\bin\Debug\Enigma.D3.Assets.dll</HintPath>
@@ -63,10 +48,6 @@
     </Reference>
     <Reference Include="SimpleTCP, Version=1.0.20.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\SimpleTCP.1.0.20\lib\net45\SimpleTCP.dll</HintPath>
-    </Reference>
-    <Reference Include="SlimDX, Version=4.0.13.43, Culture=neutral, PublicKeyToken=b1b0c32fd1ffe4f9, processorArchitecture=x86">
-      <HintPath>..\..\packages\SlimDX.4.0.13.44\lib\NET40\SlimDX.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

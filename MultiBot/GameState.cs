@@ -63,6 +63,7 @@ namespace EnvControllers
                 clientHeight = _snapshot.Window.ClientRect.Height;
                 inGame = true;
                 inMenu = false;
+                isLoading = false;
             }
             catch
             {

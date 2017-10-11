@@ -216,7 +216,8 @@ namespace EnvControllers
             var xCoord = rosbotRect.Right - (0.15*rosbotRect.Width);
             var yCoord = rosbotRect.Bottom - (0.07*rosbotRect.Height);
             RosController.SetCursorPos((int)xCoord, (int)yCoord);
-            RosController.LeftClick();
+            Thread.Sleep(100);
+            //RosController.LeftClick();
         }
 
         public partial class NativeMethods
