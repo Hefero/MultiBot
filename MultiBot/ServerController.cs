@@ -4,8 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using WindowsInput;
-using WindowsInput.Native;
 using EnvControllers;
 using SimpleTCP;
 using System.IO;
@@ -169,7 +167,7 @@ namespace EnvControllers
                 Thread.Sleep(200);
                 BlockInput();
                 Console.WriteLine("Sleeping 11s");
-                Thread.Sleep(12000);
+                Thread.Sleep(13500);
                 UnBlockInput();
                 rosController.Unpause();
                 rosController.InitVariables();
@@ -213,11 +211,18 @@ namespace EnvControllers
         public void ClickRosStart()
         {
             SetForegroundWindow(rosbotProcess.MainWindowHandle);
+            IntPtr activeWindow = GetForegroundWindow();
+            while (activeWindow != rosbotProcess.MainWindowHandle)
+            {
+                SetForegroundWindow(rosbotProcess.MainWindowHandle);
+                activeWindow = GetForegroundWindow();
+            }
+            Thread.Sleep(100);
             var xCoord = rosbotRect.Right - (0.15*rosbotRect.Width);
             var yCoord = rosbotRect.Bottom - (0.07*rosbotRect.Height);
             RosController.SetCursorPos((int)xCoord, (int)yCoord);
             Thread.Sleep(100);
-            //RosController.LeftClick();
+            RosController.LeftClick();
         }
 
         public partial class NativeMethods

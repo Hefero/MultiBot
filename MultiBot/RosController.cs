@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WindowsInput;
-using WindowsInput.Native;
 using Enigma.D3.ApplicationModel;
 using Enigma.D3.Assets;
 using Enigma.D3.AttributeModel;

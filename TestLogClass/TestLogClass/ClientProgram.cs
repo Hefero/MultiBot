@@ -4,9 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Windows.Input;
-using WindowsInput;
-using WindowsInput.Native;
 using EnvControllers;
 using SimpleTCP;
 using System.IO;
@@ -47,6 +44,13 @@ namespace MultibotPrograms
                     { //wait for game to leave loading screen
                         client.gameState.UpdateGameState();
                     }
+
+                    while (client.gameState.inMenu & !client.rosController.failed)
+                    { //wait for game to leave menu screen (but not from leaving after failed)
+                        client.gameState.UpdateGameState();
+                    }
+
+
                     var newLogLines = client.rosController.rosLog.NewLines;
 
                     if (LogFile.LookForString(newLogLines, "Vendor Loop Done") & !client.rosController.vendorLoopDone)
@@ -74,7 +78,7 @@ namespace MultibotPrograms
                     if (client.gameState.inMenu & client.rosController.failed)
                     {
                         ServerController.BlockInput();
-                        Thread.Sleep(11000);
+                        Thread.Sleep(13500);
                         client.rosController.InitVariables();
                         ServerController.UnBlockInput();
                     }

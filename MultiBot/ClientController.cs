@@ -4,8 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using WindowsInput;
-using WindowsInput.Native;
 using EnvControllers;
 using SimpleTCP;
 using System.IO;

@@ -24,14 +24,12 @@ C:\Users\GuilhermeMarques\source\repos\MultiBot\MultiBot\bin\Debug\Enigma.D3.Mem
 C:\Users\GuilhermeMarques\source\repos\MultiBot\MultiBot\bin\Debug\Enigma.D3.MemoryModel.dll
 C:\Users\GuilhermeMarques\source\repos\MultiBot\MultiBot\bin\Debug\Enigma.Memory.dll
 C:\Users\GuilhermeMarques\source\repos\MultiBot\MultiBot\bin\Debug\SimpleTCP.dll
-C:\Users\GuilhermeMarques\source\repos\MultiBot\MultiBot\bin\Debug\WindowsInput.dll
 C:\Users\GuilhermeMarques\source\repos\MultiBot\MultiBot\bin\Debug\Enigma.D3.ApplicationModel.pdb
 C:\Users\GuilhermeMarques\source\repos\MultiBot\MultiBot\bin\Debug\Enigma.D3.Assets.pdb
 C:\Users\GuilhermeMarques\source\repos\MultiBot\MultiBot\bin\Debug\Enigma.D3.Core.pdb
 C:\Users\GuilhermeMarques\source\repos\MultiBot\MultiBot\bin\Debug\Enigma.D3.MemoryModel.pdb
 C:\Users\GuilhermeMarques\source\repos\MultiBot\MultiBot\bin\Debug\Enigma.D3.MemoryModel.Caching.pdb
 C:\Users\GuilhermeMarques\source\repos\MultiBot\MultiBot\bin\Debug\Enigma.Memory.pdb
-C:\Users\GuilhermeMarques\source\repos\MultiBot\MultiBot\bin\Debug\WindowsInput.xml
 C:\Users\GuilhermeMarques\source\repos\MultiBot\MultiBot\obj\Debug\EnvControllers.csproj.CoreCompileInputs.cache
 C:\Users\GuilhermeMarques\source\repos\MultiBot\MultiBot\bin\Debug\MultiBot.dll
 C:\Users\GuilhermeMarques\source\repos\MultiBot\MultiBot\bin\Debug\MultiBot.pdb

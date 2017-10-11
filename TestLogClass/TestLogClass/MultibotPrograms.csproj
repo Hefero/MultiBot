@@ -35,11 +35,18 @@
     <StartupObject>MultibotPrograms.ClientProgram</StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Enigma.D3.ApplicationModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+    <Reference Include="Enigma.D3.ApplicationModel">
+      <HintPath>..\..\..\..\..\Documents\Enigma.D3-master\Enigma.D3.ApplicationModel\bin\Debug\Enigma.D3.ApplicationModel.dll</HintPath>
+    </Reference>
     <Reference Include="Enigma.D3.Assets">
       <HintPath>..\..\..\..\..\Documents\Enigma.D3-master\Enigma.D3.ApplicationModel\bin\Debug\Enigma.D3.Assets.dll</HintPath>
     </Reference>
-    <Reference Include="Enigma.D3.MemoryModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+    <Reference Include="Enigma.D3.Core">
+      <HintPath>..\..\..\..\..\Documents\Enigma.D3-master\Enigma.D3.ApplicationModel\bin\Debug\Enigma.D3.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Enigma.D3.MemoryModel">
+      <HintPath>..\..\..\..\..\Documents\Enigma.D3-master\Enigma.D3.ApplicationModel\bin\Debug\Enigma.D3.MemoryModel.dll</HintPath>
+    </Reference>
     <Reference Include="Enigma.D3.MemoryModel.Caching">
       <HintPath>..\..\..\..\..\Documents\Enigma.D3-master\Enigma.D3.ApplicationModel\bin\Debug\Enigma.D3.MemoryModel.Caching.dll</HintPath>
     </Reference>
@@ -67,9 +74,6 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
-    <Reference Include="WindowsInput, Version=1.0.4.0, Culture=neutral, PublicKeyToken=9b287f7dc5073cad, processorArchitecture=MSIL">
-      <HintPath>..\packages\InputSimulator.1.0.4.0\lib\net20\WindowsInput.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClientProgram.cs" />

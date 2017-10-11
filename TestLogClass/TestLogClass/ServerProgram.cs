@@ -4,9 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Windows.Input;
-using WindowsInput;
-using WindowsInput.Native;
 using EnvControllers;
 using System.IO;
 using System.Diagnostics;
@@ -65,7 +62,7 @@ namespace MultibotPrograms
                     if (server.gameState.inMenu & server.rosController.failed)
                     {
                         ServerController.BlockInput();
-                        Thread.Sleep(11000);
+                        Thread.Sleep(135000);
                         server.rosController.InitVariables();
                         ServerController.UnBlockInput();
                     }

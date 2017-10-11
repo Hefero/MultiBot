@@ -9,7 +9,6 @@ C:\Users\GuilhermeMarques\source\repos\MultiBot\TestLogClass\TestLogClass\bin\De
 C:\Users\GuilhermeMarques\source\repos\MultiBot\TestLogClass\TestLogClass\bin\Debug\System.Reactive.Core.dll
 C:\Users\GuilhermeMarques\source\repos\MultiBot\TestLogClass\TestLogClass\bin\Debug\System.Reactive.Interfaces.dll
 C:\Users\GuilhermeMarques\source\repos\MultiBot\TestLogClass\TestLogClass\bin\Debug\System.Reactive.Linq.dll
-C:\Users\GuilhermeMarques\source\repos\MultiBot\TestLogClass\TestLogClass\bin\Debug\WindowsInput.dll
 C:\Users\GuilhermeMarques\source\repos\MultiBot\TestLogClass\TestLogClass\bin\Debug\Enigma.D3.Core.dll
 C:\Users\GuilhermeMarques\source\repos\MultiBot\TestLogClass\TestLogClass\bin\Debug\MultiBot.pdb
 C:\Users\GuilhermeMarques\source\repos\MultiBot\TestLogClass\TestLogClass\bin\Debug\Enigma.D3.Assets.pdb
@@ -18,7 +17,6 @@ C:\Users\GuilhermeMarques\source\repos\MultiBot\TestLogClass\TestLogClass\bin\De
 C:\Users\GuilhermeMarques\source\repos\MultiBot\TestLogClass\TestLogClass\bin\Debug\System.Reactive.Core.xml
 C:\Users\GuilhermeMarques\source\repos\MultiBot\TestLogClass\TestLogClass\bin\Debug\System.Reactive.Interfaces.xml
 C:\Users\GuilhermeMarques\source\repos\MultiBot\TestLogClass\TestLogClass\bin\Debug\System.Reactive.Linq.xml
-C:\Users\GuilhermeMarques\source\repos\MultiBot\TestLogClass\TestLogClass\bin\Debug\WindowsInput.xml
 C:\Users\GuilhermeMarques\source\repos\MultiBot\TestLogClass\TestLogClass\bin\Debug\Enigma.D3.Core.pdb
 C:\Users\GuilhermeMarques\source\repos\MultiBot\TestLogClass\TestLogClass\obj\Debug\MultibotPrograms.csprojResolveAssemblyReference.cache
 C:\Users\GuilhermeMarques\source\repos\MultiBot\TestLogClass\TestLogClass\obj\Debug\MultibotPrograms.csproj.CoreCompileInputs.cache
