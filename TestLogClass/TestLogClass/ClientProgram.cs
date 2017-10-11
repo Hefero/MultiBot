@@ -34,6 +34,7 @@ namespace MultibotPrograms
             ClientController client = new ClientController();
             client.serverip = "192.168.1.9";
             client.serverport = 8910;
+            client.pathToLogFile = pathToFile;
             client.Start();
             client.StartModules();            
             Console.WriteLine("All modules started: reading game states");
@@ -65,15 +66,16 @@ namespace MultibotPrograms
                 }
 
                 if (client.gameState.acceptgrUiVisible & client.rosController.vendorLoopDone) {
-                    // click cancel grift request
+                    // click accept grift yes
                     client.rosController.enteredRift = false;
                     var xCoord = client.gameState.acceptgrUiControl.uirect.TranslateToClientRect(client.gameState.clientWidth, client.gameState.clientHeight).Left +
                         (client.gameState.acceptgrUiControl.uirect.TranslateToClientRect(client.gameState.clientWidth, client.gameState.clientHeight).Width / 2);
                     var yCoord = client.gameState.acceptgrUiControl.uirect.TranslateToClientRect(client.gameState.clientWidth, client.gameState.clientHeight).Top +
-                        (client.gameState.acceptgrUiControl.uirect.TranslateToClientRect(client.gameState.clientWidth, client.gameState.clientHeight).Height * 1.5);
+                        (client.gameState.acceptgrUiControl.uirect.TranslateToClientRect(client.gameState.clientWidth, client.gameState.clientHeight).Height / 2);
                     RosController.SetCursorPos((int)xCoord, (int)yCoord);
                     client.rosController.inputSimulator.Mouse.LeftButtonClick();
-                    Console.WriteLine("Accept Rift Dialog Detected: Click Cancel");
+                    client.sendMessage("Pause"); //not to fail
+                    Console.WriteLine("Accept Rift Dialog Detected: Click Accept and Send Pause");
                     Thread.Sleep(1500);                   
                 }
 
@@ -86,7 +88,8 @@ namespace MultibotPrograms
                         (client.gameState.confirmationUiControl.uirect.TranslateToClientRect(client.gameState.clientWidth, client.gameState.clientHeight).Height / 2);
                     RosController.SetCursorPos((int)xCoord, (int)yCoord);
                     client.rosController.inputSimulator.Mouse.LeftButtonClick();
-                    Console.WriteLine("Rift Cancelled Dialog Detected: Click Cancel");
+                    client.sendMessage("Start");
+                    Console.WriteLine("Rift Cancelled Dialog Detected: Pause, Click Cancel, and Send Start");
                     Thread.Sleep(1500);
                 }
 
