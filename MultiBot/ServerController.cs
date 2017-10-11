@@ -115,35 +115,51 @@ namespace EnvControllers
             Console.WriteLine("Sending message: " + message);
         }
         public void GoToMenu() {
-            rosController.Pause();
-            BlockInput();
-            Console.WriteLine("Go to menu routine started");
-            for (int i = 0; i < 10; i++)
+            try
             {
-               rosController.inputSimulator.Keyboard.KeyPress(VirtualKeyCode.ESCAPE);
-                System.Threading.Thread.Sleep(800);
+                rosController.Pause();
+                BlockInput();
+                Console.WriteLine("Go to menu routine started");
+                Console.WriteLine("First ESC and try to click");
+                rosController.inputSimulator.Keyboard.KeyPress(VirtualKeyCode.ESCAPE);
                 if (gameState.leavegameUiVisible == true)
                 {
                     var xCoord = gameState.leavegameUiControl.uirect.TranslateToClientRect(gameState.clientWidth, gameState.clientHeight).Left +
                         (gameState.leavegameUiControl.uirect.TranslateToClientRect(gameState.clientWidth, gameState.clientHeight).Width / 2);
-                    var yCoord = gameState.leavegameUiControl.uirect.TranslateToClientRect(gameState.clientWidth,gameState.clientHeight).Top +
+                    var yCoord = gameState.leavegameUiControl.uirect.TranslateToClientRect(gameState.clientWidth, gameState.clientHeight).Top +
                         (gameState.leavegameUiControl.uirect.TranslateToClientRect(gameState.clientWidth, gameState.clientHeight).Height / 2);
                     RosController.SetCursorPos((int)xCoord, (int)yCoord);
                     rosController.inputSimulator.Mouse.LeftButtonClick();
                     Console.WriteLine("Clicked to leave");
                     System.Threading.Thread.Sleep(800);
                 }
-                if (gameState.inMenu == true)
+                else
                 {
-                    Console.WriteLine("In menu");
-                    break;                    
+                    Console.WriteLine("Second ESC and try to click");
+                    rosController.inputSimulator.Keyboard.KeyPress(VirtualKeyCode.ESCAPE);
+                    if (gameState.leavegameUiVisible == true)
+                    {
+                        var xCoord = gameState.leavegameUiControl.uirect.TranslateToClientRect(gameState.clientWidth, gameState.clientHeight).Left +
+                            (gameState.leavegameUiControl.uirect.TranslateToClientRect(gameState.clientWidth, gameState.clientHeight).Width / 2);
+                        var yCoord = gameState.leavegameUiControl.uirect.TranslateToClientRect(gameState.clientWidth, gameState.clientHeight).Top +
+                            (gameState.leavegameUiControl.uirect.TranslateToClientRect(gameState.clientWidth, gameState.clientHeight).Height / 2);
+                        RosController.SetCursorPos((int)xCoord, (int)yCoord);
+                        rosController.inputSimulator.Mouse.LeftButtonClick();
+                        Console.WriteLine("Clicked to leave");
+                        System.Threading.Thread.Sleep(800);
+                    }
                 }
+                Console.WriteLine("Sleeping 11s");
+                Thread.Sleep(11000);
+                UnBlockInput();
+                rosController.Unpause();
+                Console.WriteLine("Go to menu routine finished");
             }
-            Console.WriteLine("Sleeping 11s");
-            Thread.Sleep(11000);
-            UnBlockInput();
-            rosController.Unpause();
-            Console.WriteLine("Go to menu routine finished");
+            catch
+            {
+                UnBlockInput();
+                rosController.Unpause();
+            }
         }
         public partial class NativeMethods
         {

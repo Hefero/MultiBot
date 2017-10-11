@@ -32,7 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>MultibotPrograms.ServerProgram</StartupObject>
+    <StartupObject>MultibotPrograms.ClientProgram</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Dapplo.Log, Version=1.0.29.0, Culture=neutral, processorArchitecture=MSIL">
