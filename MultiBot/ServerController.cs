@@ -90,6 +90,7 @@ namespace EnvControllers
                     }
                 case "Server Vendor Loop Done":
                     {
+                        Thread.Sleep(1000);
                         this.rosController.otherVendorLoopDone = true;
                         if (rosController.vendorLoopDone)
                         {
@@ -100,6 +101,7 @@ namespace EnvControllers
                     }
                 case "Client Vendor Loop Done":
                     {
+                        Thread.Sleep(1000);
                         this.rosController.otherVendorLoopDone = true;
                         break;
                     }

@@ -52,10 +52,12 @@ namespace EnvControllers
         {
             if (paused == false)
             {
+                Thread.Sleep(100);
                 String timeStamp = GetTimestamp(DateTime.Now);
                 Console.WriteLine(timeStamp + " Pausing");
                 SendF6();
                 paused = true;
+                Thread.Sleep(100);
             }
             else
             {
@@ -66,10 +68,12 @@ namespace EnvControllers
         {
             if (paused == true)
             {
+                Thread.Sleep(100);
                 String timeStamp = GetTimestamp(DateTime.Now);
                 Console.WriteLine(timeStamp + "Unpausing");
                 SendF6();
                 paused = false;
+                Thread.Sleep(100);
             }
             else
             {
@@ -103,9 +107,12 @@ namespace EnvControllers
         }
 
         public static void LeftClick()
-        {            
+        {
+            Thread.Sleep(100);
             mouse_event((int)(MouseEventFlags.LEFTDOWN), 0, 0, 0, 0);
+            Thread.Sleep(100);
             mouse_event((int)(MouseEventFlags.LEFTUP), 0, 0, 0, 0);
+            Thread.Sleep(100);
         }
 
         [DllImport("User32.dll")]
@@ -121,14 +128,20 @@ namespace EnvControllers
         public static void SendEscape()
         {
             IntPtr hWnd = GetForegroundWindow();
+            Thread.Sleep(100);
             SendMessage(hWnd, WM_KEYDOWN, VK_ESCAPE, IntPtr.Zero);
+            Thread.Sleep(100);
             SendMessage(hWnd, WM_KEYUP, VK_ESCAPE, IntPtr.Zero);
+            Thread.Sleep(100);
         }
 
         public static void SendF6()
         {
+            Thread.Sleep(100);
             keybd_event(VK_F6, 0, KEYEVENTF_EXTENDEDKEY, 0);
+            Thread.Sleep(100);
             keybd_event(VK_F6, 0, KEYEVENTF_KEYUP, 0);
+            Thread.Sleep(100);
         }
         public static String GetTimestamp(DateTime value)
         {
