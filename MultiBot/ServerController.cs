@@ -117,8 +117,7 @@ namespace EnvControllers
         public void GoToMenu() {
             try
             {
-                rosController.Pause();
-                BlockInput();
+                rosController.Pause();                
                 Console.WriteLine("Go to menu routine started");
                 Console.WriteLine("First ESC and try to click");
                 rosController.inputSimulator.Keyboard.KeyPress(VirtualKeyCode.ESCAPE);
@@ -131,7 +130,7 @@ namespace EnvControllers
                     RosController.SetCursorPos((int)xCoord, (int)yCoord);
                     rosController.inputSimulator.Mouse.LeftButtonClick();
                     Console.WriteLine("Clicked to leave");
-                    System.Threading.Thread.Sleep(800);
+                    BlockInput();
                 }
                 else
                 {
@@ -146,19 +145,21 @@ namespace EnvControllers
                         RosController.SetCursorPos((int)xCoord, (int)yCoord);
                         rosController.inputSimulator.Mouse.LeftButtonClick();
                         Console.WriteLine("Clicked to leave");
-                        System.Threading.Thread.Sleep(800);
+                        BlockInput();
                     }
                 }
                 Console.WriteLine("Sleeping 11s");
                 Thread.Sleep(11000);
                 UnBlockInput();
                 rosController.Unpause();
+                rosController.InitVariables();
                 Console.WriteLine("Go to menu routine finished");
             }
             catch
             {
                 UnBlockInput();
                 rosController.Unpause();
+                rosController.InitVariables();
             }
         }
         public partial class NativeMethods

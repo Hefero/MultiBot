@@ -16,6 +16,7 @@ using Enigma.D3;
 using Enigma.D3.MemoryModel.Controls;
 using static Enigma.D3.MemoryModel.Core.UXHelper;
 using System.Runtime.InteropServices;
+using static EnvControllers.ServerController;
 
 namespace EnvControllers
 {
@@ -35,6 +36,7 @@ namespace EnvControllers
         public bool didUrshi { get; set; }
         public bool enteredRift { get; set; }
         public bool sentUrshi { get; set; }
+        public bool failed { get; set; }
 
         public void InitVariables()
         {
@@ -43,6 +45,7 @@ namespace EnvControllers
             otherVendorLoopDone = false;
             didUrshi = false;
             sentUrshi = false;
+            failed = false;
             Console.WriteLine("Restarting Variables");
         }
 
@@ -74,5 +77,9 @@ namespace EnvControllers
         }
         [DllImport("user32.dll")]
         public static extern bool SetCursorPos(int X, int Y);
+        [DllImport("user32.dll")]
+        public static extern int SetForegroundWindow(IntPtr hWnd);
+        [DllImport("user32.dll")]
+        static extern bool PostMessage(IntPtr hWnd, UInt32 Msg, int wParam, int lParam);
     }
 }

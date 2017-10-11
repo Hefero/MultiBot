@@ -62,9 +62,16 @@ namespace MultibotPrograms
                 {   
                     //failure detected
                     client.sendMessage("Go to menu");
-                    client.GoToMenu();
-                    Console.WriteLine("Next rift in different game detected: Go to menu and send Go to menu");
+                    Console.WriteLine("Next rift in different game detected: send Go to menu");
                     Thread.Sleep(500);
+                }
+
+                if (client.gameState.inMenu & client.rosController.failed)
+                {
+                    ServerController.BlockInput();
+                    Thread.Sleep(11000);
+                    client.rosController.InitVariables();
+                    ServerController.UnBlockInput();
                 }
 
                 if (client.gameState.acceptgrUiVisible & client.rosController.vendorLoopDone) {
