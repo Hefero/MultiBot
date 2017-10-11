@@ -47,7 +47,7 @@ namespace EnvControllers
         }
         public virtual void ReceivedMessage(object sender, Message msg)
         {
-            Console.WriteLine("Received: ");
+            Console.WriteLine("Received: " + msg.MessageString.ToString());
             lastMessage = msg;
             switch (msg.MessageString.ToString())
             {
@@ -116,10 +116,10 @@ namespace EnvControllers
                 {
                     break;
                 }
-                Thread.Sleep(11000);
-                UnBlockInput();
-                rosController.Unpause();
             }
+            Thread.Sleep(11000);
+            UnBlockInput();
+            rosController.Unpause();
         }
         public partial class NativeMethods
         {

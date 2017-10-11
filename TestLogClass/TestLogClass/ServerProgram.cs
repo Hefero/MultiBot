@@ -42,11 +42,13 @@ namespace MultibotPrograms
                     server.rosController.vendorLoopDone = true;
                     server.rosController.enteredRift = false;
                     server.sendMessage("Vendor Loop Done");
+                    Console.WriteLine("Vendor Loop Done Detected");
                     if (server.rosController.otherVendorLoopDone == false)
                     {
                         server.rosController.Pause();
                     }
                     Thread.Sleep(100);
+                    
                 }
 
                 if (LogFile.LookForString(newLogLines, "Next rift in different") & !server.gameState.inMenu)
@@ -54,6 +56,7 @@ namespace MultibotPrograms
                     //failure detected
                     server.sendMessage("Go to menu");
                     server.GoToMenu();
+                    Console.WriteLine("Next rift in different game detected: Go to menu and send Go to menu");
                     Thread.Sleep(500);
                 }
 
@@ -66,7 +69,8 @@ namespace MultibotPrograms
                         (server.gameState.acceptgrUiControl.uirect.TranslateToClientRect(server.gameState.clientWidth, server.gameState.clientHeight).Height / 2);
                     RosController.SetCursorPos((int)xCoord, (int)yCoord);
                     server.rosController.inputSimulator.Mouse.LeftButtonClick();
-                    server.sendMessage("Pause");
+                    server.sendMessage("Pause"); //not to fail
+                    Console.WriteLine("Accept Rift Dialog Detected: Click Accept, and Send Pause");
                     Thread.Sleep(1500);                   
                 }
 
@@ -81,6 +85,7 @@ namespace MultibotPrograms
                     RosController.SetCursorPos((int)xCoord, (int)yCoord);
                     server.rosController.inputSimulator.Mouse.LeftButtonClick();
                     server.sendMessage("Start");
+                    Console.WriteLine("Rift Cancelled Dialog Detected: Pause, Click Cancel, and Send Start");
                     Thread.Sleep(1500);
                 }
 
@@ -92,6 +97,7 @@ namespace MultibotPrograms
                     server.rosController.Unpause();
                     server.rosController.InitVariables();
                     Thread.Sleep(500);
+                    Console.WriteLine("First Floor Rift Detected: Unpausing and Reiniting variables");
                 }
 
                 if (server.gameState.haveUrshiActor)
@@ -103,6 +109,7 @@ namespace MultibotPrograms
                     {
                         server.sendMessage("Teleport");
                         server.rosController.sentUrshi = true;
+                        Console.WriteLine("Sent Teleport for Urshi");
                     }
                 }
             }

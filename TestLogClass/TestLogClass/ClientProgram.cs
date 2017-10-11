@@ -42,6 +42,7 @@ namespace MultibotPrograms
                     client.rosController.vendorLoopDone = true;
                     client.rosController.enteredRift = false;
                     client.sendMessage("Vendor Loop Done");
+                    Console.WriteLine("Vendor Loop Done Detected");
                     if (client.rosController.otherVendorLoopDone == false)
                     {
                         client.rosController.Pause();
@@ -54,6 +55,7 @@ namespace MultibotPrograms
                     //failure detected
                     client.sendMessage("Go to menu");
                     client.GoToMenu();
+                    Console.WriteLine("Next rift in different game detected: Go to menu and send Go to menu");
                     Thread.Sleep(500);
                 }
 
@@ -66,19 +68,20 @@ namespace MultibotPrograms
                         (client.gameState.acceptgrUiControl.uirect.TranslateToClientRect(client.gameState.clientWidth, client.gameState.clientHeight).Height * 1.5);
                     RosController.SetCursorPos((int)xCoord, (int)yCoord);
                     client.rosController.inputSimulator.Mouse.LeftButtonClick();
+                    Console.WriteLine("Accept Rift Dialog Detected: Click Cancel");
                     Thread.Sleep(1500);                   
                 }
 
                 if (client.gameState.cancelgriftUiVisible)
                 {
                     //click cancel ok
-                    client.rosController.Pause();
                     var xCoord = client.gameState.confirmationUiControl.uirect.TranslateToClientRect(client.gameState.clientWidth, client.gameState.clientHeight).Left +
                         (client.gameState.confirmationUiControl.uirect.TranslateToClientRect(client.gameState.clientWidth, client.gameState.clientHeight).Width / 2);
                     var yCoord = client.gameState.confirmationUiControl.uirect.TranslateToClientRect(client.gameState.clientWidth, client.gameState.clientHeight).Top +
                         (client.gameState.confirmationUiControl.uirect.TranslateToClientRect(client.gameState.clientWidth, client.gameState.clientHeight).Height / 2);
                     RosController.SetCursorPos((int)xCoord, (int)yCoord);
                     client.rosController.inputSimulator.Mouse.LeftButtonClick();
+                    Console.WriteLine("Rift Cancelled Dialog Detected: Click Cancel");
                     Thread.Sleep(1500);
                 }
 
@@ -90,6 +93,7 @@ namespace MultibotPrograms
                     client.rosController.Unpause();
                     client.rosController.InitVariables();
                     Thread.Sleep(500);
+                    Console.WriteLine("First Floor Rift Detected: Unpausing and Reiniting variables");
                 }
 
                 if (client.gameState.haveUrshiActor)
@@ -101,6 +105,7 @@ namespace MultibotPrograms
                     {
                         client.sendMessage("Teleport");
                         client.rosController.sentUrshi = true;
+                        Console.WriteLine("Sent Teleport for Urshi");
                     }
                 }
             }

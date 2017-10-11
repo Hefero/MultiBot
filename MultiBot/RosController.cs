@@ -51,6 +51,7 @@ namespace EnvControllers
             {
                 inputSimulator.Keyboard.KeyPress(VirtualKeyCode.F6);
                 paused = true;
+                Console.WriteLine("Pausing");
             }
             else
             {
@@ -63,6 +64,7 @@ namespace EnvControllers
             {
                 inputSimulator.Keyboard.KeyPress(VirtualKeyCode.F6);
                 paused = false;
+                Console.WriteLine("Unpausing");
             }
             else
             {
