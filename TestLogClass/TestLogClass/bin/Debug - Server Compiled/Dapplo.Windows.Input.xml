@@ -1,0 +1,3135 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Dapplo.Windows.Input</name>
+    </assembly>
+    <members>
+        <member name="T:Dapplo.Windows.Input.Enums.HidUsagesConsumer">
+            <summary>
+            The different consumer HID usages
+            See <a href="http://www.usb.org/developers/hidpage/Hut1_12v2.pdf">here</a>
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HidUsagesConsumer.Undefined">
+            <summary>
+            Unknow usage
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HidUsagesConsumer.ConsumerControl">
+            <summary>
+            Consumer Control
+            </summary>
+        </member>
+        <member name="T:Dapplo.Windows.Input.Enums.HidUsagesGeneric">
+            <summary>
+            The different known generic HID usages
+            See <a href="http://www.usb.org/developers/hidpage/Hut1_12v2.pdf">here</a>
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HidUsagesGeneric.Undefined">
+            <summary>
+            Unknow usage
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HidUsagesGeneric.Pointer">
+            <summary>
+            Pointer
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HidUsagesGeneric.Mouse">
+            <summary>
+            Mouse
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HidUsagesGeneric.Joystick">
+            <summary>
+            Joystick
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HidUsagesGeneric.Gamepad">
+            <summary>
+            Game Pad
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HidUsagesGeneric.Keyboard">
+            <summary>
+            Keyboard
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HidUsagesGeneric.Keypad">
+            <summary>
+            Keypad
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HidUsagesGeneric.MultiAxis">
+            <summary>
+            Multi-Axis
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HidUsagesGeneric.Tablet">
+            <summary>
+            Tablet PC
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HidUsagesGeneric.Consumer">
+            <summary>
+            Consumer
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HidUsagesGeneric.X">
+            <summary>
+            X
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HidUsagesGeneric.Y">
+            <summary>
+            Y
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HidUsagesGeneric.Z">
+            <summary>
+            Z
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HidUsagesGeneric.Rx">
+            <summary>
+            Rx
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HidUsagesGeneric.Ry">
+            <summary>
+            Ry
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HidUsagesGeneric.Rz">
+            <summary>
+            Rz
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HidUsagesGeneric.Slider">
+            <summary>
+            Slider
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HidUsagesGeneric.Dial">
+            <summary>
+            Dial
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HidUsagesGeneric.Wheel">
+            <summary>
+            Wheel
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HidUsagesGeneric.HatSwitch">
+            <summary>
+            Hat switch
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HidUsagesGeneric.CountedBuffer">
+            <summary>
+            Counted buffer
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HidUsagesGeneric.ByteCount">
+            <summary>
+            Byte count
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HidUsagesGeneric.MotionWakeup">
+            <summary>
+            Motion Wakeup
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HidUsagesGeneric.Start">
+            <summary>
+            Start
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HidUsagesGeneric.Select">
+            <summary>
+            Select
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HidUsagesGeneric.SystemControl">
+            <summary>
+            Muilt-axis Controller
+            </summary>
+        </member>
+        <member name="T:Dapplo.Windows.Input.Enums.HidUsagePages">
+            <summary>
+            The different known HID usage pages
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HidUsagePages.Undefined">
+            <summary>
+            Unknow usage page
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HidUsagePages.Generic">
+            <summary>
+            Generic desktop controls
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HidUsagePages.Simulation">
+            <summary>
+            Simulation controls
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HidUsagePages.VR">
+            <summary>
+            Virtual reality controls
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HidUsagePages.Sport">
+            <summary>
+            Sports controls
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HidUsagePages.Game">
+            <summary>
+            Games controls
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HidUsagePages.Keyboard">
+            <summary>
+            Keyboard controls
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HidUsagePages.LED">
+            <summary>
+            LED controls.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HidUsagePages.Button">
+            <summary>
+            Button
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HidUsagePages.Ordinal">
+            <summary>
+            Ordinal
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HidUsagePages.Telephony">
+            <summary>
+            Telephony
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HidUsagePages.Consumer">
+            <summary>
+            Consumer
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HidUsagePages.Digitizer">
+            <summary>
+            Digitizer
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HidUsagePages.PID">
+            <summary>
+            Physical interface device
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HidUsagePages.Unicode">
+            <summary>
+            Unicode
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HidUsagePages.AlphaNumeric">
+            <summary>
+            Alphanumeric display
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HidUsagePages.Medical">
+            <summary>
+            Medical instruments
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HidUsagePages.MonitorPage0">
+            <summary>
+            Monitor page 0
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HidUsagePages.MonitorPage1">
+            <summary>
+            Monitor page 1
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HidUsagePages.MonitorPage2">
+            <summary>
+            Monitor page 2
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HidUsagePages.MonitorPage3">
+            <summary>
+            Monitor page 3
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HidUsagePages.PowerPage0">
+            <summary>
+            Power page 0
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HidUsagePages.PowerPage1">
+            <summary>
+            Power page 1
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HidUsagePages.PowerPage2">
+            <summary>
+            Power page 2
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HidUsagePages.PowerPage3">
+            <summary>
+            Power page 3
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HidUsagePages.BarCode">
+            <summary>
+            Bar code scanner
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HidUsagePages.Scale">
+            <summary>
+            Scale page
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HidUsagePages.MSR">
+            <summary>
+            Magnetic strip reading devices
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HidUsagePages.Camera">
+            <summary>
+            Camera
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HidUsagePages.Arcade">
+            <summary>
+            Arcade
+            </summary>
+        </member>
+        <member name="T:Dapplo.Windows.Input.Enums.HookTypes">
+            <summary>
+                The type of hook procedure to be installed via the SetWindowsHookEx function. This parameter can be one of the
+                following values:
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HookTypes.WH_MSGFILTER">
+            <summary>
+                Installs a hook procedure that monitors messages generated as a result of an input event in a dialog box, message
+                box, menu, or scroll bar. For more information, see the MessageProc hook procedure.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HookTypes.WH_JOURNALRECORD">
+            <summary>
+                Installs a hook procedure that records input messages posted to the system message queue. This hook is useful for
+                recording macros. For more information, see the JournalRecordProc hook procedure.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HookTypes.WH_JOURNALPLAYBACK">
+            <summary>
+                Installs a hook procedure that posts messages previously recorded by a WH_JOURNALRECORD hook procedure. For more
+                information, see the JournalPlaybackProc hook procedure.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HookTypes.WH_KEYBOARD">
+            <summary>
+                Installs a hook procedure that monitors keystroke messages. For more information, see the KeyboardProc hook
+                procedure.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HookTypes.WH_GETMESSAGE">
+            <summary>
+                Installs a hook procedure that monitors messages posted to a message queue. For more information, see the
+                GetMsgProc hook procedure.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HookTypes.WH_CALLWNDPROC">
+            <summary>
+                Installs a hook procedure that monitors messages before the system sends them to the destination window procedure.
+                For more information, see the CallWndProc hook procedure.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HookTypes.WH_CBT">
+            <summary>
+                Installs a hook procedure that receives notifications useful to a CBT application. For more information, see the
+                CBTProc hook procedure.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HookTypes.WH_SYSMSGFILTER">
+            <summary>
+                Installs a hook procedure that monitors messages generated as a result of an input event in a dialog box, message
+                box, menu, or scroll bar. The hook procedure monitors these messages for all applications in the same desktop as
+                the calling thread. For more information, see the SysMsgProc hook procedure.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HookTypes.WH_MOUSE">
+            <summary>
+                Installs a hook procedure that monitors mouse messages. For more information, see the MouseProc hook procedure.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HookTypes.WH_HARDWARE">
+            <summary>
+                Installs a hook procedure that monitors hardware messages. For more information, see the HardwareProc hook
+                procedure.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HookTypes.WH_DEBUG">
+            <summary>
+                Installs a hook procedure useful for debugging other hook procedures. For more information, see the DebugProc hook
+                procedure.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HookTypes.WH_SHELL">
+            <summary>
+                Installs a hook procedure that receives notifications useful to shell applications. For more information, see the
+                ShellProc hook procedure.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HookTypes.WH_FOREGROUNDIDLE">
+            <summary>
+                Installs a hook procedure that will be called when the application's foreground thread is about to become idle.
+                This hook is useful for performing low priority tasks during idle time. For more information, see the
+                ForegroundIdleProc hook procedure.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HookTypes.WH_CALLWNDPROCRET">
+            <summary>
+                Installs a hook procedure that monitors messages after they have been processed by the destination window
+                procedure. For more information, see the CallWndRetProc hook procedure.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HookTypes.WH_KEYBOARD_LL">
+            <summary>
+                Installs a hook procedure that monitors low-level keyboard input events. For more information, see the
+                LowLevelKeyboardProc hook procedure.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.HookTypes.WH_MOUSE_LL">
+            <summary>
+                Installs a hook procedure that monitors low-level mouse input events. For more information, see the
+                LowLevelMouseProc hook procedure
+            </summary>
+        </member>
+        <member name="T:Dapplo.Windows.Input.Enums.MouseButtonStates">
+            <summary>
+                The transition state of the mouse buttons. This member can be one or more of the following values.
+                See <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms645578.aspx">RAWMOUSE structure</a>
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.MouseButtonStates.LeftButtonDown">
+            <summary>
+                Left button changed to down.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.MouseButtonStates.LeftButtonUp">
+            <summary>
+                Left button changed to Up.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.MouseButtonStates.RightButtonDown">
+            <summary>
+                Right button changed to down.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.MouseButtonStates.RightButtonUp">
+            <summary>
+                Right button changed to Up.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.MouseButtonStates.MiddleButtonDown">
+            <summary>
+                Middle button changed to down.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.MouseButtonStates.MiddleButtonUp">
+            <summary>
+                Middle button changed to up.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.MouseButtonStates.ButtonX1Down">
+            <summary>
+            XBUTTON1 changed to down.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.MouseButtonStates.Buttonx1Up">
+            <summary>
+            XBUTTON1 changed to up.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.MouseButtonStates.ButtonX2Down">
+            <summary>
+            XBUTTON2 changed to down.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.MouseButtonStates.Buttonx2Up">
+            <summary>
+            XBUTTON2 changed to up.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.MouseButtonStates.Button1Down">
+            <summary>
+            Copy of LeftButtonDown
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.MouseButtonStates.Button1Up">
+            <summary>
+            Copy of LeftButtonUp
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.MouseButtonStates.Button2Down">
+            <summary>
+            Copy of RightButtonDown
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.MouseButtonStates.Button2Up">
+            <summary>
+            Copy of RightButtonUp
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.MouseButtonStates.Button3Down">
+            <summary>
+            Copy of MiddleButtonDown
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.MouseButtonStates.Button3Up">
+            <summary>
+            Copy of MiddleButtonUp
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.MouseButtonStates.Button4Down">
+            <summary>
+            Copy of Buttonx1Down
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.MouseButtonStates.Button4Up">
+            <summary>
+            Copy of Buttonx1Up
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.MouseButtonStates.Button5Down">
+            <summary>
+            Copy of Buttonx2Down
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.MouseButtonStates.Button6Up">
+            <summary>
+            Copy of Buttonx2Up
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.MouseButtonStates.Wheel">
+            <summary>
+            Raw input comes from a mouse wheel.
+            The wheel delta is stored in usButtonData.
+            </summary>
+        </member>
+        <member name="T:Dapplo.Windows.Input.Enums.MouseStates">
+            <summary>
+                The mouse state. This member can be any reasonable combination of the following.
+                See <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms645578.aspx">RAWMOUSE structure</a>
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.MouseStates.MoveRelative">
+            <summary>
+                Mouse movement data is relative to the last mouse position.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.MouseStates.MoveAbsolute">
+            <summary>
+                Mouse movement data is based on absolute position.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.MouseStates.VirtualDesktop">
+            <summary>
+                Mouse coordinates are mapped to the virtual desktop (for a multiple monitor system).
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.MouseStates.AttributesChanged">
+            <summary>
+                The left button was released.
+            </summary>
+        </member>
+        <member name="T:Dapplo.Windows.Input.Enums.RawInputDeviceFlags">
+            <summary>
+                Mode flag that specifies how to interpret the information provided by usUsagePage and usUsage.
+               It can be zero (the default) or one of the following values. By default, the operating system sends raw input from devices with the specified top level collection (TLC) to the registered application as long as it has the window focus.
+                See <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms645565.aspx">RAWINPUTDEVICE structure</a>
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.RawInputDeviceFlags.Remove">
+            <summary>
+                RIDEV_REMOVE: If set, this removes the top level collection from the inclusion list.
+                This tells the operating system to stop reading from a device which matches the top level collection.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.RawInputDeviceFlags.Exclude">
+            <summary>
+                RIDEV_EXCLUDE: If set, this specifies the top level collections to exclude when reading a complete usage page.
+                This flag only affects a TLC whose usage page is already specified with RIDEV_PAGEONLY.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.RawInputDeviceFlags.PageOnly">
+            <summary>
+                RIDEV_PAGEONLY: If set, this specifies all devices whose top level collection is from the specified usUsagePage.
+                Note that usUsage must be zero.
+                To exclude a particular top level collection, use RIDEV_EXCLUDE.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.RawInputDeviceFlags.NoLegacy">
+            <summary>
+                RIDEV_NOLEGACY: If set, this prevents any devices specified by usUsagePage or usUsage from generating legacy messages.
+                This is only for the mouse and keyboard. See Remarks.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.RawInputDeviceFlags.InputSink">
+            <summary>
+                RIDEV_INPUTSINK: If set, this enables the caller to receive the input even when the caller is not in the foreground.
+                Note that hwndTarget must be specified.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.RawInputDeviceFlags.NoHotkeys">
+            <summary>
+                RIDEV_NOHOTKEYS: If set, the application-defined keyboard device hotkeys are not handled.
+                However, the system hotkeys; for example, ALT+TAB and CTRL+ALT+DEL, are still handled.
+                By default, all keyboard hotkeys are handled.
+                RIDEV_NOHOTKEYS can be specified even if RIDEV_NOLEGACY is not specified and hwndTarget is NULL.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.RawInputDeviceFlags.CaptureMouse">
+            <summary>
+                RIDEV_CAPTUREMOUSE: If set, the mouse button click does not activate the other window.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.RawInputDeviceFlags.AppKeys">
+            <summary>
+                RIDEV_APPKEYS: If set, the application command keys are handled.
+                RIDEV_APPKEYS can be specified only if RIDEV_NOLEGACY is specified for a keyboard device.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.RawInputDeviceFlags.ExInputSink">
+            <summary>
+                RIDEV_EXINPUTSINK: If set, this enables the caller to receive input in the background only if the foreground application does not process it.
+                In other words, if the foreground application is not registered for raw input, then the background application that is registered will receive the input.
+                Windows XP:  This flag is not supported until Windows Vista
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.RawInputDeviceFlags.DeviceNotify">
+            <summary>
+                RIDEV_DEVNOTIFY: If set, this enables the caller to receive WM_INPUT_DEVICE_CHANGE notifications for device arrival and device removal.
+                Windows XP:  This flag is not supported until Windows Vista
+            </summary>
+        </member>
+        <member name="T:Dapplo.Windows.Input.Enums.InputTypes">
+            <summary>
+                An enum specifying the type of input event used for the SendInput call.
+                This specifies which structure type of the union supplied to SendInput is used.
+                See <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms646270(v=vs.85).aspx">INPUT structure</a>
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.InputTypes.Mouse">
+            <summary>
+                The event is a mouse event.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.InputTypes.Keyboard">
+            <summary>
+                The event is a keyboard event.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.InputTypes.Hardware">
+            <summary>
+                The event is a hardware event.
+            </summary>
+        </member>
+        <member name="T:Dapplo.Windows.Input.Enums.RawInputDeviceInfoCommands">
+            <summary>
+            See <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms645597.aspx">GetRawInputDeviceInfo function</a>
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.RawInputDeviceInfoCommands.DeviceName">
+            <summary>
+            pData points to a string that contains the device name.
+            For this uiCommand only, the value in pcbSize is the character count (not the byte count)
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.RawInputDeviceInfoCommands.DeviceInfo">
+            <summary>
+            pData points to an RID_DEVICE_INFO structure.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.RawInputDeviceInfoCommands.PreparsedData">
+            <summary>
+            pData points to the previously parsed data.
+            </summary>
+        </member>
+        <member name="T:Dapplo.Windows.Input.Enums.RawInputDataCommands">
+            <summary>
+            The commands to get the RawInputData
+            See <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms645568.aspx">RAWINPUTDEVICELIST structure</a>
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.RawInputDataCommands.Input">
+            <summary>
+            RID_INPUT: Get the raw data from the RAWINPUT structure.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.RawInputDataCommands.Header">
+            <summary>
+            RID_HEADER: Get the header information from the RAWINPUT structure.
+            </summary>
+        </member>
+        <member name="T:Dapplo.Windows.Input.Enums.RawInputDeviceTypes">
+            <summary>
+            The type of device, using in the RAWINPUTDEVICELIST
+            See <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms645568.aspx">RAWINPUTDEVICELIST structure</a>
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.RawInputDeviceTypes.Mouse">
+            <summary>
+            RIM_TYPEMOUSE: Specified device is a mouse
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.RawInputDeviceTypes.Keyboard">
+            <summary>
+            RIM_TYPEKEYBOARD: Specified device is a keyboard
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.RawInputDeviceTypes.HID">
+            <summary>
+            RIM_TYPEHID: Specified device is not a mouse or a keyboard
+            </summary>
+        </member>
+        <member name="T:Dapplo.Windows.Input.Enums.RawInputDevices">
+            <summary>
+            This is used for mapping a device to Usage Page and Usage, to register for RawInput
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.RawInputDevices.Pointer">
+            <summary>
+            Pointer
+            UsagePage: 0x01
+            Usage:  0x01
+            Hardware ID: HID_DEVICE_SYSTEM_MOUSE
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.RawInputDevices.Mouse">
+            <summary>
+            Mouse
+            UsagePage: 0x01
+            Usage: 0x02
+            Hardware ID: HID_DEVICE_SYSTEM_MOUSE
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.RawInputDevices.Joystick">
+            <summary>
+            Pointer
+            UsagePage: 0x01
+            Usage: 0x04
+            Hardware ID: HID_DEVICE_SYSTEM_GAME
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.RawInputDevices.GamePad">
+            <summary>
+            Pointer
+            UsagePage: 0x01
+            Usage: 0x05
+            Hardware ID: HID_DEVICE_SYSTEM_GAME
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.RawInputDevices.Keyboard">
+            <summary>
+            Pointer
+            UsagePage: 0x01
+            Usage:  0x06
+            Hardware ID: HID_DEVICE_SYSTEM_KEYBOARD
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.RawInputDevices.Keypad">
+            <summary>
+            Pointer
+            UsagePage: 0x01
+            Usage: 0x07
+            Hardware ID: HID_DEVICE_SYSTEM_KEYBOARD
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.RawInputDevices.SystemControl">
+            <summary>
+            Pointer
+            UsagePage: 0x01
+            Usage: 0x80
+            Hardware ID: HID_DEVICE_SYSTEM_CONTROL
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.RawInputDevices.ConsumerAudioControl">
+            <summary>
+            Pointer
+            UsagePage: 0x0C
+            Usage: 0x01
+            Hardware ID: HID_DEVICE_SYSTEM_CONSUMER
+            </summary>
+        </member>
+        <member name="T:Dapplo.Windows.Input.Enums.RawKeyboardFlags">
+            <summary>
+            Enumeration containing flags for raw keyboard input.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.RawKeyboardFlags.Make">
+            <summary>
+            The key is down.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.RawKeyboardFlags.Break">
+            <summary>
+            The key is up.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.RawKeyboardFlags.E0">
+            <summary>
+            The scan code has the E0 prefix.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.RawKeyboardFlags.E1">
+            <summary>
+            The scan code has the E1 prefix.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.RawKeyboardFlags.TerminalServerSetLED">
+            <summary>
+            No clue
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.RawKeyboardFlags.TerminalServerShadow">
+            <summary>
+            No clue
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.RawKeyboardFlags.TerminalServerVkPacket">
+            <summary>
+            No clue
+            </summary>
+        </member>
+        <member name="T:Dapplo.Windows.Input.Enums.VirtualKeyCodes">
+            <summary>
+                Symbolic constant names, hexadecimal values, and mouse or keyboard equivalents for the virtual-key codes used by
+                the system.
+                The codes are listed in numeric order.
+                See <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd375731.aspx">Virtual-Key Codes</a>
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.NONE">
+            <summary>
+                Not a key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.LBUTTON">
+            <summary>
+                Left mouse button
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.RBUTTON">
+            <summary>
+                Right mouse button
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.CANCEL">
+            <summary>
+                Control-break processing
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.MBUTTON">
+            <summary>
+                Middle mouse button (three-button mouse)
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.XBUTTON1">
+            <summary>
+                Windows 2000/XP: X1 mouse button
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.XBUTTON2">
+            <summary>
+                Windows 2000/XP: X2 mouse button
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.BACK">
+            <summary>
+                BACKSPACE key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.TAB">
+            <summary>
+                TAB key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.CLEAR">
+            <summary>
+                CLEAR key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.RETURN">
+            <summary>
+                ENTER key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.SHIFT">
+            <summary>
+                SHIFT key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.CONTROL">
+            <summary>
+                CTRL key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.MENU">
+            <summary>
+                ALT key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.PAUSE">
+            <summary>
+                PAUSE key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.CAPITAL">
+            <summary>
+                CAPS LOCK key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.KANA">
+            <summary>
+                Input Method Editor (IME) Kana mode
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.HANGUL">
+            <summary>
+                IME Hangul mode
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.JUNJA">
+            <summary>
+                IME Junja mode
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.FINAL">
+            <summary>
+                IME final mode
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.HANJA">
+            <summary>
+                IME Hanja mode
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.KANJI">
+            <summary>
+                IME Kanji mode
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.ESCAPE">
+            <summary>
+                ESC key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.CONVERT">
+            <summary>
+                IME convert
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.NONCONVERT">
+            <summary>
+                IME nonconvert
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.ACCEPT">
+            <summary>
+                IME accept
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.MODECHANGE">
+            <summary>
+                IME mode change request
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.SPACE">
+            <summary>
+                SPACEBAR
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.PRIOR">
+            <summary>
+                PAGE UP key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.NEXT">
+            <summary>
+                PAGE DOWN key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.END">
+            <summary>
+                END key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.HOME">
+            <summary>
+                HOME key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.LEFT">
+            <summary>
+                LEFT ARROW key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.UP">
+            <summary>
+                UP ARROW key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.RIGHT">
+            <summary>
+                RIGHT ARROW key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.DOWN">
+            <summary>
+                DOWN ARROW key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.SELECT">
+            <summary>
+                SELECT key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.PRINT">
+            <summary>
+                PRINT key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.EXECUTE">
+            <summary>
+                EXECUTE key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.SNAPSHOT">
+            <summary>
+                PRINT SCREEN key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.INSERT">
+            <summary>
+                INS key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.DELETE">
+            <summary>
+                DEL key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.HELP">
+            <summary>
+                HELP key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.KEY_0">
+            <summary>
+                0 key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.KEY_1">
+            <summary>
+                1 key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.KEY_2">
+            <summary>
+                2 key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.KEY_3">
+            <summary>
+                3 key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.KEY_4">
+            <summary>
+                4 key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.KEY_5">
+            <summary>
+                5 key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.KEY_6">
+            <summary>
+                6 key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.KEY_7">
+            <summary>
+                7 key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.KEY_8">
+            <summary>
+                8 key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.KEY_9">
+            <summary>
+                9 key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.KEY_A">
+            <summary>
+                A key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.KEY_B">
+            <summary>
+                B key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.KEY_C">
+            <summary>
+                C key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.KEY_D">
+            <summary>
+                D key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.KEY_E">
+            <summary>
+                E key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.KEY_F">
+            <summary>
+                F key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.KEY_G">
+            <summary>
+                G key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.KEY_H">
+            <summary>
+                H key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.KEY_I">
+            <summary>
+                I key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.KEY_J">
+            <summary>
+                J key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.KEY_K">
+            <summary>
+                K key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.KEY_L">
+            <summary>
+                L key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.KEY_M">
+            <summary>
+                M key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.KEY_N">
+            <summary>
+                N key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.KEY_O">
+            <summary>
+                O key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.KEY_P">
+            <summary>
+                P key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.KEY_Q">
+            <summary>
+                Q key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.KEY_R">
+            <summary>
+                R key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.KEY_S">
+            <summary>
+                S key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.KEY_T">
+            <summary>
+                T key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.KEY_U">
+            <summary>
+                U key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.KEY_V">
+            <summary>
+                V key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.KEY_W">
+            <summary>
+                W key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.KEY_X">
+            <summary>
+                X key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.KEY_Y">
+            <summary>
+                Y key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.KEY_Z">
+            <summary>
+                Z key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.LWIN">
+            <summary>
+                Left Windows key (Microsoft Natural keyboard)
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.RWIN">
+            <summary>
+                Right Windows key (Natural keyboard)
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.APPS">
+            <summary>
+                Applications key (Natural keyboard)
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.SLEEP">
+            <summary>
+                Computer Sleep key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.NUMPAD0">
+            <summary>
+                Numeric keypad 0 key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.NUMPAD1">
+            <summary>
+                Numeric keypad 1 key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.NUMPAD2">
+            <summary>
+                Numeric keypad 2 key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.NUMPAD3">
+            <summary>
+                Numeric keypad 3 key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.NUMPAD4">
+            <summary>
+                Numeric keypad 4 key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.NUMPAD5">
+            <summary>
+                Numeric keypad 5 key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.NUMPAD6">
+            <summary>
+                Numeric keypad 6 key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.NUMPAD7">
+            <summary>
+                Numeric keypad 7 key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.NUMPAD8">
+            <summary>
+                Numeric keypad 8 key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.NUMPAD9">
+            <summary>
+                Numeric keypad 9 key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.MULTIPLY">
+            <summary>
+                Multiply key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.ADD">
+            <summary>
+                Add key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.SEPARATOR">
+            <summary>
+                Separator key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.SUBTRACT">
+            <summary>
+                Subtract key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.DECIMAL">
+            <summary>
+                Decimal key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.DIVIDE">
+            <summary>
+                Divide key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.F1">
+            <summary>
+                F1 key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.F2">
+            <summary>
+                F2 key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.F3">
+            <summary>
+                F3 key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.F4">
+            <summary>
+                F4 key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.F5">
+            <summary>
+                F5 key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.F6">
+            <summary>
+                F6 key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.F7">
+            <summary>
+                F7 key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.F8">
+            <summary>
+                F8 key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.F9">
+            <summary>
+                F9 key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.F10">
+            <summary>
+                F10 key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.F11">
+            <summary>
+                F11 key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.F12">
+            <summary>
+                F12 key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.F13">
+            <summary>
+                F13 key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.F14">
+            <summary>
+                F14 key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.F15">
+            <summary>
+                F15 key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.F16">
+            <summary>
+                F16 key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.F17">
+            <summary>
+                F17 key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.F18">
+            <summary>
+                F18 key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.F19">
+            <summary>
+                F19 key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.F20">
+            <summary>
+                F20 key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.F21">
+            <summary>
+                F21 key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.F22">
+            <summary>
+                F22 key, (PPC only) Key used to lock device.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.F23">
+            <summary>
+                F23 key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.F24">
+            <summary>
+                F24 key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.NUMLOCK">
+            <summary>
+                NUM LOCK key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.SCROLL">
+            <summary>
+                SCROLL LOCK key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.LSHIFT">
+            <summary>
+                Left SHIFT key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.RSHIFT">
+            <summary>
+                Right SHIFT key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.LCONTROL">
+            <summary>
+                Left CONTROL key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.RCONTROL">
+            <summary>
+                Right CONTROL key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.LMENU">
+            <summary>
+                Left MENU key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.RMENU">
+            <summary>
+                Right MENU key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.BROWSER_BACK">
+            <summary>
+                Windows 2000/XP: Browser Back key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.BROWSER_FORWARD">
+            <summary>
+                Windows 2000/XP: Browser Forward key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.BROWSER_REFRESH">
+            <summary>
+                Windows 2000/XP: Browser Refresh key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.BROWSER_STOP">
+            <summary>
+                Windows 2000/XP: Browser Stop key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.BROWSER_SEARCH">
+            <summary>
+                Windows 2000/XP: Browser Search key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.BROWSER_FAVORITES">
+            <summary>
+                Windows 2000/XP: Browser Favorites key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.BROWSER_HOME">
+            <summary>
+                Windows 2000/XP: Browser Start and Home key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.VOLUME_MUTE">
+            <summary>
+                Windows 2000/XP: Volume Mute key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.VOLUME_DOWN">
+            <summary>
+                Windows 2000/XP: Volume Down key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.VOLUME_UP">
+            <summary>
+                Windows 2000/XP: Volume Up key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.MEDIA_NEXT_TRACK">
+            <summary>
+                Windows 2000/XP: Next Track key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.MEDIA_PREV_TRACK">
+            <summary>
+                Windows 2000/XP: Previous Track key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.MEDIA_STOP">
+            <summary>
+                Windows 2000/XP: Stop Media key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.MEDIA_PLAY_PAUSE">
+            <summary>
+                Windows 2000/XP: Play/Pause Media key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.LAUNCH_MAIL">
+            <summary>
+                Windows 2000/XP: Start Mail key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.LAUNCH_MEDIA_SELECT">
+            <summary>
+                Windows 2000/XP: Select Media key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.LAUNCH_APP1">
+            <summary>
+                Windows 2000/XP: Start Application 1 key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.LAUNCH_APP2">
+            <summary>
+                Windows 2000/XP: Start Application 2 key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.OEM_1">
+            <summary>
+                Used for miscellaneous characters; it can vary by keyboard.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.OEM_PLUS">
+            <summary>
+                Windows 2000/XP: For any country/region, the '+' key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.OEM_COMMA">
+            <summary>
+                Windows 2000/XP: For any country/region, the ',' key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.OEM_MINUS">
+            <summary>
+                Windows 2000/XP: For any country/region, the '-' key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.OEM_PERIOD">
+            <summary>
+                Windows 2000/XP: For any country/region, the '.' key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.OEM_2">
+            <summary>
+                Used for miscellaneous characters; it can vary by keyboard.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.OEM_3">
+            <summary>
+                Used for miscellaneous characters; it can vary by keyboard.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.OEM_4">
+            <summary>
+                Used for miscellaneous characters; it can vary by keyboard.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.OEM_5">
+            <summary>
+                Used for miscellaneous characters; it can vary by keyboard.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.OEM_6">
+            <summary>
+                Used for miscellaneous characters; it can vary by keyboard.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.OEM_7">
+            <summary>
+                Used for miscellaneous characters; it can vary by keyboard.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.OEM_8">
+            <summary>
+                Used for miscellaneous characters; it can vary by keyboard.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.OEM_102">
+            <summary>
+                Windows 2000/XP: Either the angle bracket key or the backslash key on the RT 102-key keyboard
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.PROCESSKEY">
+            <summary>
+                Windows 95/98/Me, Windows NT 4.0, Windows 2000/XP: IME PROCESS key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.PACKET">
+            <summary>
+                Windows 2000/XP: Used to pass Unicode characters as if they were keystrokes.
+                The VK_PACKET key is the low word of a 32-bit Virtual Key value used for non-keyboard input methods. For more
+                information,
+                see Remark in KEYBDINPUT, SendInput, WM_KEYDOWN, and WM_KEYUP
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.ATTN">
+            <summary>
+                Attn key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.CRSEL">
+            <summary>
+                CrSel key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.EXSEL">
+            <summary>
+                ExSel key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.EREOF">
+            <summary>
+                Erase EOF key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.PLAY">
+            <summary>
+                Play key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.ZOOM">
+            <summary>
+                Zoom key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.NONAME">
+            <summary>
+                Reserved
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.PA1">
+            <summary>
+                PA1 key
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.VirtualKeyCodes.OEM_CLEAR">
+            <summary>
+                Clear key
+            </summary>
+        </member>
+        <member name="T:Dapplo.Windows.Input.Enums.ExtendedKeyFlags">
+            <summary>
+                The extended-key flag, event-injected flags, context code, and transition-state flag.
+                This member is specified as follows.
+                An application can use the following values to test the keystroke flags.
+                Testing LLKHF_INJECTED (bit 4) will tell you whether the event was injected.
+                If it was, then testing LLKHF_LOWER_IL_INJECTED (bit 1) will tell you whether or not the event was injected from a
+                process running at lower integrity level.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.ExtendedKeyFlags.Extended">
+            <summary>
+                Test the extended-key flag.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.ExtendedKeyFlags.LowerIntegretyInjected">
+            <summary>
+                Test the event-injected (from a process running at lower integrity level) flag.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.ExtendedKeyFlags.Injected">
+            <summary>
+                Test the event-injected (from any process) flag.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.ExtendedKeyFlags.AltDown">
+            <summary>
+                Test the context code.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.ExtendedKeyFlags.Up">
+            <summary>
+                Test the transition-state flag.
+            </summary>
+        </member>
+        <member name="T:Dapplo.Windows.Input.Enums.ExtendedMouseFlags">
+            <summary>
+                The event-injected flags. An application can use the following values to test the flags.
+                Testing LLMHF_INJECTED (bit 0) will tell you whether the event was injected.
+                If it was, then testing LLMHF_LOWER_IL_INJECTED (bit 1) will tell you whether or not
+                the event was injected from a process running at lower integrity level.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.ExtendedMouseFlags.Injected">
+            <summary>
+                Test the event-injected (from any process) flag.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.ExtendedMouseFlags.LowerIntegretyInjected">
+            <summary>
+                Test the event-injected (from a process running at lower integrity level) flag.
+            </summary>
+        </member>
+        <member name="T:Dapplo.Windows.Input.Enums.MouseEventFlags">
+            <summary>
+                A set of bit flags that specify various aspects of mouse motion and button clicks.
+                The bits in this member can be any reasonable combination of the following values.
+                The bit flags that specify mouse button status are set to indicate changes in status, not ongoing conditions.
+                For example, if the left mouse button is pressed and held down,
+                MOUSEEVENTF_LEFTDOWN is set when the left button is first pressed, but not for subsequent motions.
+                Similarly, MOUSEEVENTF_LEFTUP is set only when the button is first released.
+                You cannot specify both the MOUSEEVENTF_WHEEL flag and either MOUSEEVENTF_XDOWN or MOUSEEVENTF_XUP flags
+                simultaneously
+                in the dwFlags parameter, because they both require use of the mouseData field.
+                See <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms646273(v=vs.85).aspx"></a>
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.MouseEventFlags.None">
+            <summary>
+                Default value
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.MouseEventFlags.Move">
+            <summary>
+                Movement occurred.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.MouseEventFlags.LeftDown">
+            <summary>
+                The left button was pressed.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.MouseEventFlags.LeftUp">
+            <summary>
+                The left button was released.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.MouseEventFlags.RightDown">
+            <summary>
+                The right button was pressed.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.MouseEventFlags.RightUp">
+            <summary>
+                The right button was released.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.MouseEventFlags.MiddleDown">
+            <summary>
+                The middle button was pressed.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.MouseEventFlags.MiddleUp">
+            <summary>
+                The middle button was released.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.MouseEventFlags.XDown">
+            <summary>
+                An X button was pressed.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.MouseEventFlags.XUp">
+            <summary>
+                An X button was released.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.MouseEventFlags.Wheel">
+            <summary>
+                The wheel was moved, if the mouse has a wheel. The amount of movement is specified in mouseData.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.MouseEventFlags.HorizontalWheel">
+            <summary>
+                The wheel was moved horizontally, if the mouse has a wheel.
+                The amount of movement is specified in mouseData.
+                Windows XP/2000:  This value is not supported.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.MouseEventFlags.MoveNocoalesce">
+            <summary>
+                The WM_MOUSEMOVE messages will not be coalesced. The default behavior is to coalesce WM_MOUSEMOVE messages.
+                Windows XP/2000:  This value is not supported.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.MouseEventFlags.Virtualdesk">
+            <summary>
+                Maps coordinates to the entire desktop. Must be used with MOUSEEVENTF_ABSOLUTE.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.MouseEventFlags.Absolute">
+            <summary>
+                The dx and dy members contain normalized absolute coordinates.
+                If the flag is not set, dxand dy contain relative data (the change in position since the last reported position).
+                This flag can be set, or not set, regardless of what kind of mouse or other pointing device, if any, is connected
+                to the system.
+                For further information about relative mouse motion, see the following Remarks section.
+            </summary>
+        </member>
+        <member name="T:Dapplo.Windows.Input.Enums.KeyEventFlags">
+            <summary>
+                This enum specifies various aspects of a keystroke. This member can be certain combinations of the following
+                values.
+                See
+                <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms646271(v=vs.85).aspx">KEYBDINPUT structure</a>
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.KeyEventFlags.ExtendedKey">
+            <summary>
+                If specified, the scan code was preceded by a prefix byte that has the value 0xE0 (224).
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.KeyEventFlags.KeyUp">
+            <summary>
+                If specified, the key is being released. If not specified, the key is being pressed.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.KeyEventFlags.Unicode">
+            <summary>
+                If specified, the system synthesizes a VK_PACKET keystroke. The VirtualKeyCode parameter must be zero.
+                This flag can only be combined with the KeyUp flag. For more information, see the Remarks section.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Enums.KeyEventFlags.Scancode">
+            <summary>
+                If specified, wScan identifies the key and VirtualKeyCode is ignored.
+            </summary>
+        </member>
+        <member name="T:Dapplo.Windows.Input.Enums.ScanCodes">
+            <summary>
+                A list of possible scancodes
+            </summary>
+        </member>
+        <member name="T:Dapplo.Windows.Input.Hotkey">
+            <summary>
+                Some code to help with hotkeys
+            </summary>
+        </member>
+        <member name="M:Dapplo.Windows.Input.Hotkey.GetKeyName(System.Windows.Forms.Keys)">
+            <summary>
+                Get the name of a key
+            </summary>
+            <param name="givenKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dapplo.Windows.Input.Hotkey.GetLocalizedHotkeyStringFromString(System.String)">
+            <summary>
+                Create a localized string from a normal hotkey string
+            </summary>
+            <param name="hotkeyString">string</param>
+            <returns>string</returns>
+        </member>
+        <member name="M:Dapplo.Windows.Input.Hotkey.HotkeyFromString(System.String)">
+            <summary>
+                Get a Key object from a hotkey description
+            </summary>
+            <param name="hotkey">string with the hotkey</param>
+            <returns>Keys</returns>
+        </member>
+        <member name="M:Dapplo.Windows.Input.Hotkey.HotkeyModifiersFromString(System.String)">
+            <summary>
+                Get the modifiers as a Keys enum
+            </summary>
+            <param name="modifiersString"></param>
+            <returns>Keys</returns>
+        </member>
+        <member name="M:Dapplo.Windows.Input.Hotkey.HotkeyModifiersToLocalizedString(System.Windows.Forms.Keys)">
+            <summary>
+                Create a localized string from the specified modifiers keys
+            </summary>
+            <param name="modifierKeyCode">Keys</param>
+            <returns>string</returns>
+        </member>
+        <member name="M:Dapplo.Windows.Input.Hotkey.HotkeyModifiersToString(System.Windows.Forms.Keys)">
+            <summary>
+                Create a string of the specified modifiers
+            </summary>
+            <param name="modifierKeyCode">Keys</param>
+            <returns>string</returns>
+        </member>
+        <member name="M:Dapplo.Windows.Input.Hotkey.HotkeyToLocalizedString(System.Windows.Forms.Keys,System.Windows.Forms.Keys)">
+            <summary>
+                Create a localized string from the specified keys
+            </summary>
+            <param name="modifierKeyCode">Keys</param>
+            <param name="virtualKeyCode">Keys</param>
+            <returns>string</returns>
+        </member>
+        <member name="M:Dapplo.Windows.Input.Hotkey.HotkeyToString(System.Windows.Forms.Keys,System.Windows.Forms.Keys)">
+            <summary>
+                Create a string for the specified modifiers and key
+            </summary>
+            <param name="modifierKeyCode">Keys</param>
+            <param name="virtualKeyCode">Keys</param>
+            <returns>string</returns>
+        </member>
+        <member name="T:Dapplo.Windows.Input.InputGenerator">
+            <summary>
+                This is a utility class to help to generate input for mouse and keyboard
+            </summary>
+        </member>
+        <member name="M:Dapplo.Windows.Input.InputGenerator.KeyDown(Dapplo.Windows.Input.Enums.VirtualKeyCodes[])">
+            <summary>
+                Generate key down
+            </summary>
+            <param name="keycodes">VirtualKeyCodes for the key downs</param>
+            <returns>number of input events generated</returns>
+        </member>
+        <member name="M:Dapplo.Windows.Input.InputGenerator.KeyPress(Dapplo.Windows.Input.Enums.VirtualKeyCodes[])">
+            <summary>
+                Generate key press(es)
+            </summary>
+            <param name="keycodes">params VirtualKeyCodes</param>
+        </member>
+        <member name="M:Dapplo.Windows.Input.InputGenerator.KeyUp(Dapplo.Windows.Input.Enums.VirtualKeyCodes[])">
+            <summary>
+                Generate key(s) up
+            </summary>
+            <param name="keycodes">VirtualKeyCodes for the keys to release</param>
+            <returns>number of input events generated</returns>
+        </member>
+        <member name="M:Dapplo.Windows.Input.InputGenerator.MouseClick(System.Windows.Forms.MouseButtons,System.Nullable{Dapplo.Windows.Common.Structs.NativePoint},System.UInt32)">
+            <summary>
+                Generate mouse button(s) click
+            </summary>
+            <param name="mouseButtons">MouseButtons specifying which buttons are pressed</param>
+            <param name="location">optional NativePoint to specify where the mouse click takes place</param>
+            <param name="timestamp">The time stamp for the event</param>
+            <returns>number of input events generated</returns>
+        </member>
+        <member name="M:Dapplo.Windows.Input.InputGenerator.MouseDown(System.Windows.Forms.MouseButtons,System.Nullable{Dapplo.Windows.Common.Structs.NativePoint},System.UInt32)">
+            <summary>
+                Generate mouse button(s) down
+            </summary>
+            <param name="mouseButtons">MouseButtons specifying which buttons are down</param>
+            <param name="location">optional NativePoint to specify where the mouse down takes place</param>
+            <param name="timestamp">The time stamp for the event</param>
+            <returns>number of input events generated</returns>
+        </member>
+        <member name="M:Dapplo.Windows.Input.InputGenerator.MouseUp(System.Windows.Forms.MouseButtons,System.Nullable{Dapplo.Windows.Common.Structs.NativePoint},System.UInt32)">
+            <summary>
+                Generate mouse button(s) Up
+            </summary>
+            <param name="mouseButtons">MouseButtons specifying which buttons are up</param>
+            <param name="location">optional NativePoint to specify where the mouse up takes place</param>
+            <param name="timestamp">The time stamp for the event</param>
+            <returns>number of input events generated</returns>
+        </member>
+        <member name="M:Dapplo.Windows.Input.InputGenerator.MoveMouse(Dapplo.Windows.Common.Structs.NativePoint,System.UInt32)">
+            <summary>
+                Generate mouse wheel moves
+            </summary>
+            <param name="location">NativePoint to specify where the mouse moves</param>
+            <param name="timestamp">The time stamp for the event</param>
+            <returns>number of input events generated</returns>
+        </member>
+        <member name="M:Dapplo.Windows.Input.InputGenerator.MoveMouseWheel(System.Int32,System.Nullable{Dapplo.Windows.Common.Structs.NativePoint},System.UInt32)">
+            <summary>
+                Generate mouse wheel moves
+            </summary>
+            <param name="wheelDelta"></param>
+            <param name="location">optional NativePoint to specify where the mouse wheel takes place</param>
+            <param name="timestamp">The time stamp for the event</param>
+            <returns>number of input events generated</returns>
+        </member>
+        <member name="M:Dapplo.Windows.Input.InputGenerator.SendInput(Dapplo.Windows.Input.Structs.Input[])">
+            <summary>
+                Wrapper to simplify sending of inputs
+            </summary>
+            <param name="inputs">Input array</param>
+            <returns>inputs send</returns>
+        </member>
+        <member name="M:Dapplo.Windows.Input.InputGenerator.SendInput(System.UInt32,Dapplo.Windows.Input.Structs.Input[],System.Int32)">
+            <summary>
+                Synthesizes keystrokes, mouse motions, and button clicks.
+                The function returns the number of events that it successfully inserted into the keyboard or mouse input stream.
+                If the function returns zero, the input was already blocked by another thread.
+                To get extended error information, call GetLastError.
+            </summary>
+        </member>
+        <member name="T:Dapplo.Windows.Input.KeyboardHook">
+            <summary>
+                A glocal keyboard hook, using System.Reactive
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.KeyboardHook.Singleton">
+            <summary>
+                The singleton of the KeyboardHook
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.KeyboardHook._keyObservable">
+            <summary>
+                Used to store the observable
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.KeyboardHook._callback">
+            <summary>
+                Store the handler, otherwise it might be GCed
+            </summary>
+        </member>
+        <member name="M:Dapplo.Windows.Input.KeyboardHook.#ctor">
+            <summary>
+                Private constructor to create the observable
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.KeyboardHook.KeyboardEvents">
+            <summary>
+                The actual keyboard hook observable
+            </summary>
+        </member>
+        <member name="M:Dapplo.Windows.Input.KeyboardHook.CreateKeyboardEventArgs(System.IntPtr,System.IntPtr)">
+            <summary>
+                Create the KeyboardHookEventArgs from the parameters which where in the event
+            </summary>
+            <param name="wParam">IntPtr</param>
+            <param name="lParam">IntPtr</param>
+            <returns>KeyboardHookEventArgs</returns>
+        </member>
+        <member name="F:Dapplo.Windows.Input.KeyboardHook._leftShift">
+            <summary>
+                Flags for the current state
+            </summary>
+        </member>
+        <member name="M:Dapplo.Windows.Input.KeyboardHook.SyncLockState">
+            <summary>
+                Sync the lock key state
+            </summary>
+        </member>
+        <member name="M:Dapplo.Windows.Input.KeyboardHook.GetKeyState(System.Windows.Forms.Keys)">
+            <summary>
+                Retrieve the state of a key
+            </summary>
+            <param name="keyCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dapplo.Windows.Input.KeyboardHook.IsPressed(System.Windows.Forms.Keys)">
+            <summary>
+                Test if the supplied key is pressed
+            </summary>
+            <param name="key">Keys</param>
+            <returns>true if pressed</returns>
+        </member>
+        <member name="T:Dapplo.Windows.Input.KeyboardHook.LowLevelKeyboardProc">
+            <summary>
+                The actual delegate for the p
+            </summary>
+            <param name="nCode"></param>
+            <param name="wParam"></param>
+            <param name="lParam"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dapplo.Windows.Input.KeyboardHook.SetWindowsHookEx(Dapplo.Windows.Input.Enums.HookTypes,Dapplo.Windows.Input.KeyboardHook.LowLevelKeyboardProc,System.IntPtr,System.UInt32)">
+            <summary>
+                Register a windows hook
+            </summary>
+            <param name="hookType">HookTypes</param>
+            <param name="lpfn">LowLevelKeyboardProc</param>
+            <param name="hMod">IntPtr</param>
+            <param name="dwThreadId">uint</param>
+            <returns>ID to be able to unhook it again</returns>
+        </member>
+        <member name="M:Dapplo.Windows.Input.KeyboardHook.UnhookWindowsHookEx(System.IntPtr)">
+            <summary>
+                Used to remove a hook which was set with SetWindowsHookEx
+            </summary>
+            <param name="hhk"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dapplo.Windows.Input.KeyboardHook.CallNextHookEx(System.IntPtr,System.Int32,System.IntPtr,System.IntPtr)">
+            <summary>
+                Used to call the next hook in the list, if there was any
+            </summary>
+            <param name="hhk"></param>
+            <param name="nCode"></param>
+            <param name="wParam"></param>
+            <param name="lParam"></param>
+            <returns>IntPtr</returns>
+        </member>
+        <member name="T:Dapplo.Windows.Input.KeyboardHookEventArgs">
+            <summary>
+                Information on keyboard changes
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.KeyboardHookEventArgs.Handled">
+            <summary>
+                Set this to true if the event is handled, other event-handlers in the chain will not be called
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.KeyboardHookEventArgs.IsAlt">
+            <summary>
+                True if Alt key is pressed
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.KeyboardHookEventArgs.IsCapsLockActive">
+            <summary>
+                Is the caps-lock currently active?
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.KeyboardHookEventArgs.IsControl">
+            <summary>
+                True if control is pressed
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.KeyboardHookEventArgs.IsKeyDown">
+            <summary>
+                Is this a key down, else it's up
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.KeyboardHookEventArgs.IsLeftAlt">
+            <summary>
+                Is the alt on the left side pressed?
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.KeyboardHookEventArgs.IsLeftControl">
+            <summary>
+                Is the control on the left side pressed?
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.KeyboardHookEventArgs.IsLeftShift">
+            <summary>
+                Is the shift on the left side pressed?
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.KeyboardHookEventArgs.IsLeftWindows">
+            <summary>
+                Is the windows key on the left side pressed?
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.KeyboardHookEventArgs.IsNumLockActive">
+            <summary>
+                Is the num-lock currently active?
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.KeyboardHookEventArgs.IsRightAlt">
+            <summary>
+                Is the alt on the right side pressed?
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.KeyboardHookEventArgs.IsRightControl">
+            <summary>
+                Is the control on the right side pressed?
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.KeyboardHookEventArgs.IsRightShift">
+            <summary>
+                Is the shift on the right side pressed?
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.KeyboardHookEventArgs.IsRightWindows">
+            <summary>
+                Is the windows key on the right side pressed?
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.KeyboardHookEventArgs.IsScrollLockActive">
+            <summary>
+                Is the scroll-lock currently active?
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.KeyboardHookEventArgs.IsShift">
+            <summary>
+                True if shift is pressed
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.KeyboardHookEventArgs.IsSystemKey">
+            <summary>
+                Is this a system key
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.KeyboardHookEventArgs.IsWindows">
+            <summary>
+                True if shift is pressed
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.KeyboardHookEventArgs.Key">
+            <summary>
+                The key code itself
+            </summary>
+        </member>
+        <member name="M:Dapplo.Windows.Input.KeyboardHookEventArgs.ToString">
+            <inheritdoc />
+        </member>
+        <member name="F:Dapplo.Windows.Input.MapVkType.VkToVsc">
+            <summary>
+                The uCode parameter is a virtual-key code and is translated into a scan code. If it is a virtual-key code that does
+                not distinguish between left- and right-hand keys, the left-hand scan code is returned. If there is no translation,
+                the function returns 0.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.MapVkType.VscToVk">
+            <summary>
+                The uCode parameter is a scan code and is translated into a virtual-key code that does not distinguish between
+                left- and right-hand keys. If there is no translation, the function returns 0.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.MapVkType.VkToChar">
+            <summary>
+                The uCode parameter is a virtual-key code and is translated into an unshifted character value in the low order word
+                of the return value. Dead keys (diacritics) are indicated by setting the top bit of the return value. If there is
+                no translation, the function returns 0.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.MapVkType.VscToVkEx">
+            <summary>
+                The uCode parameter is a scan code and is translated into a virtual-key code that distinguishes between left- and
+                right-hand keys. If there is no translation, the function returns 0.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.MapVkType.VkToVscEx">
+            <summary>
+                The uCode parameter is a virtual-key code and is translated into a scan code. If it is a virtual-key code that does
+                not distinguish between left- and right-hand keys, the left-hand scan code is returned. If the scan code is an
+                extended scan code, the high byte of the uCode value can contain either 0xe0 or 0xe1 to specify the extended scan
+                code. If there is no translation, the function returns 0.
+            </summary>
+        </member>
+        <member name="T:Dapplo.Windows.Input.MouseHook">
+            <summary>
+                A glocal mouse hook, using System.Reactive
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.MouseHook.Singleton">
+            <summary>
+                The singleton of the MouseHook
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.MouseHook._mouseObservable">
+            <summary>
+                Used to store the observable
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.MouseHook._callback">
+            <summary>
+                Store the handler, otherwise it might be GCed
+            </summary>
+        </member>
+        <member name="M:Dapplo.Windows.Input.MouseHook.#ctor">
+            <summary>
+                Private constructor to create the observable
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.MouseHook.MouseEvents">
+            <summary>
+                The actual keyboard hook observable
+            </summary>
+        </member>
+        <member name="M:Dapplo.Windows.Input.MouseHook.CreateMouseEventArgs(System.IntPtr,System.IntPtr)">
+            <summary>
+                Create the MouseEventArgs from the parameters which where in the event
+            </summary>
+            <param name="wParam">IntPtr</param>
+            <param name="lParam">IntPtr</param>
+            <returns>MouseEventArgs</returns>
+        </member>
+        <member name="T:Dapplo.Windows.Input.MouseHook.LowLevelMouseProc">
+            <summary>
+                The actual delegate for the p
+            </summary>
+            <param name="nCode"></param>
+            <param name="wParam"></param>
+            <param name="lParam"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dapplo.Windows.Input.MouseHook.SetWindowsHookEx(Dapplo.Windows.Input.Enums.HookTypes,Dapplo.Windows.Input.MouseHook.LowLevelMouseProc,System.IntPtr,System.UInt32)">
+            <summary>
+                Register a windows hook
+            </summary>
+            <param name="hookType">HookTypes</param>
+            <param name="lpfn">LowLevelMouseProc</param>
+            <param name="hMod">IntPtr</param>
+            <param name="dwThreadId">uint</param>
+            <returns>ID to be able to unhook it again</returns>
+        </member>
+        <member name="M:Dapplo.Windows.Input.MouseHook.UnhookWindowsHookEx(System.IntPtr)">
+            <summary>
+                Used to remove a hook which was set with SetWindowsHookEx
+            </summary>
+            <param name="hhk"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dapplo.Windows.Input.MouseHook.CallNextHookEx(System.IntPtr,System.Int32,System.IntPtr,System.IntPtr)">
+            <summary>
+                Used to call the next hook in the list, if there was any
+            </summary>
+            <param name="hhk"></param>
+            <param name="nCode"></param>
+            <param name="wParam"></param>
+            <param name="lParam"></param>
+            <returns>IntPtr</returns>
+        </member>
+        <member name="T:Dapplo.Windows.Input.RawInputMonitor">
+            <summary>
+            Reactive access to RawInput
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.RawInputMonitor.OnDeviceChanges">
+            <summary>
+            An observable which can be subscribed to be informed of device changes.
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.RawInputMonitor.OnRawInput">
+            <summary>
+            An observable which can be subscribed to be informed of raw input.
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.RawInputMonitor.Devices">
+            <summary>
+            The raw-input devices currently in the system
+            </summary>
+        </member>
+        <member name="M:Dapplo.Windows.Input.RawInputMonitor.HandleRawInputMessages(System.IntPtr,System.Int32,System.IntPtr,System.IntPtr,System.Boolean@)">
+            <summary>
+            A local function which handles the RawInput messages
+            </summary>
+            <param name="hwnd">IntPtr</param>
+            <param name="msg">int</param>
+            <param name="wParam">IntPtr</param>
+            <param name="lParam">IntPtr</param>
+            <param name="handled">ref bool</param>
+            <returns>IntPtr</returns>
+        </member>
+        <member name="M:Dapplo.Windows.Input.RawInputMonitor.MonitorRawInput(Dapplo.Windows.Input.Enums.RawInputDevices[])">
+            <summary>
+                Create an observable to monitor rawinput device changes
+            </summary>
+        </member>
+        <member name="M:Dapplo.Windows.Input.RawInputMonitor.MonitorRawInputDeviceChanges(Dapplo.Windows.Input.Enums.RawInputDevices[])">
+            <summary>
+                Create an observable to monitor rawinput device changes
+            </summary>
+        </member>
+        <member name="T:Dapplo.Windows.Input.RawInputEventArgs">
+            <summary>
+                Raw Input information
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.RawInputEventArgs.IsForeground">
+            <summary>
+                If true the application was in the foreground
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.RawInputEventArgs.RawInput">
+            <summary>
+                The actual raw input
+            </summary>
+        </member>
+        <member name="T:Dapplo.Windows.Input.RawInputDeviceChangeEventArgs">
+            <summary>
+                Information on RawInput device changes
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.RawInputDeviceChangeEventArgs.Added">
+            <summary>
+                If true it was added, if false it was removed
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.RawInputDeviceChangeEventArgs.DeviceInformation">
+            <summary>
+                The device which was added or removed
+            </summary>
+        </member>
+        <member name="T:Dapplo.Windows.Input.MouseHookEventArgs">
+            <summary>
+                Information on mouse changes
+                TODO: Make the information a lot clearer, than processing WindowsMessages
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.MouseHookEventArgs.Handled">
+            <summary>
+                Set this to true if the event is handled, other event-handlers in the chain will not be called
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.MouseHookEventArgs.Point">
+            <summary>
+                The x- and y-coordinates of the cursor, in per-monitor-aware screen coordinates.
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.MouseHookEventArgs.WindowsMessage">
+            <summary>
+                The mouse message
+            </summary>
+        </member>
+        <member name="T:Dapplo.Windows.Input.RawInputApi">
+            <summary>
+            Functionality to use the RawInput API
+            </summary>
+        </member>
+        <member name="M:Dapplo.Windows.Input.RawInputApi.RegisterRawInput(System.IntPtr,Dapplo.Windows.Input.Enums.RawInputDeviceFlags,Dapplo.Windows.Input.Enums.RawInputDevices[])">
+            <summary>
+            Register the specified window to receive raw input, coming from the specified device
+            </summary>
+            <param name="hWnd">IntPtr for the window to receive the events</param>
+            <param name="flags">RawInputDeviceFlags</param>
+            <param name="devices">one or more RawInputDevices</param>
+        </member>
+        <member name="M:Dapplo.Windows.Input.RawInputApi.CreateRawInputDevice(System.IntPtr,Dapplo.Windows.Input.Enums.RawInputDevices,Dapplo.Windows.Input.Enums.RawInputDeviceFlags)">
+            <summary>
+            Create RawInputDevice
+            </summary>
+            <param name="hWnd">IntPtr with the window handle which handles the messages</param>
+            <param name="device">RawInputDevices</param>
+            <param name="flags">RawInputDeviceFlags</param>
+            <returns>RawInputDevice filleds</returns>
+        </member>
+        <member name="M:Dapplo.Windows.Input.RawInputApi.CreateRawInputDevice(System.IntPtr,Dapplo.Windows.Input.Enums.HidUsagesGeneric,Dapplo.Windows.Input.Enums.RawInputDeviceFlags)">
+            <summary>
+            Create RawInputDevice, to use with RegisterRawInput
+            </summary>
+            <param name="hWnd">IntPtr with the window handle which handles the messages</param>
+            <param name="usage">Generic Usage for the raw input device.</param>
+            <param name="flags">RawInputDeviceFlags</param>
+            <returns>RawInputDevice filleds</returns>
+        </member>
+        <member name="M:Dapplo.Windows.Input.RawInputApi.CreateRawInputDevice(System.IntPtr,Dapplo.Windows.Input.Enums.HidUsagesConsumer,Dapplo.Windows.Input.Enums.RawInputDeviceFlags)">
+            <summary>
+            Create RawInputDevice, to use with RegisterRawInput
+            </summary>
+            <param name="hWnd">IntPtr with the window handle which handles the messages</param>
+            <param name="usage">Consumer Usage for the raw input device.</param>
+            <param name="flags">RawInputDeviceFlags</param>
+            <returns>RawInputDevice filleds</returns>
+        </member>
+        <member name="M:Dapplo.Windows.Input.RawInputApi.RegisterRawInput(Dapplo.Windows.Input.Structs.RawInputDevice[])">
+            <summary>
+            Register to handle RawInput events
+            Note:
+            To receive WM_INPUT messages, an application must first register the raw input devices using RegisterRawInputDevices. By default, an application does not receive raw input.
+            To receive WM_INPUT_DEVICE_CHANGE messages, an application must specify the RIDEV_DEVNOTIFY flag for each device class that is specified by the usUsagePage and usUsage fields of the RAWINPUTDEVICE structure . By default, an application does not receive WM_INPUT_DEVICE_CHANGE notifications for raw input device arrival and removal.
+            If a RAWINPUTDEVICE structure has the RIDEV_REMOVE flag set and the hwndTarget parameter is not set to NULL, then parameter validation will fail.
+            </summary>
+            <param name="rawInputDevices">RawInputDevice(s) specifying what to register</param>
+            <exception cref="T:System.ComponentModel.Win32Exception">Win32Exception when the registration failed</exception>
+        </member>
+        <member name="M:Dapplo.Windows.Input.RawInputApi.GetDeviceInformation(System.IntPtr)">
+            <summary>
+            Retrieve RawInputDeviceInformation on the by the handle specified RawInput device
+            This is used when calling GetAllDevices, but can also be called when getting a WM_INPUT_DEVICE_CHANGE message
+            </summary>
+            <param name="handle">IntPtr handle to the raw input device</param>
+            <returns>RawInputDeviceInformation</returns>
+        </member>
+        <member name="M:Dapplo.Windows.Input.RawInputApi.GetAllDevices">
+            <summary>
+            A convenient function for getting all raw input devices.
+            This method will get all devices, including virtual devices-
+            For remote desktop and any other device driver that's registered as such a device.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Dapplo.Windows.Input.RawInputApi.GetRawInputData(System.IntPtr,Dapplo.Windows.Input.Enums.RawInputDataCommands,Dapplo.Windows.Input.Structs.RawInput@,System.Int32@,System.Int32)">
+            <summary>
+            GetRawInputData function
+            Retrieves the raw input from the specified device.
+            See <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms645596.aspx">GetRawInputData function</a>
+            </summary>
+            <param name="hRawInput">IntPtr to a RawInput struct</param>
+            <param name="uiCommand">RawInputDataCommands</param>
+            <param name="pData"></param>
+            <param name="pcbSize">int</param>
+            <param name="cbSizeHeader">int</param>
+            <returns></returns>
+        </member>
+        <member name="T:Dapplo.Windows.Input.RawInputDeviceInformation">
+            <summary>
+            Desribes a RawInput device
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.RawInputDeviceInformation.Handle">
+            <summary>
+            The handle to the raw input device
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.RawInputDeviceInformation.DeviceName">
+            <summary>
+            The cryptic device name
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.RawInputDeviceInformation.DisplayName">
+            <summary>
+            A name which can be used to display to a user
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.RawInputDeviceInformation.DeviceInfo">
+            <summary>
+            The actual device information
+            </summary>
+        </member>
+        <member name="T:Dapplo.Windows.Input.Structs.RawHID">
+            <summary>
+                Describes the format of the raw input from a Human Interface Device (HID).
+                See <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms645549.aspx">RAWHID structure</a>
+            </summary>
+        </member>
+        <member name="M:Dapplo.Windows.Input.Structs.RawHID.GetData">
+            <summary>
+            Returns the raw input data, as an array of bytes.
+            </summary>
+        </member>
+        <member name="T:Dapplo.Windows.Input.Structs.RawKeyboard">
+            <summary>
+                Contains information about the state of the keyboard.
+                See <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms645575.aspx">RAWKEYBOARD structure</a>
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.Structs.RawKeyboard.VirtualKey">
+            <summary>
+            The virtual key code
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.Structs.RawKeyboard.Flags">
+            <summary>
+            Scan code flags
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.Structs.RawKeyboard.ScanCode">
+            <summary>
+            The scan code
+            </summary>
+        </member>
+        <member name="M:Dapplo.Windows.Input.Structs.RawKeyboard.ToString">
+            <inheritdoc />
+        </member>
+        <member name="T:Dapplo.Windows.Input.Structs.RawMouse">
+            <summary>
+                Contains information about the state of the mouse.
+                See <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms645578.aspx">RAWMOUSE structure</a>
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.Structs.RawMouse.State">
+            <summary>
+            The mouse state.
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.Structs.RawMouse.ButtonState">
+            <summary>
+            The button state
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.Structs.RawMouse.WheelData">
+            <summary>
+            If usButtonFlags is RI_MOUSE_WHEEL, this member is a signed value that specifies the wheel delta.
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.Structs.RawMouse.X">
+            <summary>
+            The motion in the X direction.
+            This is signed relative motion or absolute motion, depending on the value of usFlags.
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.Structs.RawMouse.Y">
+            <summary>
+            The motion in the Y direction.
+            This is signed relative motion or absolute motion, depending on the value of usFlags.
+            </summary>
+        </member>
+        <member name="T:Dapplo.Windows.Input.Structs.RawDevice">
+            <summary>
+                This is used to similate a union in the RawInput struct, were cannot use Explicit due to 32/64 bit
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.Structs.RawDevice.Mouse">
+            <summary>
+            Information on the mouse
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.Structs.RawDevice.Keyboard">
+            <summary>
+            Information on the keyboard
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.Structs.RawDevice.HID">
+            <summary>
+            Information on the HID device
+            </summary>
+        </member>
+        <member name="T:Dapplo.Windows.Input.Structs.RawInput">
+            <summary>
+                Contains the raw input from a device.
+                See <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms645562.aspx">RAWINPUT structure</a>
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.Structs.RawInput.Header">
+            <summary>
+            The RawInput header
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.Structs.RawInput.Device">
+            <summary>
+            The device.
+            </summary>
+        </member>
+        <member name="T:Dapplo.Windows.Input.Structs.RawInputHeader">
+            <summary>
+                Contains the header information that is part of the raw input data.
+                See <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms645571.aspx">RAWINPUTHEADER structure</a>
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.Structs.RawInputHeader.Type">
+            <summary>
+            Type of raw input (RIM_TYPEHID 2, RIM_TYPEKEYBOARD 1, RIM_TYPEMOUSE 0)
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.Structs.RawInputHeader.DeviceHandle">
+            <summary>
+            A handle to the Device.
+            </summary>
+        </member>
+        <member name="T:Dapplo.Windows.Input.Structs.RawInputDeviceInfo">
+            <summary>
+                This structdefines the raw input data coming from any device.
+                See <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms645581(v=vs.85).aspx">RID_DEVICE_INFO structure</a>
+            Remarks:
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.Structs.RawInputDeviceInfo.Type">
+            <summary>
+            The type RawInput device
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.Structs.RawInputDeviceInfo.Mouse">
+            <summary>
+            Information on the mouse device
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.Structs.RawInputDeviceInfo.Keyboard">
+            <summary>
+            Information on the keyboard device
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.Structs.RawInputDeviceInfo.HID">
+            <summary>
+            Information on the HID device
+            </summary>
+        </member>
+        <member name="T:Dapplo.Windows.Input.Structs.RawInputDeviceInfoHID">
+            <summary>
+                This struct defines the raw input data coming from the specified keyboard.
+                See <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms645587.aspx">RID_DEVICE_INFO_KEYBOARD structure</a>
+            Remarks:
+            For the keyboard, the Usage Page is 1 and the Usage is 6.
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.Structs.RawInputDeviceInfoHID.VendorId">
+            <summary>
+            The vendor identifier for the HID.
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.Structs.RawInputDeviceInfoHID.ProductId">
+            <summary>
+            The product identifier for the HID.
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.Structs.RawInputDeviceInfoHID.VersionNumber">
+            <summary>
+            The version number for the HID.
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.Structs.RawInputDeviceInfoHID.UsagePage">
+            <summary>
+            The top-level collection Usage Page for the device.
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.Structs.RawInputDeviceInfoHID.Usage">
+            <summary>
+            The top-level collection Usage for the device.
+            </summary>
+        </member>
+        <member name="T:Dapplo.Windows.Input.Structs.RawInputDeviceInfoKeyboard">
+            <summary>
+                This struct defines the raw input data coming from the specified keyboard.
+                See <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms645587.aspx">RID_DEVICE_INFO_KEYBOARD structure</a>
+            Remarks:
+            For the keyboard, the Usage Page is 1 and the Usage is 6.
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.Structs.RawInputDeviceInfoKeyboard.Type">
+            <summary>
+            The type of the keyboard
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.Structs.RawInputDeviceInfoKeyboard.SubType">
+            <summary>
+            The type of the keyboard
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.Structs.RawInputDeviceInfoKeyboard.KeyboardMode">
+            <summary>
+            The scan code mode.
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.Structs.RawInputDeviceInfoKeyboard.NumberOfFunctionKeys">
+            <summary>
+            The number of function keys on the keyboard.
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.Structs.RawInputDeviceInfoKeyboard.NumberOfIndicators">
+            <summary>
+            The number of LED indicators on the keyboard.
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.Structs.RawInputDeviceInfoKeyboard.NumberOfKeysTotal">
+            <summary>
+            The total number of keys on the keyboard.
+            </summary>
+        </member>
+        <member name="T:Dapplo.Windows.Input.Structs.RawInputDeviceInfoMouse">
+            <summary>
+                This struct defines the raw input data coming from the specified mouse.
+                See <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms645589.aspx">RID_DEVICE_INFO_MOUSE structure</a>
+            Remarks:
+            For the mouse, the Usage Page is 1 and the Usage is 2.
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.Structs.RawInputDeviceInfoMouse.Id">
+            <summary>
+            The identifier of the mouse device.
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.Structs.RawInputDeviceInfoMouse.NumberOfButtons">
+            <summary>
+            The number of buttons for the mouse.
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.Structs.RawInputDeviceInfoMouse.SampleRate">
+            <summary>
+            The number of data points per second. This information may not be applicable for every mouse device.
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.Structs.RawInputDeviceInfoMouse.HasHorizontalWheel">
+            <summary>
+            TRUE if the mouse has a wheel for horizontal scrolling; otherwise, FALSE.
+            Windows XP:  This member is only supported starting with Windows Vista.
+            </summary>
+        </member>
+        <member name="T:Dapplo.Windows.Input.Structs.RawInputDeviceList">
+            <summary>
+            Contains information about a raw input device.
+            See <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms645568.aspx">RAWINPUTDEVICELIST structure</a>
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.Structs.RawInputDeviceList.Handle">
+            <summary>
+            A handle to the raw input device.
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.Structs.RawInputDeviceList.RawInputDeviceType">
+            <summary>
+            The type of device
+            </summary>
+        </member>
+        <member name="T:Dapplo.Windows.Input.Structs.RawInputDevice">
+            <summary>
+                This struct contains information about a raw input device.
+                See <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms645565.aspx">RAWINPUTDEVICE structure</a>
+            Remarks:
+            If RIDEV_NOLEGACY is set for a mouse or a keyboard, the system does not generate any legacy message for that device for the application.
+            For example, if the mouse TLC is set with RIDEV_NOLEGACY, WM_LBUTTONDOWN and related legacy mouse messages are not generated.
+            Likewise, if the keyboard TLC is set with RIDEV_NOLEGACY, WM_KEYDOWN and related legacy keyboard messages are not generated.
+            If RIDEV_REMOVE is set and the hwndTarget member is not set to NULL, then parameter validation will fail.
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.Structs.RawInputDevice.UsagePage">
+            <summary>
+            Top level collection Usage page for the raw input device.
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.Structs.RawInputDevice.Usage">
+            <summary>
+            Top level collection Usage for the raw input device.
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.Structs.RawInputDevice.Flags">
+            <summary>
+            Mode flag that specifies how to interpret the information provided by usUsagePage and usUsage.
+            It can be zero (the default) or one of the following values.
+            By default, the operating system sends raw input from devices with the specified top level collection (TLC) to the registered application as long as it has the window focus.
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.Structs.RawInputDevice.TargetHwnd">
+            <summary>
+            A handle to the target window. If NULL it follows the keyboard focus.
+            </summary>
+        </member>
+        <member name="M:Dapplo.Windows.Input.Structs.RawInputDevice.ToString">
+            <inheritdoc />
+        </member>
+        <member name="T:Dapplo.Windows.Input.Structs.MouseInput">
+            <summary>
+                Contains information about a simulated mouse event.
+                See
+                <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms646273(v=vs.85).aspx">MOUSEINPUT structure</a>
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Structs.MouseInput.dx">
+            <summary>
+                The absolute position of the mouse, or the amount of motion since the last mouse event was generated,
+                depending on the value of the dwFlags member.
+                Absolute data is specified as the x coordinate of the mouse;
+                relative data is specified as the number of pixels moved.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Structs.MouseInput.dy">
+            <summary>
+                The absolute position of the mouse, or the amount of motion since the last mouse event was generated,
+                depending on the value of the dwFlags member.
+                Absolute data is specified as the y coordinate of the mouse;
+                relative data is specified as the number of pixels moved.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Structs.MouseInput.MouseData">
+            <summary>
+                If dwFlags contains MOUSEEVENTF_WHEEL, then mouseData specifies the amount of wheel movement.
+                A positive value indicates that the wheel was rotated forward, away from the user;
+                a negative value indicates that the wheel was rotated backward, toward the user.
+                One wheel click is defined as WHEEL_DELTA, which is 120.
+                Windows Vista: If dwFlags contains MOUSEEVENTF_HWHEEL, then dwData specifies the amount of wheel movement.
+                A positive value indicates that the wheel was rotated to the right;
+                a negative value indicates that the wheel was rotated to the left.
+                One wheel click is defined as WHEEL_DELTA, which is 120.
+                If dwFlags does not contain MOUSEEVENTF_WHEEL, MOUSEEVENTF_XDOWN, or MOUSEEVENTF_XUP, then mouseData should be
+                zero.
+                If dwFlags contains MOUSEEVENTF_XDOWN or MOUSEEVENTF_XUP, then mouseData specifies which X buttons were pressed or
+                released.
+                This value may be any combination of the following flags:
+                XBUTTON1 0x0001 Set if the first X button is pressed or released.
+                XBUTTON2 0x0002 Set if the second X button is pressed or released.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Structs.MouseInput.MouseEventFlags">
+            <summary>
+                A set of bit flags that specify various aspects of mouse motion and button clicks.
+                The bits in this member can be any reasonable combination of the following values.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Structs.MouseInput.Timestamp">
+            <summary>
+                The time stamp for the event, in milliseconds. If this parameter is 0, the system will provide its own time stamp.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Structs.MouseInput.dwExtraInfo">
+            <summary>
+                An additional value associated with the mouse event. An application calls GetMessageExtraInfo to obtain this extra
+                information.
+            </summary>
+        </member>
+        <member name="M:Dapplo.Windows.Input.Structs.MouseInput.RemapLocation(Dapplo.Windows.Common.Structs.NativePoint)">
+            <summary>
+                The coordinates need to be mapped from 0-65535 where 0 is left and 65535 is right
+            </summary>
+            <param name="location">NativePoint</param>
+            <returns>NativePoint</returns>
+        </member>
+        <member name="M:Dapplo.Windows.Input.Structs.MouseInput.MoveMouseWheel(System.Int32,System.Nullable{Dapplo.Windows.Common.Structs.NativePoint},System.UInt32)">
+            <summary>
+                Create a MouseInput struct for a wheel move
+            </summary>
+            <param name="wheelDelta">How much does the wheel move</param>
+            <param name="location">Location of the event</param>
+            <param name="timestamp">The time stamp for the event</param>
+            <returns>MouseInput</returns>
+        </member>
+        <member name="M:Dapplo.Windows.Input.Structs.MouseInput.MouseMove(Dapplo.Windows.Common.Structs.NativePoint,System.UInt32)">
+            <summary>
+                Create a MouseInput struct for a mouse move
+            </summary>
+            <param name="location">Where is the click located</param>
+            <param name="timestamp">The time stamp for the event</param>
+            <returns>MouseInput</returns>
+        </member>
+        <member name="M:Dapplo.Windows.Input.Structs.MouseInput.MouseDown(System.Windows.Forms.MouseButtons,System.Nullable{Dapplo.Windows.Common.Structs.NativePoint},System.UInt32)">
+            <summary>
+                Create a MouseInput struct for a mouse button down
+            </summary>
+            <param name="mouseButtons">MouseButtons to specify which mouse buttons</param>
+            <param name="location">Where is the click located</param>
+            <param name="timestamp">The time stamp for the event</param>
+            <returns>MouseInput</returns>
+        </member>
+        <member name="M:Dapplo.Windows.Input.Structs.MouseInput.MouseUp(System.Windows.Forms.MouseButtons,System.Nullable{Dapplo.Windows.Common.Structs.NativePoint},System.UInt32)">
+            <summary>
+                Create a MouseInput struct for a mouse button up
+            </summary>
+            <param name="mouseButtons">MouseButtons to specify which mouse buttons</param>
+            <param name="location">Where is the click located</param>
+            <param name="timestamp">The time stamp for the event</param>
+            <returns>MouseInput</returns>
+        </member>
+        <member name="T:Dapplo.Windows.Input.Structs.MouseLowLevelHookStruct">
+            <summary>
+                This struct is passed in the WH_MOUSE_LL hook
+                See: https://msdn.microsoft.com/en-us/library/windows/desktop/ms644970.aspx
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Structs.MouseLowLevelHookStruct.pt">
+            <summary>
+                The x- and y-coordinates of the cursor, in per-monitor-aware screen coordinates.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Structs.MouseLowLevelHookStruct.MouseData">
+            <summary>
+                If the message is WM_MOUSEWHEEL, the high-order word of this member is the wheel delta.
+                The low-order word is reserved. A positive value indicates that the wheel was rotated forward, away from the user;
+                a negative value indicates that the wheel was rotated backward, toward the user.
+                One wheel click is defined as WHEEL_DELTA, which is 120.
+                If the message is WM_XBUTTONDOWN, WM_XBUTTONUP, WM_XBUTTONDBLCLK, WM_NCXBUTTONDOWN, WM_NCXBUTTONUP, or
+                WM_NCXBUTTONDBLCLK,
+                the high-order word specifies which X button was pressed or released, and the low-order word is reserved.
+                This value can be one or more of the following values.
+                Otherwise, mouseData is not used.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Structs.MouseLowLevelHookStruct.Flags">
+            <summary>
+                The event-injected flags.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Structs.MouseLowLevelHookStruct.TimeStamp">
+            <summary>
+                The time stamp for this message.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Structs.MouseLowLevelHookStruct.dwExtraInfo">
+            <summary>
+                Additional information associated with the message.
+            </summary>
+        </member>
+        <member name="T:Dapplo.Windows.Input.Structs.KeyboardInput">
+            <summary>
+                This struct contains information about a simulated keyboard event.
+                See
+                <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms646271.aspx">KEYBDINPUT structure</a>
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.Structs.KeyboardInput.VirtualKeyCode">
+            <summary>
+                A virtual-key code. The code must be a value in the range 1 to 254.
+                If the dwFlags member specifies KEYEVENTF_UNICODE, wVk must be 0.
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.Structs.KeyboardInput.ScanCode">
+            <summary>
+                A hardware scan code for the key. If KeyEventFlags specifies Unicode, ScanCode specifies a Unicode character which
+                is to be sent to the foreground application.
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.Structs.KeyboardInput.KeyEventFlags">
+            <summary>
+                Specifies various aspects of a keystroke. This member can be certain combinations of the following values.
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.Structs.KeyboardInput.Timestamp">
+            <summary>
+                The time stamp for the event, in milliseconds. If this parameter is zero, the system will provide its own time
+                stamp.
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.Structs.KeyboardInput.ExtraInfo">
+            <summary>
+                An additional value associated with the keystroke. Use the GetMessageExtraInfo function to obtain this information.
+            </summary>
+        </member>
+        <member name="M:Dapplo.Windows.Input.Structs.KeyboardInput.ForKeyPress(Dapplo.Windows.Input.Enums.VirtualKeyCodes,System.Int32)">
+            <summary>
+                Create a KeyboardInput for a key press (up / down)
+            </summary>
+            <param name="virtualKeyCode">Value from VirtualKeyCodes</param>
+            <param name="timestamp">optional Timestamp</param>
+            <returns>KeyboardInput[]</returns>
+        </member>
+        <member name="M:Dapplo.Windows.Input.Structs.KeyboardInput.ForKeyDown(Dapplo.Windows.Input.Enums.VirtualKeyCodes,System.Int32)">
+            <summary>
+                Create a KeyboardInput for a key down
+            </summary>
+            <param name="virtualKeyCode">Value from VirtualKeyCodes</param>
+            <param name="timestamp">optional Timestamp</param>
+            <returns>KeyboardInput</returns>
+        </member>
+        <member name="M:Dapplo.Windows.Input.Structs.KeyboardInput.ForKeyUp(Dapplo.Windows.Input.Enums.VirtualKeyCodes,System.Int32)">
+            <summary>
+                Create a KeyboardInput for a key up
+            </summary>
+            <param name="virtualKeyCode">Value from VirtualKeyCodes</param>
+            <param name="timestamp">optional Timestamp</param>
+            <returns>KeyboardInput</returns>
+        </member>
+        <member name="T:Dapplo.Windows.Input.Structs.KeyboardLowLevelHookStruct">
+            <summary>
+                Contains information about a low-level keyboard input event.
+            See <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms644967(v=vs.85).aspx">KBDLLHOOKSTRUCT structure</a>
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.Structs.KeyboardLowLevelHookStruct.VirtualKeyCode">
+            <summary>
+                A virtual-key code. The code must be a value in the range 1 to 254.
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.Structs.KeyboardLowLevelHookStruct.ScanCode">
+            <summary>
+                A hardware scan code for the key.
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.Structs.KeyboardLowLevelHookStruct.Flags">
+            <summary>
+                The extended-key flag, event-injected flags, context code, and transition-state flag.
+                This member is specified as follows. An application can use the following values to test the keystroke flags.
+                Testing LLKHF_INJECTED (bit 4) will tell you whether the event was injected.
+                If it was, then testing LLKHF_LOWER_IL_INJECTED (bit 1) will tell you whether or not the event
+                was injected from a process running at lower integrity level.
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.Structs.KeyboardLowLevelHookStruct.TimeStamp">
+            <summary>
+                The time stamp for this message, equivalent to what GetMessageTime would return for this message.
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.Structs.KeyboardLowLevelHookStruct.ExtraInfo">
+            <summary>
+                Additional information associated with the message.
+            </summary>
+        </member>
+        <member name="T:Dapplo.Windows.Input.Structs.HardwareInput">
+            <summary>
+            Contains information about a simulated message generated by an input device other than a keyboard or mouse.
+            See <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms646269.aspx">HARDWAREINPUT structure</a>
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.Structs.HardwareInput.uMsg">
+            <summary>
+            The message generated by the input hardware.
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.Structs.HardwareInput.ParamL">
+            <summary>
+            The low-order word of the lParam parameter for uMsg.
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Input.Structs.HardwareInput.wParamH">
+            <summary>
+            The high-order word of the lParam parameter for uMsg.
+            </summary>
+        </member>
+        <member name="T:Dapplo.Windows.Input.Structs.Input">
+            <summary>
+                A struct used by SendInput to store information for synthesizing input events such as keystrokes, mouse movement,
+                and mouse clicks.
+                See <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms646270(v=vs.85).aspx">INPUT structure</a>
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Structs.Input.InputType">
+            <summary>
+                The type of the input event. This member can be one of the following values.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Structs.Input.InputUnion">
+            <summary>
+                A union which contains the MouseInput, KeyboardInput or HardwareInput
+            </summary>
+        </member>
+        <member name="M:Dapplo.Windows.Input.Structs.Input.CreateMouseInputs(Dapplo.Windows.Input.Structs.MouseInput[])">
+            <summary>
+                A factory method to simplify creating mouse input
+            </summary>
+            <returns>Array of Input structs</returns>
+        </member>
+        <member name="M:Dapplo.Windows.Input.Structs.Input.CreateKeyboardInputs(Dapplo.Windows.Input.Structs.KeyboardInput[])">
+            <summary>
+                A factory method to simplify creating input
+            </summary>
+            <returns>Array of Input structs</returns>
+        </member>
+        <member name="P:Dapplo.Windows.Input.Structs.Input.Size">
+            <summary>
+                Used as the Size in the SendInput call
+            </summary>
+        </member>
+        <member name="T:Dapplo.Windows.Input.Structs.InputUnion">
+            <summary>
+                A "union" containing a specific input struct
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Structs.InputUnion.MouseInput">
+            <summary>
+                Assign this if the input is MouseInput
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Structs.InputUnion.KeyboardInput">
+            <summary>
+                Assign this if the input is MouseInputKeyboardInput
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Input.Structs.InputUnion.HardwareInput">
+            <summary>
+                Assign this if the input is HardwareInput
+            </summary>
+        </member>
+    </members>
+</doc>

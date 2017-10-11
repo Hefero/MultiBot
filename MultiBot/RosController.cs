@@ -52,9 +52,11 @@ namespace EnvControllers
         {
             if (paused == false)
             {
+                Thread.Sleep(15);
                 Console.WriteLine("Pausing");
                 SendF6();
-                paused = true;                
+                paused = true;
+                Thread.Sleep(500);
             }
             else
             {
@@ -65,9 +67,11 @@ namespace EnvControllers
         {
             if (paused == true)
             {
+                Thread.Sleep(15);
                 Console.WriteLine("Unpausing");
                 SendF6();
-                paused = false;                
+                paused = false;
+                Thread.Sleep(500);
             }
             else
             {
@@ -121,6 +125,7 @@ namespace EnvControllers
         {
             IntPtr hWnd = GetForegroundWindow();
             SendMessage(hWnd, WM_KEYDOWN, VK_ESCAPE, IntPtr.Zero);
+            Thread.Sleep(100);
             SendMessage(hWnd, WM_KEYUP, VK_ESCAPE, IntPtr.Zero);
         }
 
