@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClientController.cs" />
+    <Compile Include="FileLockInfo.cs" />
     <Compile Include="GameState.cs" />
     <Compile Include="LogFile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

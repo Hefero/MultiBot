@@ -119,10 +119,11 @@ namespace EnvControllers
 
         public static void SendEscape()
         {
-            keybd_event(VK_ESCAPE, 0, KEYEVENTF_EXTENDEDKEY, 0);
-            Thread.Sleep(100);
-            keybd_event(VK_ESCAPE, 0, KEYEVENTF_KEYUP, 0);
+            IntPtr hWnd = GetForegroundWindow();
+            SendMessage(hWnd, WM_KEYDOWN, VK_ESCAPE, IntPtr.Zero);
+            SendMessage(hWnd, WM_KEYUP, VK_ESCAPE, IntPtr.Zero);
         }
+
         public static void SendF6()
         {
             keybd_event(VK_F6, 0, KEYEVENTF_EXTENDEDKEY, 0);

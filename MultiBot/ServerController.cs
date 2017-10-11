@@ -21,6 +21,7 @@ using Enigma.D3;
 using Enigma.D3.MemoryModel.Controls;
 using static Enigma.D3.MemoryModel.Core.UXHelper;
 using System.Net.Sockets;
+using System.Diagnostics;
 
 namespace EnvControllers
 {
@@ -37,6 +38,7 @@ namespace EnvControllers
             };
         }
 
+        public Process rosbotProcess { get; set; }
         public SimpleTcpServer tcpServer { get; set; }
         public Message lastMessage { get; set; }
         public RosController rosController { get; set; }
@@ -116,11 +118,11 @@ namespace EnvControllers
         }
         public void GoToMenu() {
             try
-            {
+            {                
                 rosController.Pause();                
                 Console.WriteLine("Go to menu routine started");
-                Console.WriteLine("First ESC and try to click");
-                RosController.SendEscape();
+                Console.WriteLine("First ESC and try to click");                
+                RosController.SendEscape();                
                 if (gameState.leavegameUiVisible == true)
                 {
                     var xCoord = gameState.leavegameUiControl.uirect.TranslateToClientRect(gameState.clientWidth, gameState.clientHeight).Left +
@@ -130,12 +132,11 @@ namespace EnvControllers
                     RosController.SetCursorPos((int)xCoord, (int)yCoord);
                     RosController.LeftClick();
                     Console.WriteLine("Clicked to leave");
-                    BlockInput();
                 }
                 else
                 {
                     Console.WriteLine("Second ESC and try to click");
-                    RosController.SendEscape();
+                    RosController.SendEscape();                    
                     if (gameState.leavegameUiVisible == true)
                     {
                         var xCoord = gameState.leavegameUiControl.uirect.TranslateToClientRect(gameState.clientWidth, gameState.clientHeight).Left +
@@ -144,12 +145,13 @@ namespace EnvControllers
                             (gameState.leavegameUiControl.uirect.TranslateToClientRect(gameState.clientWidth, gameState.clientHeight).Height / 2);
                         RosController.SetCursorPos((int)xCoord, (int)yCoord);
                         RosController.LeftClick();
-                        Console.WriteLine("Clicked to leave");
-                        BlockInput();
+                        Console.WriteLine("Clicked to leave");                        
                     }
                 }
+                Thread.Sleep(200);
+                BlockInput();
                 Console.WriteLine("Sleeping 11s");
-                Thread.Sleep(11000);
+                Thread.Sleep(12000);
                 UnBlockInput();
                 rosController.Unpause();
                 rosController.InitVariables();
