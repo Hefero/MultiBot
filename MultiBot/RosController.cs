@@ -81,8 +81,9 @@ namespace EnvControllers
         [DllImport("user32.dll")]
         public static extern bool PostMessage(IntPtr hWnd, UInt32 Msg, int wParam, int lParam);
         [DllImport("user32.dll")]
-        public static extern void mouse_event(int dwFlags, int dx, int dy,
-                      int dwData, int dwExtraInfo);
+        public static extern void mouse_event(int dwFlags, int dx, int dy, int dwData, int dwExtraInfo);
+        [DllImport("user32.dll")]
+        public static extern void keybd_event(byte bVk, byte bScan, int dwFlags, int dwExtraInfo);
         [DllImport("user32.dll")]
         static extern IntPtr GetForegroundWindow();
 
@@ -102,29 +103,31 @@ namespace EnvControllers
         public static void LeftClick()
         {            
             mouse_event((int)(MouseEventFlags.LEFTDOWN), 0, 0, 0, 0);
+            Thread.Sleep(100);
             mouse_event((int)(MouseEventFlags.LEFTUP), 0, 0, 0, 0);
         }
 
         [DllImport("User32.dll")]
         public static extern IntPtr SendMessage(IntPtr hwnd, int uMsg, int wParam, IntPtr lParam);
 
-        const int WM_KEYDOWN = 0x100;
-        const int WM_KEYUP = 0x101;
-        const int VK_ESCAPE = 0x1B;
-        const int VK_F6 = 0x75;
+        public const int WM_KEYDOWN = 0x100;
+        public const int WM_KEYUP = 0x101;
+        public const int VK_ESCAPE = 0x1B;
+        public const int VK_F6 = 0x75;
+        public const int KEYEVENTF_EXTENDEDKEY = 0x0001; //Key down flag
+        public const int KEYEVENTF_KEYUP = 0x0002; //Key up flag
 
         public static void SendEscape()
         {
-            IntPtr hWnd = GetForegroundWindow();
-            SendMessage(hWnd, WM_KEYDOWN, VK_ESCAPE, IntPtr.Zero);
-            SendMessage(hWnd, WM_KEYUP, VK_ESCAPE, IntPtr.Zero);
+            keybd_event(VK_ESCAPE, 0, KEYEVENTF_EXTENDEDKEY, 0);
+            Thread.Sleep(100);
+            keybd_event(VK_ESCAPE, 0, KEYEVENTF_KEYUP, 0);
         }
         public static void SendF6()
         {
-            IntPtr hWnd = GetForegroundWindow();
-            SendMessage(hWnd, WM_KEYDOWN, VK_F6, IntPtr.Zero);
+            keybd_event(VK_F6, 0, KEYEVENTF_EXTENDEDKEY, 0);
             Thread.Sleep(100);
-            SendMessage(hWnd, WM_KEYUP, VK_F6, IntPtr.Zero);
+            keybd_event(VK_F6, 0, KEYEVENTF_KEYUP, 0);
         }
     }
 }
