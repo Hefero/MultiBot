@@ -17,6 +17,7 @@ using Enigma.D3.MemoryModel.Core;
 using Enigma.D3;
 using Enigma.D3.MemoryModel.Controls;
 using static Enigma.D3.MemoryModel.Core.UXHelper;
+using static EnvControllers.RosController;
 
 namespace EnvControllers
 {
@@ -28,6 +29,15 @@ namespace EnvControllers
             tcpClient.DelimiterDataReceived += (sender, msg) => {
                 ReceivedMessage(sender, msg);
             };
+            FocusRosBot();
+            RECT _rct = new RECT();
+            GetWindowRect(rosbotProcess.MainWindowHandle, ref _rct);
+            while (_rct.Left <= 0 | _rct.Right <= 0 | _rct.Bottom <= 0 | _rct.Top <= 0)
+            {
+                FocusRosBot();
+                GetWindowRect(rosbotProcess.MainWindowHandle, ref _rct);
+            }
+            rosbotRect = _rct;
         }
         public SimpleTcpClient tcpClient { get; set; }
         public string serverip { get; set; }

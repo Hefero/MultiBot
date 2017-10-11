@@ -35,10 +35,15 @@ namespace EnvControllers
             tcpServer.ClientConnected += (sender, msg) => {
                 ClientConnected(sender, msg);
             };
+            FocusRosBot();
             RECT _rct = new RECT();
             GetWindowRect(rosbotProcess.MainWindowHandle, ref _rct);
+            while (_rct.Left <= 0 | _rct.Right <= 0 | _rct.Bottom <= 0 | _rct.Top <= 0)
+            {
+                FocusRosBot();
+                GetWindowRect(rosbotProcess.MainWindowHandle, ref _rct);
+            }
             rosbotRect = _rct;
-
         }
         public RECT rosbotRect { get; set; }
         public Process rosbotProcess { get; set; }
@@ -210,6 +215,16 @@ namespace EnvControllers
         }
         public void ClickRosStart()
         {
+            FocusRosBot();
+            Thread.Sleep(100);
+            var xCoord = rosbotRect.Right - (0.15*rosbotRect.Width);
+            var yCoord = rosbotRect.Bottom - (0.07*rosbotRect.Height);
+            RosController.SetCursorPos((int)xCoord, (int)yCoord);
+            Thread.Sleep(100);
+            RosController.LeftClick();
+        }
+        public void FocusRosBot()
+        {
             SetForegroundWindow(rosbotProcess.MainWindowHandle);
             IntPtr activeWindow = GetForegroundWindow();
             while (activeWindow != rosbotProcess.MainWindowHandle)
@@ -217,12 +232,6 @@ namespace EnvControllers
                 SetForegroundWindow(rosbotProcess.MainWindowHandle);
                 activeWindow = GetForegroundWindow();
             }
-            Thread.Sleep(100);
-            var xCoord = rosbotRect.Right - (0.15*rosbotRect.Width);
-            var yCoord = rosbotRect.Bottom - (0.07*rosbotRect.Height);
-            RosController.SetCursorPos((int)xCoord, (int)yCoord);
-            Thread.Sleep(100);
-            RosController.LeftClick();
         }
 
         public partial class NativeMethods

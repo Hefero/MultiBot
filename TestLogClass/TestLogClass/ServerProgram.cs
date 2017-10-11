@@ -29,7 +29,8 @@ namespace MultibotPrograms
             Console.WriteLine("Starting Game Modules");
             server.StartModules();
             Console.WriteLine("All modules started: reading game states");
-            Console.WriteLine("Ready to start");            
+            Console.WriteLine("Ready to start");
+            server.ClickRosStart();
             while (true) {
                 try
                 {
