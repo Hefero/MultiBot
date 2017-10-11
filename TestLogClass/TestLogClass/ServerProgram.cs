@@ -56,7 +56,6 @@ namespace MultibotPrograms
                         server.sendMessage("Server Vendor Loop Done");
                         Console.WriteLine("Vendor Loop Done Detected, server Always Pause here");
                         server.rosController.Pause();
-                        Thread.Sleep(100);
                     }
 
                     if (LogFile.LookForString(newLogLines, "Next rift in different") & !server.gameState.inMenu)
@@ -64,7 +63,6 @@ namespace MultibotPrograms
                         //failure detected
                         server.sendMessage("Go to menu");
                         Console.WriteLine("Next rift in different game detected: send Go to menu");
-                        Thread.Sleep(500);
                         server.rosController.failed = true;
                     }
 
@@ -87,7 +85,6 @@ namespace MultibotPrograms
                         RosController.SetCursorPos((int)xCoord, (int)yCoord);
                         RosController.LeftClick();
                         Console.WriteLine("Accept Rift Dialog Detected: Click Cancel");
-                        Thread.Sleep(100);
                     }
 
                     if (server.gameState.cancelgriftUiVisible)
@@ -101,7 +98,6 @@ namespace MultibotPrograms
                         RosController.SetCursorPos((int)xCoord, (int)yCoord);
                         RosController.LeftClick();
                         Console.WriteLine("Rift Cancelled Dialog Detected: Click Cancel");
-                        Thread.Sleep(1500);
                     }
 
                     if (server.gameState.firstlevelRift & !server.rosController.enteredRift)
@@ -111,7 +107,6 @@ namespace MultibotPrograms
                         server.rosController.enteredRift = true;
                         server.rosController.Unpause();
                         server.rosController.InitVariables();
-                        Thread.Sleep(500);
                         Console.WriteLine("First Floor Rift Detected: Unpausing and Reiniting variables");
                     }
 

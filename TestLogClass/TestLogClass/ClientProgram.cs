@@ -71,7 +71,6 @@ namespace MultibotPrograms
                         //failure detected
                         client.sendMessage("Go to menu");
                         Console.WriteLine("Next rift in different game detected: send Go to menu");
-                        Thread.Sleep(500);
                         client.rosController.failed = true;
                     }
 
@@ -95,7 +94,6 @@ namespace MultibotPrograms
                         RosController.LeftClick();
                         client.sendMessage("Pause"); //not to fail
                         Console.WriteLine("Accept Rift Dialog Detected: Click Accept and Send Pause");
-                        Thread.Sleep(1500);
                     }
 
                     if (client.gameState.cancelgriftUiVisible)
@@ -110,7 +108,6 @@ namespace MultibotPrograms
                         RosController.LeftClick();
                         client.sendMessage("Start");
                         Console.WriteLine("Rift Cancelled Dialog Detected: Pause, Click Cancel, and Send Start");
-                        Thread.Sleep(1500);
                     }
 
                     if (client.gameState.firstlevelRift & !client.rosController.enteredRift)
@@ -120,7 +117,6 @@ namespace MultibotPrograms
                         client.rosController.enteredRift = true;
                         client.rosController.Unpause();
                         client.rosController.InitVariables();
-                        Thread.Sleep(500);
                         Console.WriteLine("First Floor Rift Detected: Unpausing and Reiniting variables");
                     }
 

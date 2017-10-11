@@ -52,12 +52,10 @@ namespace EnvControllers
         {
             if (paused == false)
             {
-                Thread.Sleep(1000);
                 String timeStamp = GetTimestamp(DateTime.Now);
                 Console.WriteLine(timeStamp + " Pausing");
                 SendF6();
                 paused = true;
-                Thread.Sleep(1000);
             }
             else
             {
@@ -68,12 +66,10 @@ namespace EnvControllers
         {
             if (paused == true)
             {
-                Thread.Sleep(1000);
                 String timeStamp = GetTimestamp(DateTime.Now);
                 Console.WriteLine(timeStamp + "Unpausing");
                 SendF6();
                 paused = false;
-                Thread.Sleep(1000);
             }
             else
             {
@@ -109,7 +105,6 @@ namespace EnvControllers
         public static void LeftClick()
         {            
             mouse_event((int)(MouseEventFlags.LEFTDOWN), 0, 0, 0, 0);
-            Thread.Sleep(100);
             mouse_event((int)(MouseEventFlags.LEFTUP), 0, 0, 0, 0);
         }
 
@@ -127,14 +122,12 @@ namespace EnvControllers
         {
             IntPtr hWnd = GetForegroundWindow();
             SendMessage(hWnd, WM_KEYDOWN, VK_ESCAPE, IntPtr.Zero);
-            Thread.Sleep(100);
             SendMessage(hWnd, WM_KEYUP, VK_ESCAPE, IntPtr.Zero);
         }
 
         public static void SendF6()
         {
             keybd_event(VK_F6, 0, KEYEVENTF_EXTENDEDKEY, 0);
-            Thread.Sleep(100);
             keybd_event(VK_F6, 0, KEYEVENTF_KEYUP, 0);
         }
         public static String GetTimestamp(DateTime value)
