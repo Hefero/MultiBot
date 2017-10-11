@@ -39,7 +39,8 @@ namespace EnvControllers
         {   
             lastSendMessage = message;
             tcpClient.WriteLine(message);
-            Console.WriteLine("Sending message: " + message);
+            String timeStamp = RosController.GetTimestamp(DateTime.Now);
+            Console.WriteLine(timeStamp + "Sending message: " + message);
         }
     }
 }

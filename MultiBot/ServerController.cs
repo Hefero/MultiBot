@@ -107,14 +107,15 @@ namespace EnvControllers
                         Console.WriteLine(msg.MessageString.ToString());
                     break;
             }
-            Console.WriteLine("Received: " + msg.MessageString.ToString());
-            Console.WriteLine("\n");
+            String timeStamp = RosController.GetTimestamp(DateTime.Now);
+            Console.WriteLine(timeStamp + " Received: " + msg.MessageString.ToString());
         }
         public virtual void sendMessage(string message)
         {
             lastSendMessage = message;
             tcpServer.BroadcastLine(message);
-            Console.WriteLine("Sending message: " + message);
+            String timeStamp = RosController.GetTimestamp(DateTime.Now);
+            Console.WriteLine(timeStamp + "Sending message: " + message);
         }
         public void GoToMenu() {
             try
