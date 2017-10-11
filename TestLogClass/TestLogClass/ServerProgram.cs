@@ -47,12 +47,11 @@ namespace MultibotPrograms
                     server.rosController.enteredRift = false;
                     server.sendMessage("Vendor Loop Done");
                     Console.WriteLine("Vendor Loop Done Detected");
-                    if (server.rosController.otherVendorLoopDone == false)
+                    if (!server.rosController.otherVendorLoopDone)
                     {
                         server.rosController.Pause();
                     }
                     Thread.Sleep(100);
-                    
                 }
 
                 if (LogFile.LookForString(newLogLines, "Next rift in different") & !server.gameState.inMenu)

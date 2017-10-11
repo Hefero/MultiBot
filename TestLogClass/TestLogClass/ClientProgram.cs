@@ -48,7 +48,7 @@ namespace MultibotPrograms
                     client.rosController.enteredRift = false;
                     client.sendMessage("Vendor Loop Done");
                     Console.WriteLine("Vendor Loop Done Detected");
-                    if (client.rosController.otherVendorLoopDone == false)
+                    if (!client.rosController.otherVendorLoopDone)
                     {
                         client.rosController.Pause();
                     }

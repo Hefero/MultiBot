@@ -82,13 +82,18 @@ namespace EnvControllers
                     {
                         if (this.gameState.haveUrshiActor == false)
                         {
-                           //teleport
+                            Console.WriteLine("Going to Urshi");
                         }
                         break;
                     }
                 case "Vendor Loop Done":
                     {
                         this.rosController.otherVendorLoopDone = true;
+                        if (rosController.vendorLoopDone)
+                        {
+                            Console.WriteLine("Unpausing: my Vendor Loop is done and received Vendor Loop done");
+                            rosController.Unpause();                            
+                        }
                         break;
                     }
                 default:
