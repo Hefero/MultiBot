@@ -105,8 +105,12 @@ namespace EnvControllers
             {
                 if (inMenu == false)
                 {
-                    openriftUiControl = UXHelper.GetControl<UXControl>("Root.NormalLayer.rift_dialog_mainPage.LayoutRoot.MainBG");
-                    return openriftUiControl.IsVisible();
+                    try
+                    {
+                        openriftUiControl = UXHelper.GetControl<UXControl>("Root.NormalLayer.rift_dialog_mainPage.LayoutRoot.MainBG");
+                        return openriftUiControl.IsVisible();
+                    }
+                    catch { return false; }
                 }
                 else{
                     return false;
@@ -120,8 +124,12 @@ namespace EnvControllers
             {
                 if (inMenu == false)
                 {
-                    acceptgrUiControl = UXHelper.GetControl<UXControl>("Root.NormalLayer.rift_join_party_main.stack.wrapper.Accept");
-                    return acceptgrUiControl.IsVisible();
+                    try
+                    {
+                        acceptgrUiControl = UXHelper.GetControl<UXControl>("Root.NormalLayer.rift_join_party_main.stack.wrapper.Accept");
+                        return acceptgrUiControl.IsVisible();
+                    }
+                    catch { return false; }
                 }
                 else
                 {
@@ -136,8 +144,12 @@ namespace EnvControllers
             {
                 if (inMenu == false)
                 {
-                    urshiUiControl = UXHelper.GetControl<UXControl>("Root.NormalLayer.vendor_dialog_mainPage.riftReward_dialog.LayoutRoot.gemUpgradePane.centerWisp");
-                    return urshiUiControl.IsVisible();
+                    try
+                    {
+                        urshiUiControl = UXHelper.GetControl<UXControl>("Root.NormalLayer.vendor_dialog_mainPage.riftReward_dialog.LayoutRoot.gemUpgradePane.centerWisp");
+                        return urshiUiControl.IsVisible();
+                    }
+                    catch { return false; }
                 }
                 else
                 {
@@ -152,8 +164,12 @@ namespace EnvControllers
             {
                 if (inMenu == false)
                 {
-                    grcompleteUiControl = UXHelper.GetControl<UXControl>("Root.NormalLayer.GreaterRifts_VictoryScreen.LayoutRoot.PartyContainer.PlayerContainer.Player1.Player1Profile.Player1Banner.Player1Clan");
-                    return grcompleteUiControl.IsVisible();
+                    try
+                    {
+                        grcompleteUiControl = UXHelper.GetControl<UXControl>("Root.NormalLayer.GreaterRifts_VictoryScreen.LayoutRoot.PartyContainer.PlayerContainer.Player1.Player1Profile.Player1Banner.Player1Clan");
+                        return grcompleteUiControl.IsVisible();
+                    }
+                    catch { return false; }
                 }
                 else
                 {
@@ -168,8 +184,12 @@ namespace EnvControllers
             {
                 if (inMenu == false)
                 {
-                    confirmationUiControl = UXHelper.GetControl<UXControl>("Root.TopLayer.confirmation.subdlg.stack.wrap.button_cancel");
-                    return confirmationUiControl.IsVisible();
+                    try
+                    {
+                        confirmationUiControl = UXHelper.GetControl<UXControl>("Root.TopLayer.confirmation.subdlg.stack.wrap.button_cancel");
+                        return confirmationUiControl.IsVisible();
+                    }
+                    catch { return false; }
                 }
                 else
                 {
@@ -184,8 +204,12 @@ namespace EnvControllers
             {
                 if (inMenu == false)
                 {
-                    vendorUiControl = UXHelper.GetControl<UXControl>("Root.NormalLayer.vendor_dialog_mainPage");
-                    return vendorUiControl.IsVisible();
+                    try
+                    {
+                        vendorUiControl = UXHelper.GetControl<UXControl>("Root.NormalLayer.vendor_dialog_mainPage");
+                        return vendorUiControl.IsVisible();
+                    }
+                    catch { return false; }
                 }
                 else
                 {
@@ -200,8 +224,12 @@ namespace EnvControllers
             {
                 if (inMenu == false)
                 {
-                    leavegameUiControl = UXHelper.GetControl<UXControl>("Root.NormalLayer.gamemenu_dialog.gamemenu_bkgrnd.ButtonStackContainer.button_leaveGame");
-                    return leavegameUiControl.IsVisible();
+                    try
+                    {
+                        leavegameUiControl = UXHelper.GetControl<UXControl>("Root.NormalLayer.gamemenu_dialog.gamemenu_bkgrnd.ButtonStackContainer.button_leaveGame");
+                        return leavegameUiControl.IsVisible();
+                    }
+                    catch { return false; }
                 }
                 else
                 {

@@ -37,4 +37,3 @@ C:\Users\GuilhermeMarques\source\repos\MultiBot\MultiBot\bin\Debug\MultiBot.dll
 C:\Users\GuilhermeMarques\source\repos\MultiBot\MultiBot\bin\Debug\MultiBot.pdb
 C:\Users\GuilhermeMarques\source\repos\MultiBot\MultiBot\obj\Debug\MultiBot.dll
 C:\Users\GuilhermeMarques\source\repos\MultiBot\MultiBot\obj\Debug\MultiBot.pdb
-C:\Users\GuilhermeMarques\source\repos\MultiBot\MultiBot\obj\Debug\EnvControllers.csprojResolveAssemblyReference.cache

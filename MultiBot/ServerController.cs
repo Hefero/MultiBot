@@ -120,7 +120,7 @@ namespace EnvControllers
                 rosController.Pause();                
                 Console.WriteLine("Go to menu routine started");
                 Console.WriteLine("First ESC and try to click");
-                rosController.inputSimulator.Keyboard.KeyPress(VirtualKeyCode.ESCAPE);
+                RosController.SendEscape();
                 if (gameState.leavegameUiVisible == true)
                 {
                     var xCoord = gameState.leavegameUiControl.uirect.TranslateToClientRect(gameState.clientWidth, gameState.clientHeight).Left +
@@ -128,14 +128,14 @@ namespace EnvControllers
                     var yCoord = gameState.leavegameUiControl.uirect.TranslateToClientRect(gameState.clientWidth, gameState.clientHeight).Top +
                         (gameState.leavegameUiControl.uirect.TranslateToClientRect(gameState.clientWidth, gameState.clientHeight).Height / 2);
                     RosController.SetCursorPos((int)xCoord, (int)yCoord);
-                    rosController.inputSimulator.Mouse.LeftButtonClick();
+                    RosController.LeftClick();
                     Console.WriteLine("Clicked to leave");
                     BlockInput();
                 }
                 else
                 {
                     Console.WriteLine("Second ESC and try to click");
-                    rosController.inputSimulator.Keyboard.KeyPress(VirtualKeyCode.ESCAPE);
+                    RosController.SendEscape();
                     if (gameState.leavegameUiVisible == true)
                     {
                         var xCoord = gameState.leavegameUiControl.uirect.TranslateToClientRect(gameState.clientWidth, gameState.clientHeight).Left +
@@ -143,7 +143,7 @@ namespace EnvControllers
                         var yCoord = gameState.leavegameUiControl.uirect.TranslateToClientRect(gameState.clientWidth, gameState.clientHeight).Top +
                             (gameState.leavegameUiControl.uirect.TranslateToClientRect(gameState.clientWidth, gameState.clientHeight).Height / 2);
                         RosController.SetCursorPos((int)xCoord, (int)yCoord);
-                        rosController.inputSimulator.Mouse.LeftButtonClick();
+                        RosController.LeftClick();
                         Console.WriteLine("Clicked to leave");
                         BlockInput();
                     }

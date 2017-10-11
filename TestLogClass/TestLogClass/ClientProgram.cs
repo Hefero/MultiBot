@@ -82,7 +82,7 @@ namespace MultibotPrograms
                     var yCoord = client.gameState.acceptgrUiControl.uirect.TranslateToClientRect(client.gameState.clientWidth, client.gameState.clientHeight).Top +
                         (client.gameState.acceptgrUiControl.uirect.TranslateToClientRect(client.gameState.clientWidth, client.gameState.clientHeight).Height / 2);
                     RosController.SetCursorPos((int)xCoord, (int)yCoord);
-                    client.rosController.inputSimulator.Mouse.LeftButtonClick();
+                    RosController.LeftClick();
                     client.sendMessage("Pause"); //not to fail
                     Console.WriteLine("Accept Rift Dialog Detected: Click Accept and Send Pause");
                     Thread.Sleep(1500);                 
@@ -96,7 +96,7 @@ namespace MultibotPrograms
                     var yCoord = client.gameState.confirmationUiControl.uirect.TranslateToClientRect(client.gameState.clientWidth, client.gameState.clientHeight).Top +
                         (client.gameState.confirmationUiControl.uirect.TranslateToClientRect(client.gameState.clientWidth, client.gameState.clientHeight).Height / 2);
                     RosController.SetCursorPos((int)xCoord, (int)yCoord);
-                    client.rosController.inputSimulator.Mouse.LeftButtonClick();
+                    RosController.LeftClick();
                     client.sendMessage("Start");
                     Console.WriteLine("Rift Cancelled Dialog Detected: Pause, Click Cancel, and Send Start");
                     Thread.Sleep(1500);

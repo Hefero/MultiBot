@@ -80,6 +80,44 @@ namespace EnvControllers
         [DllImport("user32.dll")]
         public static extern int SetForegroundWindow(IntPtr hWnd);
         [DllImport("user32.dll")]
-        static extern bool PostMessage(IntPtr hWnd, UInt32 Msg, int wParam, int lParam);
+        public static extern bool PostMessage(IntPtr hWnd, UInt32 Msg, int wParam, int lParam);
+        [DllImport("user32.dll")]
+        public static extern void mouse_event(int dwFlags, int dx, int dy,
+                      int dwData, int dwExtraInfo);
+        [DllImport("user32.dll")]
+        static extern IntPtr GetForegroundWindow();
+
+        [Flags]
+        public enum MouseEventFlags
+        {
+            LEFTDOWN = 0x00000002,
+            LEFTUP = 0x00000004,
+            MIDDLEDOWN = 0x00000020,
+            MIDDLEUP = 0x00000040,
+            MOVE = 0x00000001,
+            ABSOLUTE = 0x00008000,
+            RIGHTDOWN = 0x00000008,
+            RIGHTUP = 0x00000010
+        }
+
+        public static void LeftClick()
+        {            
+            mouse_event((int)(MouseEventFlags.LEFTDOWN), 0, 0, 0, 0);
+            mouse_event((int)(MouseEventFlags.LEFTUP), 0, 0, 0, 0);
+        }
+
+        [DllImport("User32.dll")]
+        public static extern IntPtr SendMessage(IntPtr hwnd, int uMsg, int wParam, IntPtr lParam);
+
+        const int WM_KEYDOWN = 0x100;
+        const int WM_KEYUP = 0x101;
+        const int VK_ESCAPE = 0x1B;
+
+        public static void SendEscape()
+        {
+            IntPtr hWnd = GetForegroundWindow();
+            SendMessage(hWnd, WM_KEYDOWN, VK_ESCAPE, IntPtr.Zero);
+            SendMessage(hWnd, WM_KEYUP, VK_ESCAPE, IntPtr.Zero);
+        }
     }
 }
