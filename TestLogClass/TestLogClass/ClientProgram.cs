@@ -35,8 +35,9 @@ namespace MultibotPrograms
             client.serverip = "192.168.1.9";
             client.serverport = 8910;
             client.Start();
-            client.StartModules();
+            client.StartModules();            
             Console.WriteLine("All modules started: reading game states");
+            client.sendMessage("Client started modules");
             while (true) {
                 client.gameState.UpdateGameState();
                 var newLogLines = client.rosController.rosLog.NewLines;

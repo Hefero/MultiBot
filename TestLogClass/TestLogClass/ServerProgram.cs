@@ -36,6 +36,7 @@ namespace MultibotPrograms
             server.Start();
             server.StartModules();
             Console.WriteLine("All modules started: reading game states");
+            server.sendMessage("Server started modules");
             while (true) {
                 server.gameState.UpdateGameState();
                 var newLogLines = server.rosController.rosLog.NewLines;

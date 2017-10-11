@@ -87,15 +87,19 @@ namespace EnvControllers
             catch { return null; }
         }
         public static bool LookForString(List<string> list, string myString)
-        {            
-            if (list.FirstOrDefault(stringToCheck => stringToCheck.ToLower().Contains(myString.ToLower())) != null)
+        {
+            try
             {
-                return true;
+                if (list.FirstOrDefault(stringToCheck => stringToCheck.ToLower().Contains(myString.ToLower())) != null)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
-            else
-            {
-                return false;
-            }
+            catch { return false; }
         }
     }
 }
