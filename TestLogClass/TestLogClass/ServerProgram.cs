@@ -20,28 +20,19 @@ using static Enigma.D3.MemoryModel.Core.UXHelper;
 using SlimDX.DirectInput;
 using System.Runtime.InteropServices;
 
-namespace TestLogClassl
+namespace MultibotPrograms
 {
-    class Program
+    class ServerProgram
     {
-       
-
         static void Main(string[] args)
         {
             string pathToFile = @"C:\Users\GuilhermeMarques\Documents\RoS-BoT\Logs\logs.txt";
             RosController rosCon = new RosController(pathToFile);
-
             ServerController server = new ServerController();
             server.port = 8910;
             server.pathToLogFile = @"C:\Users\GuilhermeMarques\Documents\RoS-BoT\Logs\logs.txt";
             server.Start();
             server.StartModules();
-
-            //ClientController client = new ClientController();
-            //client.serverip = "127.0.0.1";
-            //client.serverport = 8910;
-            //client.Start();
-            //client.sendMessage("StartModules");
             while (true) {
                 server.gameState.UpdateGameState();
                 var newLogLines = server.rosController.rosLog.NewLines;
@@ -74,7 +65,8 @@ namespace TestLogClassl
                     var yCoord = server.gameState.acceptgrUiControl.uirect.TranslateToClientRect(server.gameState.clientWidth, server.gameState.clientHeight).Top +
                         (server.gameState.acceptgrUiControl.uirect.TranslateToClientRect(server.gameState.clientWidth, server.gameState.clientHeight).Height / 2);
                     RosController.SetCursorPos((int)xCoord, (int)yCoord);
-                    server.rosController.inputSimulator.Mouse.LeftButtonClick();                    
+                    server.rosController.inputSimulator.Mouse.LeftButtonClick();
+                    server.sendMessage("Pause");
                     Thread.Sleep(1500);                   
                 }
 
@@ -94,7 +86,7 @@ namespace TestLogClassl
 
                 if (server.gameState.firstlevelRift & !server.rosController.enteredRift)
                 {
-                    //unpause after entering rift
+                    //unpause after entering rift and reinit variables
                     Thread.Sleep(1500);
                     server.rosController.enteredRift = true;
                     server.rosController.Unpause();
@@ -106,10 +98,12 @@ namespace TestLogClassl
                 {   
                     //set Urshi state
                     server.rosController.didUrshi = true;
-                }
-                else
-                {
-                    server.rosController.didUrshi = false;
+                    //send have urushi to other if didnt yet
+                    if (!server.rosController.sentUrshi)
+                    {
+                        server.sendMessage("Teleport");
+                        server.rosController.sentUrshi = true;
+                    }
                 }
             }
         }

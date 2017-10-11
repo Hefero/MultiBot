@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnvControllers", "MultiBot\EnvControllers.csproj", "{88977AD8-E426-433D-A5A9-7E930737A166}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestLogClass", "TestLogClass\TestLogClass\TestLogClass.csproj", "{3B420571-DE2E-4735-8EDE-757C772F021B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultibotPrograms", "TestLogClass\TestLogClass\MultibotPrograms.csproj", "{3B420571-DE2E-4735-8EDE-757C772F021B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

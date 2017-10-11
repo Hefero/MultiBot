@@ -34,6 +34,7 @@ namespace EnvControllers
         public bool otherVendorLoopDone { get; set; }
         public bool didUrshi { get; set; }
         public bool enteredRift { get; set; }
+        public bool sentUrshi { get; set; }
 
         public void InitVariables()
         {
@@ -41,6 +42,7 @@ namespace EnvControllers
             vendorLoopDone = false;
             otherVendorLoopDone = false;
             didUrshi = false;
+            sentUrshi = false;
         }
 
         public void Pause()

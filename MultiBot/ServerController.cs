@@ -104,7 +104,12 @@ namespace EnvControllers
                 System.Threading.Thread.Sleep(800);
                 if (gameState.leavegameUiVisible == true)
                 {
-                    //click it
+                    var xCoord = gameState.leavegameUiControl.uirect.TranslateToClientRect(gameState.clientWidth, gameState.clientHeight).Left +
+                        (gameState.leavegameUiControl.uirect.TranslateToClientRect(gameState.clientWidth, gameState.clientHeight).Width / 2);
+                    var yCoord = gameState.leavegameUiControl.uirect.TranslateToClientRect(gameState.clientWidth,gameState.clientHeight).Top +
+                        (gameState.leavegameUiControl.uirect.TranslateToClientRect(gameState.clientWidth, gameState.clientHeight).Height / 2);
+                    RosController.SetCursorPos((int)xCoord, (int)yCoord);
+                    rosController.inputSimulator.Mouse.LeftButtonClick();
                     System.Threading.Thread.Sleep(800);
                 }
                 if (gameState.inMenu == true)
