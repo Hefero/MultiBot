@@ -70,11 +70,13 @@ namespace EnvControllers
                 {
                     inGame = false;
                     inMenu = true;
+                    isLoading = false;
                 }
                 else
                 {
                     inGame = true;
                     inMenu = false;
+                    isLoading = true;
                 }
             }
             this.snapshot = _snapshot;
@@ -86,10 +88,10 @@ namespace EnvControllers
         public void UpdateGameState()
         {
             UpdateSnapshot();
-            var update0 = openriftUiVisible;
+            var update0 = openriftUiVisible;    //no use yet
             var update1 = acceptgrUiVisible;
-            var update2 = urshiUiVisible;
-            var update3 = grcompleteUiVisible;
+            var update2 = urshiUiVisible;       //no use yet
+            var update3 = grcompleteUiVisible; //to do
             var update4 = confirmationUiVisible;
             var update5 = vendorUiVisible;
             var update6 = leavegameUiVisible;
@@ -291,6 +293,7 @@ namespace EnvControllers
         //State Properties
         public bool inGame { get; set; }
         public bool inMenu { get; set; }
+        public bool isLoading { get; set; }
 
 
     }

@@ -24,10 +24,10 @@ namespace EnvControllers
     public class RosController
     {
         public RosController(string logPath) {            
-            rosLog = new LogFile(logPath);
+            rosLog = new LogFile(logPath);            
             enteredRift = false;
             InitVariables();
-        }
+        }        
         public LogFile rosLog { get; set; }
         public bool paused { get; set; }
         public bool vendorLoopDone { get; set; }
@@ -59,10 +59,6 @@ namespace EnvControllers
                 paused = true;
                 Thread.Sleep(100);
             }
-            else
-            {
-                //throw new System.ArgumentException("Trying to pause but already paused");
-            }
         }
         public void Unpause()
         {
@@ -74,10 +70,6 @@ namespace EnvControllers
                 SendF6();
                 paused = false;
                 Thread.Sleep(100);
-            }
-            else
-            {
-                //throw new System.ArgumentException("Trying to unpause but already unpaused");
             }
         }
         [DllImport("user32.dll")]
@@ -91,7 +83,29 @@ namespace EnvControllers
         [DllImport("user32.dll")]
         public static extern void keybd_event(byte bVk, byte bScan, int dwFlags, int dwExtraInfo);
         [DllImport("user32.dll")]
-        static extern IntPtr GetForegroundWindow();
+        public static extern IntPtr GetForegroundWindow();
+        [DllImport("user32.dll", SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        public static extern bool GetWindowRect(IntPtr hWnd, ref RECT lpRect);
+        [StructLayout(LayoutKind.Sequential)]
+        public struct RECT
+        {
+            public int Left;
+            public int Top;
+            public int Right;
+            public int Bottom;
+
+            public int Width
+            {
+                get { return Right - Left; }
+            }
+
+            public int Height
+            {
+                get { return Bottom - Top; }
+            }
+
+        }
 
         [Flags]
         public enum MouseEventFlags
@@ -112,6 +126,15 @@ namespace EnvControllers
             mouse_event((int)(MouseEventFlags.LEFTDOWN), 0, 0, 0, 0);
             Thread.Sleep(100);
             mouse_event((int)(MouseEventFlags.LEFTUP), 0, 0, 0, 0);
+            Thread.Sleep(100);
+        }
+
+        public static void RightClick()
+        {
+            Thread.Sleep(100);
+            mouse_event((int)(MouseEventFlags.RIGHTDOWN), 0, 0, 0, 0);
+            Thread.Sleep(100);
+            mouse_event((int)(MouseEventFlags.RIGHTUP), 0, 0, 0, 0);
             Thread.Sleep(100);
         }
 

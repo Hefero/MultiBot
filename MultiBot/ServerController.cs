@@ -22,6 +22,7 @@ using Enigma.D3.MemoryModel.Controls;
 using static Enigma.D3.MemoryModel.Core.UXHelper;
 using System.Net.Sockets;
 using System.Diagnostics;
+using static EnvControllers.RosController;
 
 namespace EnvControllers
 {
@@ -36,8 +37,12 @@ namespace EnvControllers
             tcpServer.ClientConnected += (sender, msg) => {
                 ClientConnected(sender, msg);
             };
-        }
+            RECT _rct = new RECT();
+            GetWindowRect(rosbotProcess.MainWindowHandle, ref _rct);
+            rosbotRect = _rct;
 
+        }
+        public RECT rosbotRect { get; set; }
         public Process rosbotProcess { get; set; }
         public SimpleTcpServer tcpServer { get; set; }
         public Message lastMessage { get; set; }
@@ -57,6 +62,9 @@ namespace EnvControllers
         }
         public virtual void ReceivedMessage(object sender, Message msg)
         {
+            while (gameState.isLoading) { //wait for game to leave loading screen
+                gameState.UpdateGameState();
+            }
             lastMessage = msg;
             switch (msg.MessageString.ToString())
             {
@@ -85,6 +93,7 @@ namespace EnvControllers
                         if (this.gameState.haveUrshiActor == false)
                         {
                             Console.WriteLine("Going to Urshi");
+                            TeleportToPlayer1();
                         }
                         break;
                     }
@@ -103,6 +112,12 @@ namespace EnvControllers
                     {
                         Thread.Sleep(1000);
                         this.rosController.otherVendorLoopDone = true;
+                        break;
+                    }
+                case "BeginRosBot":
+                    {
+                        Thread.Sleep(1000);
+                        ClickRosStart();
                         break;
                     }
                 default:
@@ -165,8 +180,45 @@ namespace EnvControllers
                 UnBlockInput();
                 rosController.Unpause();
                 rosController.InitVariables();
-            }
+            }            
         }
+        public void TeleportToPlayer1() {
+            try
+            {
+                Console.WriteLine("Teleport routine started");
+                rosController.Pause();
+                //right click player 1
+                UXControl player1FrameControl = UXHelper.GetControl<UXControl>("Root.NormalLayer.portraits.stack.party_stack.portrait_1.Frame");
+                var xCoord = player1FrameControl.uirect.TranslateToClientRect(gameState.clientWidth, gameState.clientHeight).Left +
+                            (player1FrameControl.uirect.TranslateToClientRect(gameState.clientWidth, gameState.clientHeight).Width / 2);
+                var yCoord = player1FrameControl.uirect.TranslateToClientRect(gameState.clientWidth, gameState.clientHeight).Top +
+                    (player1FrameControl.uirect.TranslateToClientRect(gameState.clientWidth, gameState.clientHeight).Height / 2);
+                RosController.SetCursorPos((int)xCoord, (int)yCoord);
+                RosController.RightClick();
+                Thread.Sleep(100);
+                //left click teleport
+                UXControl teleportOptionUiControl = UXHelper.GetControl<UXControl>("Root.TopLayer.ContextMenus.PlayerContextMenu.PlayerContextMenuContent.PlayerContextMenuList.InGameTeleportToPlayer");
+                xCoord = teleportOptionUiControl.uirect.TranslateToClientRect(gameState.clientWidth, gameState.clientHeight).Left +
+                            (teleportOptionUiControl.uirect.TranslateToClientRect(gameState.clientWidth, gameState.clientHeight).Width / 2);
+                yCoord = teleportOptionUiControl.uirect.TranslateToClientRect(gameState.clientWidth, gameState.clientHeight).Top +
+                    (teleportOptionUiControl.uirect.TranslateToClientRect(gameState.clientWidth, gameState.clientHeight).Height / 2);
+                RosController.SetCursorPos((int)xCoord, (int)yCoord);
+                RosController.LeftClick();
+                Thread.Sleep(6000);
+                rosController.Unpause();
+                Console.WriteLine("Teleport routine finished");
+            }
+            catch {  }
+        }
+        public void ClickRosStart()
+        {
+            SetForegroundWindow(rosbotProcess.MainWindowHandle);
+            var xCoord = rosbotRect.Right - (0.15*rosbotRect.Width);
+            var yCoord = rosbotRect.Bottom - (0.07*rosbotRect.Height);
+            RosController.SetCursorPos((int)xCoord, (int)yCoord);
+            RosController.LeftClick();
+        }
+
         public partial class NativeMethods
         {
 

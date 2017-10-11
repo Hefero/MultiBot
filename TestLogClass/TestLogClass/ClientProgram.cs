@@ -46,10 +46,16 @@ namespace MultibotPrograms
             client.StartModules();            
             Console.WriteLine("All modules started: reading game states");
             client.sendMessage("Client started modules");
+            client.ClickRosStart();
+            client.sendMessage("BeginRosBot");
             while (true) {
                 try
                 {
                     client.gameState.UpdateGameState();
+                    while (client.gameState.isLoading)
+                    { //wait for game to leave loading screen
+                        client.gameState.UpdateGameState();
+                    }
                     var newLogLines = client.rosController.rosLog.NewLines;
 
                     if (LogFile.LookForString(newLogLines, "Vendor Loop Done") & !client.rosController.vendorLoopDone)
