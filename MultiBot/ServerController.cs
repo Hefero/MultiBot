@@ -86,14 +86,19 @@ namespace EnvControllers
                         }
                         break;
                     }
-                case "Vendor Loop Done":
+                case "Server Vendor Loop Done":
                     {
                         this.rosController.otherVendorLoopDone = true;
                         if (rosController.vendorLoopDone)
                         {
-                            Console.WriteLine("Unpausing: my Vendor Loop is done and received Vendor Loop done");
+                            Console.WriteLine("Unpausing: Client Vendor Loop is done and received Vendor Loop done from server");
                             rosController.Unpause();                            
                         }
+                        break;
+                    }
+                case "Client Vendor Loop Done":
+                    {
+                        this.rosController.otherVendorLoopDone = true;
                         break;
                     }
                 default:

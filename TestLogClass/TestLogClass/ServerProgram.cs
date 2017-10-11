@@ -34,6 +34,7 @@ namespace MultibotPrograms
             server.pathToLogFile = pathToFile;
             Console.WriteLine("Starting Server TCP");
             server.Start();
+            Console.WriteLine("Starting Game Modules");
             server.StartModules();
             Console.WriteLine("All modules started: reading game states");
             server.sendMessage("Server started modules");
@@ -45,12 +46,9 @@ namespace MultibotPrograms
                     //pause after vendor loop done
                     server.rosController.vendorLoopDone = true;
                     server.rosController.enteredRift = false;
-                    server.sendMessage("Vendor Loop Done");
-                    Console.WriteLine("Vendor Loop Done Detected");
-                    if (!server.rosController.otherVendorLoopDone)
-                    {
-                        server.rosController.Pause();
-                    }
+                    server.sendMessage("Server Vendor Loop Done");
+                    Console.WriteLine("Vendor Loop Done Detected, server Always Pause here");
+                    server.rosController.Pause();
                     Thread.Sleep(100);
                 }
 
@@ -73,7 +71,7 @@ namespace MultibotPrograms
                     RosController.SetCursorPos((int)xCoord, (int)yCoord);
                     server.rosController.inputSimulator.Mouse.LeftButtonClick();                    
                     Console.WriteLine("Accept Rift Dialog Detected: Click Cancel");
-                    Thread.Sleep(1500);                   
+                    Thread.Sleep(100);                   
                 }
 
                 if (server.gameState.cancelgriftUiVisible)
