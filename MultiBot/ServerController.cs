@@ -95,7 +95,7 @@ namespace EnvControllers
                     }
                 case "Teleport":
                     {
-                        if (this.gameState.haveUrshiActor == false)
+                        if (gameState.haveUrshiActor == false)
                         {
                             Console.WriteLine("Going to Urshi");
                             TeleportToPlayer1();
@@ -105,7 +105,7 @@ namespace EnvControllers
                 case "Server Vendor Loop Done":
                     {
                         Thread.Sleep(1000);
-                        this.rosController.otherVendorLoopDone = true;
+                        rosController.otherVendorLoopDone = true;
                         if (rosController.vendorLoopDone)
                         {
                             Console.WriteLine("Unpausing: Client Vendor Loop is done and received Vendor Loop done from server");
@@ -116,7 +116,7 @@ namespace EnvControllers
                 case "Client Vendor Loop Done":
                     {
                         Thread.Sleep(1000);
-                        this.rosController.otherVendorLoopDone = true;
+                        rosController.otherVendorLoopDone = true;
                         break;
                     }
                 case "BeginRosBot":
@@ -129,14 +129,14 @@ namespace EnvControllers
                         Console.WriteLine(msg.MessageString.ToString());
                     break;
             }
-            String timeStamp = RosController.GetTimestamp(DateTime.Now);
+            String timeStamp = GetTimestamp(DateTime.Now);
             Console.WriteLine(timeStamp + " Received: " + msg.MessageString.ToString());
         }
         public virtual void sendMessage(string message)
         {
             lastSendMessage = message;
             tcpServer.BroadcastLine(message);
-            String timeStamp = RosController.GetTimestamp(DateTime.Now);
+            String timeStamp = GetTimestamp(DateTime.Now);
             Console.WriteLine(timeStamp + "Sending message: " + message);
         }
         public void GoToMenu() {
@@ -145,36 +145,36 @@ namespace EnvControllers
                 rosController.Pause();                
                 Console.WriteLine("Go to menu routine started");
                 Console.WriteLine("First ESC and try to click");                
-                RosController.SendEscape();                
+                SendEscape();                
                 if (gameState.leavegameUiVisible == true)
                 {
                     var xCoord = gameState.leavegameUiControl.uirect.TranslateToClientRect(gameState.clientWidth, gameState.clientHeight).Left +
                         (gameState.leavegameUiControl.uirect.TranslateToClientRect(gameState.clientWidth, gameState.clientHeight).Width / 2);
                     var yCoord = gameState.leavegameUiControl.uirect.TranslateToClientRect(gameState.clientWidth, gameState.clientHeight).Top +
                         (gameState.leavegameUiControl.uirect.TranslateToClientRect(gameState.clientWidth, gameState.clientHeight).Height / 2);
-                    RosController.SetCursorPos((int)xCoord, (int)yCoord);
-                    RosController.LeftClick();
+                    SetCursorPos((int)xCoord, (int)yCoord);
+                    LeftClick();
                     Console.WriteLine("Clicked to leave");
                 }
                 else
                 {
                     Console.WriteLine("Second ESC and try to click");
-                    RosController.SendEscape();                    
+                    SendEscape();                    
                     if (gameState.leavegameUiVisible == true)
                     {
                         var xCoord = gameState.leavegameUiControl.uirect.TranslateToClientRect(gameState.clientWidth, gameState.clientHeight).Left +
                             (gameState.leavegameUiControl.uirect.TranslateToClientRect(gameState.clientWidth, gameState.clientHeight).Width / 2);
                         var yCoord = gameState.leavegameUiControl.uirect.TranslateToClientRect(gameState.clientWidth, gameState.clientHeight).Top +
                             (gameState.leavegameUiControl.uirect.TranslateToClientRect(gameState.clientWidth, gameState.clientHeight).Height / 2);
-                        RosController.SetCursorPos((int)xCoord, (int)yCoord);
-                        RosController.LeftClick();
+                        SetCursorPos((int)xCoord, (int)yCoord);
+                        LeftClick();
                         Console.WriteLine("Clicked to leave");                        
                     }
                 }
                 Thread.Sleep(200);
                 BlockInput();
                 Console.WriteLine("Sleeping 11s");
-                Thread.Sleep(13500);
+                Thread.Sleep(11500);
                 UnBlockInput();
                 rosController.Unpause();
                 rosController.InitVariables();
@@ -193,22 +193,22 @@ namespace EnvControllers
                 Console.WriteLine("Teleport routine started");
                 rosController.Pause();
                 //right click player 1
-                UXControl player1FrameControl = UXHelper.GetControl<UXControl>("Root.NormalLayer.portraits.stack.party_stack.portrait_1.Frame");
+                UXControl player1FrameControl = GetControl<UXControl>("Root.NormalLayer.portraits.stack.party_stack.portrait_1.Frame");
                 var xCoord = player1FrameControl.uirect.TranslateToClientRect(gameState.clientWidth, gameState.clientHeight).Left +
                             (player1FrameControl.uirect.TranslateToClientRect(gameState.clientWidth, gameState.clientHeight).Width / 2);
                 var yCoord = player1FrameControl.uirect.TranslateToClientRect(gameState.clientWidth, gameState.clientHeight).Top +
                     (player1FrameControl.uirect.TranslateToClientRect(gameState.clientWidth, gameState.clientHeight).Height / 2);
-                RosController.SetCursorPos((int)xCoord, (int)yCoord);
-                RosController.RightClick();
+                SetCursorPos((int)xCoord, (int)yCoord);
+                RightClick();
                 Thread.Sleep(100);
                 //left click teleport
-                UXControl teleportOptionUiControl = UXHelper.GetControl<UXControl>("Root.TopLayer.ContextMenus.PlayerContextMenu.PlayerContextMenuContent.PlayerContextMenuList.InGameTeleportToPlayer");
+                UXControl teleportOptionUiControl = GetControl<UXControl>("Root.TopLayer.ContextMenus.PlayerContextMenu.PlayerContextMenuContent.PlayerContextMenuList.InGameTeleportToPlayer");
                 xCoord = teleportOptionUiControl.uirect.TranslateToClientRect(gameState.clientWidth, gameState.clientHeight).Left +
                             (teleportOptionUiControl.uirect.TranslateToClientRect(gameState.clientWidth, gameState.clientHeight).Width / 2);
                 yCoord = teleportOptionUiControl.uirect.TranslateToClientRect(gameState.clientWidth, gameState.clientHeight).Top +
                     (teleportOptionUiControl.uirect.TranslateToClientRect(gameState.clientWidth, gameState.clientHeight).Height / 2);
-                RosController.SetCursorPos((int)xCoord, (int)yCoord);
-                RosController.LeftClick();
+                SetCursorPos((int)xCoord, (int)yCoord);
+                LeftClick();
                 Thread.Sleep(6000);
                 rosController.Unpause();
                 Console.WriteLine("Teleport routine finished");
@@ -221,44 +221,10 @@ namespace EnvControllers
             Thread.Sleep(100);
             var xCoord = rosbotRect.Right - (0.15*rosbotRect.Width);
             var yCoord = rosbotRect.Bottom - (0.07*rosbotRect.Height);
-            RosController.SetCursorPos((int)xCoord, (int)yCoord);
+            SetCursorPos((int)xCoord, (int)yCoord);
             Thread.Sleep(100);
-            RosController.LeftClick();
-        }
-        public void FocusProcess(IntPtr hWnd)
-        {
-            ShowWindowAsync(hWnd, SW_RESTORE);
-            Thread.Sleep(100);
-            SetForegroundWindow(hWnd);
-            Thread.Sleep(100);
+            LeftClick();
         }
 
-        public partial class NativeMethods
-        {
-
-            /// Return Type: BOOL->int
-            ///fBlockIt: BOOL->int
-            [System.Runtime.InteropServices.DllImportAttribute("user32.dll", EntryPoint = "BlockInput")]
-            [return: System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.Bool)]
-            public static extern bool BlockInput([System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.Bool)] bool fBlockIt);
-        }
-        public static void BlockInput()
-        {
-            try
-            {
-                NativeMethods.BlockInput(true);
-                Console.WriteLine("Blocking inputs");
-            }
-            catch { }
-        }
-        public static void UnBlockInput()
-        {
-            try
-            {
-                NativeMethods.BlockInput(false);
-                Console.WriteLine("Unblocking inputs");
-            }
-            catch { }
-        }
     }
 }

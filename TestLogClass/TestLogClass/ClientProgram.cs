@@ -8,12 +8,13 @@ using EnvControllers;
 using SimpleTCP;
 using System.IO;
 using System.Diagnostics;
+using static Enigma.D3.MemoryModel.Core.UXHelper;
 
 namespace MultibotPrograms
 {
-    class ClientProgram
+    public class ClientProgram
     {
-        static void Main(string[] args)
+        public ClientProgram()
         {
             Console.WriteLine("Server Ip: "); // Prompt
             string serveripInput = Console.ReadLine();
@@ -64,7 +65,17 @@ namespace MultibotPrograms
                         Console.WriteLine("Vendor Loop Done Detected");
                         if (!client.rosController.otherVendorLoopDone)
                         {
-                            client.rosController.Pause();
+                            bool isRiftStarted = false;
+                            try //check for rift started for pausing
+                            {
+                                UXControl riftStartedUiControl = GetControl<UXControl>("Root.NormalLayer.eventtext_bkgrnd.eventtext_region.stackpanel.rift_wrapper");
+                                isRiftStarted = riftStartedUiControl.IsVisible();
+                            }
+                            catch { isRiftStarted = false; }
+                            if (!isRiftStarted)
+                            {
+                                client.rosController.Pause();
+                            }
                         }
                         Thread.Sleep(100);
                     }
@@ -79,10 +90,10 @@ namespace MultibotPrograms
 
                     if (client.gameState.inMenu & client.rosController.failed)
                     {
-                        ServerController.BlockInput();
-                        Thread.Sleep(13500);
+                        RosController.BlockInput();
+                        Thread.Sleep(15000);
                         client.rosController.InitVariables();
-                        ServerController.UnBlockInput();
+                        RosController.UnBlockInput();
                     }
 
                     if (client.gameState.acceptgrUiVisible & client.rosController.vendorLoopDone)

@@ -7,12 +7,14 @@ using System.Threading.Tasks;
 using EnvControllers;
 using System.IO;
 using System.Diagnostics;
+using Enigma.D3.MemoryModel.Core;
+using static Enigma.D3.MemoryModel.Core.UXHelper;
 
 namespace MultibotPrograms
 {
-    class ServerProgram
+    public class ServerProgram
     {
-        static void Main(string[] args)
+        public ServerProgram()
         {
             Console.WriteLine("Choose Port: "); // Prompt
             int serverportInput = Convert.ToInt32(Console.ReadLine());
@@ -41,6 +43,11 @@ namespace MultibotPrograms
                         server.gameState.UpdateGameState();
                     }
 
+                    while (server.gameState.inMenu & server.rosController.failed)
+                    { //wait for game to leave menu screen (but not from leaving after failed)
+                       server.gameState.UpdateGameState();
+                    }
+
                     var newLogLines = server.rosController.rosLog.NewLines;
 
                     if (LogFile.LookForString(newLogLines, "Vendor Loop Done") & !server.rosController.vendorLoopDone)
@@ -50,7 +57,16 @@ namespace MultibotPrograms
                         server.rosController.enteredRift = false;
                         server.sendMessage("Server Vendor Loop Done");
                         Console.WriteLine("Vendor Loop Done Detected, server Always Pause here");
-                        server.rosController.Pause();
+                        bool isRiftStarted = false;
+                        try //check for rift started for pausing
+                        {
+                            UXControl riftStartedUiControl = GetControl<UXControl>("Root.NormalLayer.eventtext_bkgrnd.eventtext_region.stackpanel.rift_wrapper");
+                            isRiftStarted = riftStartedUiControl.IsVisible();
+                        }
+                        catch { isRiftStarted = false; }
+                        if (!isRiftStarted) {
+                            server.rosController.Pause();
+                        }
                     }
 
                     if (LogFile.LookForString(newLogLines, "Next rift in different") & !server.gameState.inMenu)
@@ -63,10 +79,10 @@ namespace MultibotPrograms
 
                     if (server.gameState.inMenu & server.rosController.failed)
                     {
-                        ServerController.BlockInput();
-                        Thread.Sleep(135000);
+                        RosController.BlockInput();
+                        Thread.Sleep(150000);
                         server.rosController.InitVariables();
-                        ServerController.UnBlockInput();
+                        RosController.UnBlockInput();
                     }
 
                     if (server.gameState.acceptgrUiVisible)

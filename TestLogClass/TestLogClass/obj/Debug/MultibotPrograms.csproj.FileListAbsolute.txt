@@ -26,3 +26,7 @@ C:\Users\GuilhermeMarques\source\repos\MultiBot\TestLogClass\TestLogClass\bin\De
 C:\Users\GuilhermeMarques\source\repos\MultiBot\TestLogClass\TestLogClass\bin\Debug\Enigma.D3.MemoryModel.dll
 C:\Users\GuilhermeMarques\source\repos\MultiBot\TestLogClass\TestLogClass\bin\Debug\Enigma.D3.ApplicationModel.pdb
 C:\Users\GuilhermeMarques\source\repos\MultiBot\TestLogClass\TestLogClass\bin\Debug\Enigma.D3.MemoryModel.pdb
+C:\Users\GuilhermeMarques\source\repos\MultiBot\TestLogClass\TestLogClass\bin\Debug\MultibotPrograms.exe.manifest
+C:\Users\GuilhermeMarques\source\repos\MultiBot\TestLogClass\TestLogClass\bin\Debug\MultibotPrograms.application
+C:\Users\GuilhermeMarques\source\repos\MultiBot\TestLogClass\TestLogClass\obj\Debug\MultibotPrograms.exe.manifest
+C:\Users\GuilhermeMarques\source\repos\MultiBot\TestLogClass\TestLogClass\obj\Debug\MultibotPrograms.application

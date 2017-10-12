@@ -22,8 +22,8 @@ namespace EnvControllers
     public class RosController
     {
         public RosController(string logPath) {            
-            rosLog = new LogFile(logPath);            
-            enteredRift = false;
+            rosLog = new LogFile(logPath);
+            enteredRift = false; // cant go inside Init else infite loop for firstfloor
             InitVariables();
         }        
         public LogFile rosLog { get; set; }
@@ -36,7 +36,7 @@ namespace EnvControllers
         public bool failed { get; set; }
 
         public void InitVariables()
-        {
+        {            
             paused = false;
             vendorLoopDone = false;
             otherVendorLoopDone = false;
@@ -54,7 +54,7 @@ namespace EnvControllers
                 String timeStamp = GetTimestamp(DateTime.Now);
                 Console.WriteLine(timeStamp + " Pausing");
                 SendF6();
-                paused = true;
+                paused = true;                
                 Thread.Sleep(100);
             }
         }
@@ -167,9 +167,46 @@ namespace EnvControllers
             keybd_event(VK_F6, 0, KEYEVENTF_KEYUP, 0);
             Thread.Sleep(100);
         }
+
         public static String GetTimestamp(DateTime value)
         {
             return value.ToString("yyyy,MM/dd,HH:mm:ss.ffff");
+        }
+
+        public static void FocusProcess(IntPtr hWnd)
+        {
+            ShowWindowAsync(hWnd, SW_RESTORE);
+            Thread.Sleep(100);
+            SetForegroundWindow(hWnd);
+            Thread.Sleep(100);
+        }
+
+        public partial class NativeMethods
+        {
+
+            /// Return Type: BOOL->int
+            ///fBlockIt: BOOL->int
+            [System.Runtime.InteropServices.DllImportAttribute("user32.dll", EntryPoint = "BlockInput")]
+            [return: System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.Bool)]
+            public static extern bool BlockInput([System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.Bool)] bool fBlockIt);
+        }
+        public static void BlockInput()
+        {
+            try
+            {
+                NativeMethods.BlockInput(true);
+                Console.WriteLine("Blocking inputs");
+            }
+            catch { }
+        }
+        public static void UnBlockInput()
+        {
+            try
+            {
+                NativeMethods.BlockInput(false);
+                Console.WriteLine("Unblocking inputs");
+            }
+            catch { }
         }
     }
 }
