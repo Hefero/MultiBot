@@ -35,16 +35,18 @@ namespace EnvControllers
             tcpServer.ClientConnected += (sender, msg) => {
                 ClientConnected(sender, msg);
             };
-            FocusRosBot();
+            FocusProcess(rosbotProcess.MainWindowHandle);
             RECT _rct = new RECT();
             GetWindowRect(rosbotProcess.MainWindowHandle, ref _rct);
             while (_rct.Left <= 0 | _rct.Right <= 0 | _rct.Bottom <= 0 | _rct.Top <= 0)
             {
-                FocusRosBot();
+                FocusProcess(rosbotProcess.MainWindowHandle);
                 GetWindowRect(rosbotProcess.MainWindowHandle, ref _rct);
             }
             rosbotRect = _rct;
+            FocusProcess(multibotProcess);
         }
+        public IntPtr multibotProcess { get; set; }
         public RECT rosbotRect { get; set; }
         public Process rosbotProcess { get; set; }
         public SimpleTcpServer tcpServer { get; set; }
@@ -215,7 +217,7 @@ namespace EnvControllers
         }
         public void ClickRosStart()
         {
-            FocusRosBot();
+            FocusProcess(rosbotProcess.MainWindowHandle);
             Thread.Sleep(100);
             var xCoord = rosbotRect.Right - (0.15*rosbotRect.Width);
             var yCoord = rosbotRect.Bottom - (0.07*rosbotRect.Height);
@@ -223,11 +225,11 @@ namespace EnvControllers
             Thread.Sleep(100);
             RosController.LeftClick();
         }
-        public void FocusRosBot()
+        public void FocusProcess(IntPtr hWnd)
         {
-            ShowWindowAsync(rosbotProcess.MainWindowHandle, SW_RESTORE);
+            ShowWindowAsync(hWnd, SW_RESTORE);
             Thread.Sleep(100);
-            SetForegroundWindow(rosbotProcess.MainWindowHandle);
+            SetForegroundWindow(hWnd);
             Thread.Sleep(100);
         }
 

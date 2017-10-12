@@ -29,15 +29,16 @@ namespace EnvControllers
             tcpClient.DelimiterDataReceived += (sender, msg) => {
                 ReceivedMessage(sender, msg);
             };
-            FocusRosBot();
+            FocusProcess(rosbotProcess.MainWindowHandle);
             RECT _rct = new RECT();
             GetWindowRect(rosbotProcess.MainWindowHandle, ref _rct);
             while (_rct.Left <= 0 | _rct.Right <= 0 | _rct.Bottom <= 0 | _rct.Top <= 0)
             {
-                FocusRosBot();
+                FocusProcess(rosbotProcess.MainWindowHandle);
                 GetWindowRect(rosbotProcess.MainWindowHandle, ref _rct);
             }
             rosbotRect = _rct;
+            FocusProcess(multibotProcess);
         }
         public SimpleTcpClient tcpClient { get; set; }
         public string serverip { get; set; }

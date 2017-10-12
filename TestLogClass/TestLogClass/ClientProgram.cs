@@ -19,6 +19,7 @@ namespace MultibotPrograms
             string serveripInput = Console.ReadLine();
             Console.WriteLine("Server Port: "); // Prompt
             int serverportInput = Convert.ToInt32(Console.ReadLine());
+            IntPtr multibotProcess = RosController.GetForegroundWindow();
 
             string pathToFile = Path.Combine(Environment.ExpandEnvironmentVariables("%userprofile%"), "Documents\\RoS-BoT\\Logs\\logs.txt");
             Process RosBotProcess = Win32Processes.GetProcessesLockingFile(pathToFile).FirstOrDefault();
@@ -28,6 +29,7 @@ namespace MultibotPrograms
             client.serverport = serverportInput;
             client.pathToLogFile = pathToFile;
             client.rosbotProcess = RosBotProcess;
+            client.multibotProcess = multibotProcess;
             Console.WriteLine("Connecting to Server");
             client.Start();
             Console.WriteLine("Starting Game Modules");
