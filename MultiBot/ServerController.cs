@@ -226,12 +226,7 @@ namespace EnvControllers
         public void FocusRosBot()
         {
             SetForegroundWindow(rosbotProcess.MainWindowHandle);
-            IntPtr activeWindow = GetForegroundWindow();
-            while (activeWindow != rosbotProcess.MainWindowHandle)
-            {
-                SetForegroundWindow(rosbotProcess.MainWindowHandle);
-                activeWindow = GetForegroundWindow();
-            }
+            Thread.Sleep(100);
         }
 
         public partial class NativeMethods
