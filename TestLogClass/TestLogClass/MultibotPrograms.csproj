@@ -32,7 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>MultibotPrograms.ClientProgram</StartupObject>
+    <StartupObject>MultibotPrograms.ServerProgram</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Enigma.D3.ApplicationModel">

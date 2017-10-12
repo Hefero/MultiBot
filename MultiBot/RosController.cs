@@ -71,7 +71,10 @@ namespace EnvControllers
             }
         }
         [DllImport("user32.dll")]
-        public static extern bool SetCursorPos(int X, int Y);
+        public static extern bool SetCursorPos(int X, int Y);        
+        [DllImport("user32.dll")]
+        public static extern bool ShowWindowAsync(IntPtr hWnd, int nCmdShow);
+        public const int SW_RESTORE = 9;
         [DllImport("user32.dll")]
         public static extern int SetForegroundWindow(IntPtr hWnd);
         [DllImport("user32.dll")]

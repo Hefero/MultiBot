@@ -225,6 +225,8 @@ namespace EnvControllers
         }
         public void FocusRosBot()
         {
+            ShowWindowAsync(rosbotProcess.MainWindowHandle, SW_RESTORE);
+            Thread.Sleep(100);
             SetForegroundWindow(rosbotProcess.MainWindowHandle);
             Thread.Sleep(100);
         }
