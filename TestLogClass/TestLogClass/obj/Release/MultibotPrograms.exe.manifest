@@ -121,19 +121,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Yxs+4vNzIK1LJR67/C1c7fhJrz+CdDHOGtzdNrnviFA=</dsig:DigestValue>
+        <dsig:DigestValue>rUGCoXCqFgYv2da8TyVshtVc/hBau96UkKoTisbP/4Q=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MultibotPrograms.exe" size="11760">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MultibotPrograms.exe" size="12272">
       <assemblyIdentity name="MultibotPrograms" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>g742v5RTdjbB3T3f/wGfnrXWUnlyB8H45CicOXzlEwc=</dsig:DigestValue>
+        <dsig:DigestValue>QKvF9ntb1tQpr13Nc1fLyOKD6goFHwAIKy1mgXrQBo0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -29,6 +29,7 @@ namespace EnvControllers
                     _snapshot.Update();
                     inGame = true;
                     inMenu = false;
+                    isLoading = false;
                     return _snapshot;
                 }
                 catch
@@ -37,11 +38,13 @@ namespace EnvControllers
                     {
                         inGame = false;
                         inMenu = true;
+                        isLoading = false;
                     }
                     else
                     {
                         inGame = true;
                         inMenu = false;
+                        isLoading = true;
                     }
                     return _snapshot;
                 }
