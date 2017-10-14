@@ -68,6 +68,7 @@
     <Compile Include="LogFile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RosController.cs" />
+    <Compile Include="ScreenController.cs" />
     <Compile Include="ServerController.cs" />
   </ItemGroup>
   <ItemGroup>

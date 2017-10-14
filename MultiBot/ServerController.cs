@@ -26,30 +26,12 @@ namespace EnvControllers
 {
     public class ServerController
     {
-        public virtual void Start()
-        {
-            tcpServer = new SimpleTcpServer().Start(port);
-            tcpServer.DelimiterDataReceived += (sender, msg) => {
-                ReceivedMessage(sender, msg);
-            };
-            tcpServer.ClientConnected += (sender, msg) => {
-                ClientConnected(sender, msg);
-            };
-            FocusProcess(rosbotProcess.MainWindowHandle);
-            RECT _rct = new RECT();
-            GetWindowRect(rosbotProcess.MainWindowHandle, ref _rct);
-            while (_rct.Left <= 0 | _rct.Right <= 0 | _rct.Bottom <= 0 | _rct.Top <= 0)
-            {
-                FocusProcess(rosbotProcess.MainWindowHandle);
-                GetWindowRect(rosbotProcess.MainWindowHandle, ref _rct);
-            }
-            rosbotRect = _rct;
-            FocusProcess(multibotProcess);
-        }
+        public virtual void Start() { }
         public IntPtr multibotProcess { get; set; }
         public RECT rosbotRect { get; set; }
         public Process rosbotProcess { get; set; }
         public SimpleTcpServer tcpServer { get; set; }
+        public SimpleTcpClient tcpClient { get; set; }
         public Message lastMessage { get; set; }
         public RosController rosController { get; set; }
         public GameState gameState { get; set; }
@@ -67,9 +49,6 @@ namespace EnvControllers
         }
         public virtual void ReceivedMessage(object sender, Message msg)
         {
-            while (gameState.isLoading) { //wait for game to leave loading screen
-                gameState.UpdateGameState();
-            }
             lastMessage = msg;
             switch (msg.MessageString.ToString())
             {
@@ -226,5 +205,28 @@ namespace EnvControllers
             LeftClick();
         }
 
+        public void GetRosRect()
+        {
+            FocusProcess(rosbotProcess.MainWindowHandle);
+            RECT _rct = new RECT();
+            GetWindowRect(rosbotProcess.MainWindowHandle, ref _rct);
+            while (_rct.Left <= 0 | _rct.Right <= 0 | _rct.Bottom <= 0 | _rct.Top <= 0)
+            {
+                FocusProcess(rosbotProcess.MainWindowHandle);
+                GetWindowRect(rosbotProcess.MainWindowHandle, ref _rct);
+            }
+            rosbotRect = _rct;
+            FocusProcess(multibotProcess);
+        }
+
+        public void StartServerTCP() {
+            tcpServer = new SimpleTcpServer().Start(port);
+            tcpServer.DelimiterDataReceived += (sender, msg) => {
+                ReceivedMessage(sender, msg);
+            };
+            tcpServer.ClientConnected += (sender, msg) => {
+                ClientConnected(sender, msg);
+            };
+        }
     }
 }

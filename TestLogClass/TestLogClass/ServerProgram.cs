@@ -16,41 +16,49 @@ namespace MultibotPrograms
     {
         public ServerProgram()
         {
-            Console.WriteLine("Choose Port: "); // Prompt
-            int serverportInput = Convert.ToInt32(Console.ReadLine());
+            
             IntPtr multibotProcess = RosController.GetForegroundWindow();
-
             string pathToFile = Path.Combine(Environment.ExpandEnvironmentVariables("%userprofile%"), "Documents\\RoS-BoT\\Logs\\logs.txt");
             Process RosBotProcess = Win32Processes.GetProcessesLockingFile(pathToFile).FirstOrDefault();
             Console.WriteLine("Starting Server Controller");
-            ServerController server = new ServerController();
-            server.port = serverportInput;
+            ServerController server = new ServerController();            
             server.pathToLogFile = pathToFile;
             server.rosbotProcess = RosBotProcess;
             server.multibotProcess = multibotProcess;
+            server.GetRosRect();
+            Console.WriteLine("Choose Port: "); // Prompt
+            int serverportInput = Convert.ToInt32(Console.ReadLine());
+            server.port = serverportInput;
             Console.WriteLine("Starting Server TCP");
-            server.Start();
+            bool serverStarting = true;
+            while (serverStarting) {
+                try
+                {
+                    server.StartServerTCP();
+                    try
+                    {
+                        serverStarting = !server.tcpServer.IsStarted;
+                    }
+                    catch
+                    { serverStarting = true; }
+                }
+                catch
+                {
+                    Console.WriteLine("Failed to start server TCP, press key to try again");
+                    Console.ReadLine();
+                }
+            }
             Console.WriteLine("Starting Game Modules");
             server.StartModules();            
             Console.WriteLine("All modules started: reading game states");
-            Console.WriteLine("Ready to start");
+            Console.WriteLine("Server Ready to start, client can connect and start now");
             while (true) {
                 try
                 {
                     server.gameState.UpdateGameState();
-                    while (server.gameState.isLoading)
-                    { //wait for game to leave loading screen
-                        server.gameState.UpdateGameState();
-                    }
-
-                    while (server.gameState.inMenu & server.rosController.failed)
-                    { //wait for game to leave menu screen (but not from leaving after failed)
-                       server.gameState.UpdateGameState();
-                    }
-
                     var newLogLines = server.rosController.rosLog.NewLines;
 
-                    if (LogFile.LookForString(newLogLines, "Vendor Loop Done") & !server.rosController.vendorLoopDone)
+                    if (LogFile.LookForString(newLogLines, "Vendor Loop Done") & !server.rosController.vendorLoopDone & !server.gameState.inMenu)
                     {
                         //pause after vendor loop done
                         server.rosController.vendorLoopDone = true;
@@ -85,7 +93,7 @@ namespace MultibotPrograms
                         RosController.UnBlockInput();
                     }
 
-                    if (server.gameState.acceptgrUiVisible)
+                    if (server.gameState.acceptgrUiVisible & !server.gameState.inMenu)
                     {
                         // grift accept request: always click cancel
                         server.rosController.enteredRift = false;
@@ -98,7 +106,7 @@ namespace MultibotPrograms
                         Console.WriteLine("Accept Rift Dialog Detected: Click Cancel");
                     }
 
-                    if (server.gameState.cancelgriftUiVisible)
+                    if (server.gameState.cancelgriftUiVisible & !server.gameState.inMenu)
                     {
                         //click cancel ok
                         server.rosController.Pause();
@@ -111,7 +119,7 @@ namespace MultibotPrograms
                         Console.WriteLine("Rift Cancelled Dialog Detected: Click Cancel");
                     }
 
-                    if (server.gameState.firstlevelRift & !server.rosController.enteredRift)
+                    if (server.gameState.firstlevelRift & !server.rosController.enteredRift & !server.gameState.inMenu)
                     {
                         //unpause after entering rift and reinit variables
                         Thread.Sleep(1500);
@@ -121,7 +129,7 @@ namespace MultibotPrograms
                         Console.WriteLine("First Floor Rift Detected: Unpausing and Reiniting variables");
                     }
 
-                    if (server.gameState.haveUrshiActor)
+                    if (server.gameState.haveUrshiActor & !server.gameState.inMenu) 
                     {
                         //set Urshi state
                         server.rosController.didUrshi = true;

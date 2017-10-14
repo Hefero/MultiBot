@@ -15,10 +15,12 @@ namespace MultibotPrograms
             int option = Convert.ToInt32(Console.ReadLine());
             if (option == 1)
             {
+                Console.WriteLine("Loading Server Program...");
                 ServerProgram serverProgram = new ServerProgram();
             }
             else
             {
+                Console.WriteLine("Loading Client Program...");
                 ClientProgram clientProgram = new ClientProgram();
             }
         }

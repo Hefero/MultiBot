@@ -16,23 +16,45 @@ namespace MultibotPrograms
     {
         public ClientProgram()
         {
+            
+            IntPtr multibotProcess = RosController.GetForegroundWindow();
+            string pathToFile = Path.Combine(Environment.ExpandEnvironmentVariables("%userprofile%"), "Documents\\RoS-BoT\\Logs\\logs.txt");
+            Process RosBotProcess = Win32Processes.GetProcessesLockingFile(pathToFile).FirstOrDefault();
+            Console.WriteLine("Starting Client controller: Make sure Server is Ready");
+            ClientController client = new ClientController();
+            client.pathToLogFile = pathToFile;
+            client.rosbotProcess = RosBotProcess;
+            client.multibotProcess = multibotProcess;
+            client.GetRosRect();
             Console.WriteLine("Server Ip: "); // Prompt
             string serveripInput = Console.ReadLine();
             Console.WriteLine("Server Port: "); // Prompt
             int serverportInput = Convert.ToInt32(Console.ReadLine());
-            IntPtr multibotProcess = RosController.GetForegroundWindow();
-
-            string pathToFile = Path.Combine(Environment.ExpandEnvironmentVariables("%userprofile%"), "Documents\\RoS-BoT\\Logs\\logs.txt");
-            Process RosBotProcess = Win32Processes.GetProcessesLockingFile(pathToFile).FirstOrDefault();
-            Console.WriteLine("Starting Client controller");
-            ClientController client = new ClientController();
             client.serverip = serveripInput;
             client.serverport = serverportInput;
-            client.pathToLogFile = pathToFile;
-            client.rosbotProcess = RosBotProcess;
-            client.multibotProcess = multibotProcess;
             Console.WriteLine("Connecting to Server");
-            client.Start();
+            bool clientStarting = true;
+            while (clientStarting)
+            {
+                try
+                {
+                    client.Connect();
+                    try
+                    {
+                        clientStarting = !client.tcpClient.TcpClient.Connected;
+                    }
+                    catch { clientStarting = true; }
+                }
+                catch
+                {
+                    Console.WriteLine("Failed to connect to server, press key to try again");
+                    Console.ReadLine();
+                    Console.WriteLine("Server Ip: "); // Prompt
+                    serveripInput = Console.ReadLine();
+                    Console.WriteLine("Server Port: "); // Prompt
+                    serverportInput = Convert.ToInt32(Console.ReadLine());
+                }
+            }
             Console.WriteLine("Starting Game Modules");
             client.StartModules();            
             Console.WriteLine("All modules started: reading game states");
@@ -43,20 +65,9 @@ namespace MultibotPrograms
                 try
                 {
                     client.gameState.UpdateGameState();
-                    while (client.gameState.isLoading)
-                    { //wait for game to leave loading screen
-                        client.gameState.UpdateGameState();
-                    }
-
-                    while (client.gameState.inMenu & !client.rosController.failed)
-                    { //wait for game to leave menu screen (but not from leaving after failed)
-                        client.gameState.UpdateGameState();
-                    }
-
-
                     var newLogLines = client.rosController.rosLog.NewLines;
 
-                    if (LogFile.LookForString(newLogLines, "Vendor Loop Done") & !client.rosController.vendorLoopDone)
+                    if (LogFile.LookForString(newLogLines, "Vendor Loop Done") & !client.rosController.vendorLoopDone & !client.gameState.inMenu)
                     {
                         //pause after vendor loop done
                         client.rosController.vendorLoopDone = true;
@@ -96,7 +107,7 @@ namespace MultibotPrograms
                         RosController.UnBlockInput();
                     }
 
-                    if (client.gameState.acceptgrUiVisible & client.rosController.vendorLoopDone)
+                    if (client.gameState.acceptgrUiVisible & client.rosController.vendorLoopDone & !client.gameState.inMenu)
                     {
                         // click accept grift yes
                         client.rosController.enteredRift = false;
@@ -110,7 +121,7 @@ namespace MultibotPrograms
                         Console.WriteLine("Accept Rift Dialog Detected: Click Accept and Send Pause");
                     }
 
-                    if (client.gameState.cancelgriftUiVisible)
+                    if (client.gameState.cancelgriftUiVisible & !client.gameState.inMenu)
                     {
                         //click cancel ok
                         client.rosController.Pause();
@@ -124,7 +135,7 @@ namespace MultibotPrograms
                         Console.WriteLine("Rift Cancelled Dialog Detected: Pause, Click Cancel, and Send Start");
                     }
 
-                    if (client.gameState.firstlevelRift & !client.rosController.enteredRift)
+                    if (client.gameState.firstlevelRift & !client.rosController.enteredRift & !client.gameState.inMenu)
                     {
                         //unpause after entering rift and reinit variables
                         Thread.Sleep(1500);
@@ -134,7 +145,7 @@ namespace MultibotPrograms
                         Console.WriteLine("First Floor Rift Detected: Unpausing and Reiniting variables");
                     }
 
-                    if (client.gameState.haveUrshiActor)
+                    if (client.gameState.haveUrshiActor & !client.gameState.inMenu)
                     {
                         //set Urshi state
                         client.rosController.didUrshi = true;

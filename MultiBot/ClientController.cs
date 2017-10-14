@@ -23,24 +23,7 @@ namespace EnvControllers
 {
     public class ClientController : ServerController
     {
-        public override void Start()
-        {
-            tcpClient = new SimpleTcpClient().Connect(serverip, serverport);
-            tcpClient.DelimiterDataReceived += (sender, msg) => {
-                ReceivedMessage(sender, msg);
-            };
-            FocusProcess(rosbotProcess.MainWindowHandle);
-            RECT _rct = new RECT();
-            GetWindowRect(rosbotProcess.MainWindowHandle, ref _rct);
-            while (_rct.Left <= 0 | _rct.Right <= 0 | _rct.Bottom <= 0 | _rct.Top <= 0)
-            {
-                FocusProcess(rosbotProcess.MainWindowHandle);
-                GetWindowRect(rosbotProcess.MainWindowHandle, ref _rct);
-            }
-            rosbotRect = _rct;
-            FocusProcess(multibotProcess);
-        }
-        public SimpleTcpClient tcpClient { get; set; }
+        public override void Start() { }        
         public string serverip { get; set; }
         public int serverport { get; set; }
 
@@ -50,6 +33,13 @@ namespace EnvControllers
             tcpClient.WriteLine(message);
             String timeStamp = RosController.GetTimestamp(DateTime.Now);
             Console.WriteLine(timeStamp + "Sending message: " + message);
+        }
+        public void Connect()
+        {
+            tcpClient = new SimpleTcpClient().Connect(serverip, serverport);
+            tcpClient.DelimiterDataReceived += (sender, msg) => {
+                ReceivedMessage(sender, msg);
+            };
         }
     }
 }

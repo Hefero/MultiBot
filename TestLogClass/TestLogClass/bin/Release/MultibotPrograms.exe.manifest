@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Enigma.D3.ApplicationModel.dll" size="28672">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Enigma.D3.ApplicationModel.dll" size="29184">
       <assemblyIdentity name="Enigma.D3.ApplicationModel" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Uv0wcNADjTdkW344pPlLhRP6K3Ax3A/82+X/Az4OvtI=</dsig:DigestValue>
+        <dsig:DigestValue>qeKqBv/TyGxBrWZuiKztySkwOMVywxSl4tuc/I6r39M=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -61,7 +61,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>WRzwECOJZVh6wvGD73oCKw0FJqfi1uTHs8aywLFtteQ=</dsig:DigestValue>
+        <dsig:DigestValue>6/49Xb94pIyVdzOcFOA4NYM81t6RdVh8oGgqMNMjdbI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -73,7 +73,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>512NdbDbWPnAGcrxeV08aTYBNZpMQ3Tz4rWPrafSx4o=</dsig:DigestValue>
+        <dsig:DigestValue>lbjjjGuHl0rq9UTB33wwLsvPsUHlqS2aZ9r0lrH6e4Y=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -85,7 +85,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>xIdBf9k7YZ4f7OezsnALwOcKeGxv4CfBm6DJRmG/OCs=</dsig:DigestValue>
+        <dsig:DigestValue>f/x76EfjYEMDuekCVFKiZ/Gi2OLiB72xoQXJT559ywA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -97,7 +97,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>gGDS2HTa6nqq7inQws9QtKr8k9IAN1CiqVxihjMkQNA=</dsig:DigestValue>
+        <dsig:DigestValue>rhmcu/GdSxFm9mcC41rABFeETlPCYba8zwYoXVtKQQc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -109,31 +109,31 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>pOa/Zv+DXUCjbZiwm6KWT35qtRpcfgFlmKgvPbhoeDc=</dsig:DigestValue>
+        <dsig:DigestValue>z2hZDDPau2cpf3R9gKifma6V0uR7BeXvy+UJG2z7HEs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MultiBot.dll" size="25600">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MultiBot.dll" size="26112">
       <assemblyIdentity name="MultiBot" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>rUGCoXCqFgYv2da8TyVshtVc/hBau96UkKoTisbP/4Q=</dsig:DigestValue>
+        <dsig:DigestValue>mkSw2sM7GdjxPKPX1SyO8+2niVO0+WutCpucDQWQw0M=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MultibotPrograms.exe" size="12272">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MultibotPrograms.exe" size="12784">
       <assemblyIdentity name="MultibotPrograms" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>QKvF9ntb1tQpr13Nc1fLyOKD6goFHwAIKy1mgXrQBo0=</dsig:DigestValue>
+        <dsig:DigestValue>1w99ClhGfKYyhN9CY2dvXLix7d+U5sZsCKfSyy+feU4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
