@@ -104,6 +104,14 @@ namespace EnvControllers
                         ClickRosStart();
                         break;
                     }
+                case "Status Check Code 20":
+                    {
+                        if (rosController.paused)
+                        {
+                            sendMessage("Start");
+                        }
+                        break;
+                    }
                 default:
                         Console.WriteLine(msg.MessageString.ToString());
                     break;

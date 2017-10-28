@@ -31,22 +31,22 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Enigma.D3.ApplicationModel">
-      <HintPath>..\..\..\..\Documents\Enigma.D3-master\Enigma.D3.ApplicationModel\bin\Debug\Enigma.D3.ApplicationModel.dll</HintPath>
+      <HintPath>..\Enigma.D3\Enigma.D3.ApplicationModel\bin\Debug\Enigma.D3.ApplicationModel.dll</HintPath>
     </Reference>
     <Reference Include="Enigma.D3.Assets">
-      <HintPath>..\..\..\..\Documents\Enigma.D3-master\Enigma.D3.ApplicationModel\bin\Debug\Enigma.D3.Assets.dll</HintPath>
+      <HintPath>..\Enigma.D3\Enigma.D3.ApplicationModel\bin\Debug\Enigma.D3.Assets.dll</HintPath>
     </Reference>
     <Reference Include="Enigma.D3.Core">
-      <HintPath>..\..\..\..\Documents\Enigma.D3-master\Enigma.D3.ApplicationModel\bin\Debug\Enigma.D3.Core.dll</HintPath>
+      <HintPath>..\Enigma.D3\Enigma.D3.ApplicationModel\bin\Debug\Enigma.D3.Core.dll</HintPath>
     </Reference>
     <Reference Include="Enigma.D3.MemoryModel">
-      <HintPath>..\..\..\..\Documents\Enigma.D3-master\Enigma.D3.ApplicationModel\bin\Debug\Enigma.D3.MemoryModel.dll</HintPath>
+      <HintPath>..\Enigma.D3\Enigma.D3.ApplicationModel\bin\Debug\Enigma.D3.MemoryModel.dll</HintPath>
     </Reference>
     <Reference Include="Enigma.D3.MemoryModel.Caching">
-      <HintPath>..\..\..\..\Documents\Enigma.D3-master\Enigma.D3.ApplicationModel\bin\Debug\Enigma.D3.MemoryModel.Caching.dll</HintPath>
+      <HintPath>..\Enigma.D3\Enigma.D3.ApplicationModel\bin\Debug\Enigma.D3.MemoryModel.Caching.dll</HintPath>
     </Reference>
     <Reference Include="Enigma.Memory">
-      <HintPath>..\..\..\..\Documents\Enigma.D3-master\Enigma.D3.ApplicationModel\bin\Debug\Enigma.Memory.dll</HintPath>
+      <HintPath>..\Enigma.D3\Enigma.D3.ApplicationModel\bin\Debug\Enigma.Memory.dll</HintPath>
     </Reference>
     <Reference Include="SimpleTCP, Version=1.0.20.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SimpleTCP.1.0.20\lib\net45\SimpleTCP.dll</HintPath>

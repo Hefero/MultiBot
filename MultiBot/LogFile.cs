@@ -15,13 +15,13 @@ namespace EnvControllers
             AllLines = ReadAllLines();
         }
 
-        private List<string> AllLines { get; set; }
+        public List<string> AllLines { get; set; }
 
         private string fileLocation { get; set; }
 
         public List<string> NewLines { get { return GetNewLines(); } set { } }
 
-        private List<string> ReadAllLines()
+        public List<string> ReadAllLines()
         {
             try
             {
