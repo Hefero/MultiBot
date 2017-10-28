@@ -8,7 +8,7 @@ Also dont forget to put a exception on Windows Firewall or disable it.
 
 Only works with 2 players until some details are sorted out
 
-Be sure to try to connect with Client after the Server has started and is ready.
+Be sure to try to connect with Client after the Server has started and is ready. and use the game in english.
 
 Video of it working:
 https://www.youtube.com/watch?v=fYShjKqFG6A
