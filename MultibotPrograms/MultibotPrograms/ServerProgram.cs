@@ -85,7 +85,12 @@ namespace MultibotPrograms
                         server.rosController.failed = true;
                     }
 
-                    if (LogFile.LookForString(newLogLines, "[27] Reseting timeouts") & !server.gameState.inMenu)
+                    if (  LogFile.LookForString(newLogLines, "[20] Reseting timeouts") | LogFile.LookForString(newLogLines, "[21] Reseting timeouts") 
+                        | LogFile.LookForString(newLogLines, "[22] Reseting timeouts") | LogFile.LookForString(newLogLines, "[23] Reseting timeouts") 
+                        | LogFile.LookForString(newLogLines, "[24] Reseting timeouts") | LogFile.LookForString(newLogLines, "[25] Reseting timeouts")
+                        | LogFile.LookForString(newLogLines, "[26] Reseting timeouts") | LogFile.LookForString(newLogLines, "[27] Reseting timeouts") 
+                        | LogFile.LookForString(newLogLines, "[28] Reseting timeouts") | LogFile.LookForString(newLogLines, "[29] Reseting timeouts")
+                        | LogFile.LookForString(newLogLines, "[30] Reseting timeouts"))
                     {
                         //paused detected
                         server.rosController.paused = true;
