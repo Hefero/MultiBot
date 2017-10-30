@@ -69,7 +69,7 @@ namespace MultibotPrograms
                     var allLines = client.rosController.rosLog.AllLines;
 
 
-                    if (LogFile.LookForString(newLogLines, "Vendor Loop Done") & !client.rosController.vendorLoopDone & !client.gameState.inMenu & !client.gameState.isLoading)
+                    if (LogFile.LookForString(newLogLines, "Vendor Loop Done"))
                     {
                         //pause after vendor loop done
                         client.rosController.vendorLoopDone = true;
@@ -93,7 +93,7 @@ namespace MultibotPrograms
                         Thread.Sleep(100);
                     }
 
-                    if (LogFile.LookForString(newLogLines, "Next rift in different") & !client.gameState.inMenu)
+                    if (LogFile.LookForString(newLogLines, "Next rift in different"))
                     {
                         //failure detected
                         client.sendMessage("Go to menu");
@@ -123,9 +123,10 @@ namespace MultibotPrograms
                         client.sendMessage("Status Check Code 20");
                     }
 
-                    if (client.gameState.acceptgrUiVisible & client.rosController.vendorLoopDone & !client.gameState.inMenu & !client.gameState.isLoading)
+                    if (client.gameState.acceptgrUiVisible & client.rosController.vendorLoopDone)
                     {
                         // click accept grift yes
+                        client.rosController.Pause();
                         client.rosController.enteredRift = false;
                         var xCoord = client.gameState.acceptgrUiControl.uirect.TranslateToClientRect(client.gameState.clientWidth, client.gameState.clientHeight).Left +
                             (client.gameState.acceptgrUiControl.uirect.TranslateToClientRect(client.gameState.clientWidth, client.gameState.clientHeight).Width / 2);
@@ -137,7 +138,7 @@ namespace MultibotPrograms
                         Console.WriteLine("Accept Rift Dialog Detected: Click Accept and Send Pause");
                     }
 
-                    if (client.gameState.cancelgriftUiVisible & !client.gameState.inMenu & !client.gameState.isLoading)
+                    if (client.gameState.cancelgriftUiVisible)
                     {
                         //click cancel ok
                         client.rosController.Pause();
@@ -161,7 +162,7 @@ namespace MultibotPrograms
                         Console.WriteLine("First Floor Rift Detected: Unpausing and Reiniting variables");
                     }
 
-                    if (client.gameState.haveUrshiActor & !client.gameState.inMenu & !client.gameState.isLoading)
+                    if (client.gameState.haveUrshiActor)
                     {
                         //set Urshi state
                         client.rosController.didUrshi = true;
@@ -175,6 +176,7 @@ namespace MultibotPrograms
                     }
                     if (client.gameState.aloneInGame)
                     {
+                        Console.WriteLine("InGame Alone Detected: Unpause and Stop application");
                         client.rosController.Unpause();
                         break;
                     }
