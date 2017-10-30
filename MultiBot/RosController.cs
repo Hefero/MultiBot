@@ -43,6 +43,16 @@ namespace EnvControllers
             didUrshi = false;
             sentUrshi = false;
             failed = false;
+            Console.WriteLine("Starting Variables");
+        }
+
+        public void InitVariables_Without_otherVendorLoopDone()
+        {
+            paused = false;
+            vendorLoopDone = false;
+            didUrshi = false;
+            sentUrshi = false;
+            failed = false;
             Console.WriteLine("Restarting Variables");
         }
 
@@ -146,6 +156,7 @@ namespace EnvControllers
         public const int WM_KEYUP = 0x101;
         public const int VK_ESCAPE = 0x1B;
         public const int VK_F6 = 0x75;
+        public const int VK_F7 = 0x76;
         public const int KEYEVENTF_EXTENDEDKEY = 0x0001; //Key down flag
         public const int KEYEVENTF_KEYUP = 0x0002; //Key up flag
 
@@ -165,6 +176,15 @@ namespace EnvControllers
             keybd_event(VK_F6, 0, KEYEVENTF_EXTENDEDKEY, 0);
             Thread.Sleep(100);
             keybd_event(VK_F6, 0, KEYEVENTF_KEYUP, 0);
+            Thread.Sleep(100);
+        }
+
+        public static void SendF7()
+        {
+            Thread.Sleep(100);
+            keybd_event(VK_F7, 0, KEYEVENTF_EXTENDEDKEY, 0);
+            Thread.Sleep(100);
+            keybd_event(VK_F7, 0, KEYEVENTF_KEYUP, 0);
             Thread.Sleep(100);
         }
 

@@ -68,7 +68,8 @@ namespace MultibotPrograms
                     var newLogLines = client.rosController.rosLog.NewLines;
                     var allLines = client.rosController.rosLog.AllLines;
 
-                    if (LogFile.LookForString(newLogLines, "Vendor Loop Done") & !client.rosController.vendorLoopDone & !client.gameState.inMenu)
+
+                    if (LogFile.LookForString(newLogLines, "Vendor Loop Done") & !client.rosController.vendorLoopDone & !client.gameState.inMenu & !client.gameState.isLoading)
                     {
                         //pause after vendor loop done
                         client.rosController.vendorLoopDone = true;
@@ -103,8 +104,8 @@ namespace MultibotPrograms
                     if (client.gameState.inMenu & client.rosController.failed)
                     {
                         RosController.BlockInput();
-                        Console.WriteLine("Sleeping 15s");
-                        Thread.Sleep(15000);
+                        Console.WriteLine("Sleeping 20s");
+                        Thread.Sleep(20000);
                         Console.WriteLine("Done");
                         client.rosController.InitVariables();
                         RosController.UnBlockInput();
@@ -122,7 +123,7 @@ namespace MultibotPrograms
                         client.sendMessage("Status Check Code 20");
                     }
 
-                    if (client.gameState.acceptgrUiVisible & client.rosController.vendorLoopDone & !client.gameState.inMenu)
+                    if (client.gameState.acceptgrUiVisible & client.rosController.vendorLoopDone & !client.gameState.inMenu & !client.gameState.isLoading)
                     {
                         // click accept grift yes
                         client.rosController.enteredRift = false;
@@ -136,7 +137,7 @@ namespace MultibotPrograms
                         Console.WriteLine("Accept Rift Dialog Detected: Click Accept and Send Pause");
                     }
 
-                    if (client.gameState.cancelgriftUiVisible & !client.gameState.inMenu)
+                    if (client.gameState.cancelgriftUiVisible & !client.gameState.inMenu & !client.gameState.isLoading)
                     {
                         //click cancel ok
                         client.rosController.Pause();
@@ -150,7 +151,7 @@ namespace MultibotPrograms
                         Console.WriteLine("Rift Cancelled Dialog Detected: Pause, Click Cancel, and Send Start");
                     }
 
-                    if (client.gameState.firstlevelRift & !client.rosController.enteredRift & !client.gameState.inMenu)
+                    if (client.gameState.firstlevelRift & !client.rosController.enteredRift & !client.gameState.inMenu & !client.gameState.isLoading)
                     {
                         //unpause after entering rift and reinit variables
                         Thread.Sleep(1500);
@@ -160,7 +161,7 @@ namespace MultibotPrograms
                         Console.WriteLine("First Floor Rift Detected: Unpausing and Reiniting variables");
                     }
 
-                    if (client.gameState.haveUrshiActor & !client.gameState.inMenu)
+                    if (client.gameState.haveUrshiActor & !client.gameState.inMenu & !client.gameState.isLoading)
                     {
                         //set Urshi state
                         client.rosController.didUrshi = true;

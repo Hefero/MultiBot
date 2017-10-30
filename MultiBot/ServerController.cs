@@ -68,14 +68,17 @@ namespace EnvControllers
                         break;
                     }
                 case "Go to menu":
-                    {                        
+                    {
+                        WaitStates();
                         GoToMenu();
                         break;
                     }
                 case "Teleport":
-                    {
+                    {                        
+                        gameState.UpdateGameState();
                         if (gameState.haveUrshiActor == false)
                         {
+                            WaitStates();
                             Console.WriteLine("Going to Urshi");
                             TeleportToPlayer1();
                         }
@@ -112,6 +115,21 @@ namespace EnvControllers
                         }
                         break;
                     }
+                case "Timeout":
+                    {
+                        Console.WriteLine("Timeout Received");
+                        SendF7();
+                        Thread.Sleep(5000);
+                        gameState.lastRift.Restart();
+                        rosController.InitVariables_Without_otherVendorLoopDone();
+                        ClickRosStart();
+                        break;
+                    }
+                case "Unblock inputs":
+                    {
+                        UnBlockInput();
+                        break;
+                    }
                 default:
                         Console.WriteLine(msg.MessageString.ToString());
                     break;
@@ -126,6 +144,26 @@ namespace EnvControllers
             String timeStamp = GetTimestamp(DateTime.Now);
             Console.WriteLine(timeStamp + "Sending message: " + message);
         }
+
+        public void WaitStates() {
+            gameState.UpdateGameState();
+            if (gameState.isLoading | gameState.urshiUiVisible)
+            {
+                Console.WriteLine("Entering WaitStates (loading or uiurshi visible)");
+                int i = 0;
+                while (i < 15)
+                {
+                    Thread.Sleep(1000);
+                    gameState.UpdateGameState();
+                    if (!gameState.isLoading & !gameState.urshiUiVisible)
+                    {
+                        break;
+                    }
+                    i++;
+                }
+            }
+        }
+
         public void GoToMenu() {
             try
             {                
@@ -162,9 +200,10 @@ namespace EnvControllers
                 BlockInput();
                 Console.WriteLine("Sleeping 11s");
                 Thread.Sleep(11500);
-                UnBlockInput();
+                UnBlockInput();                
                 rosController.Unpause();
                 rosController.InitVariables();
+                sendMessage("Unblock inputs");
                 Console.WriteLine("Go to menu routine finished");
             }
             catch

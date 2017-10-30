@@ -13,6 +13,7 @@ using Enigma.D3.MemoryModel.Core;
 using Enigma.D3;
 using Enigma.D3.MemoryModel.Controls;
 using static Enigma.D3.MemoryModel.Core.UXHelper;
+using System.Diagnostics;
 
 namespace EnvControllers
 {
@@ -54,6 +55,9 @@ namespace EnvControllers
         }
         public GameState() {
             ctx = MemoryContext.FromProcess();
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+            lastRift = stopwatch;
             UpdateGameState();
         }
 
@@ -244,6 +248,27 @@ namespace EnvControllers
             }
         }
 
+        public UXControl player1UiControl { get; set; }
+        public bool player1UiVisible
+        {
+            get
+            {
+                if (inMenu == false)
+                {
+                    try
+                    {
+                        player1UiControl = UXHelper.GetControl<UXControl>("Root.NormalLayer.portraits.stack.party_stack.portrait_1.Frame");
+                        return player1UiControl.IsVisible();
+                    }
+                    catch { return false; }
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+
         //Other Properties
         public bool cancelgriftUiVisible
         {
@@ -266,6 +291,7 @@ namespace EnvControllers
             {
                 if (ctx.DataSegment.LevelAreaName == "Greater Rift Floor 1")
                 {
+                    lastRift.Restart();
                     return true;
                 }
                 else
@@ -283,6 +309,7 @@ namespace EnvControllers
                 {
                     if (snapshot.Game.Monsters.FirstOrDefault(ab => ab.ActorSNO == 398682) != null) //Urshi ID
                     {
+                        lastRift.Restart();
                         return true;
                     }
                     else
@@ -298,6 +325,7 @@ namespace EnvControllers
         public bool inGame { get; set; }
         public bool inMenu { get; set; }
         public bool isLoading { get; set; }
+        public Stopwatch lastRift { get; set; }
 
 
     }

@@ -58,7 +58,7 @@ namespace MultibotPrograms
                     server.gameState.UpdateGameState();
                     var newLogLines = server.rosController.rosLog.NewLines;
 
-                    if (LogFile.LookForString(newLogLines, "Vendor Loop Done") & !server.rosController.vendorLoopDone & !server.gameState.inMenu)
+                    if (LogFile.LookForString(newLogLines, "Vendor Loop Done") & !server.rosController.vendorLoopDone & !server.gameState.inMenu & !server.gameState.isLoading)
                     {
                         //pause after vendor loop done
                         server.rosController.vendorLoopDone = true;
@@ -99,14 +99,14 @@ namespace MultibotPrograms
                     if (server.gameState.inMenu & server.rosController.failed)
                     {
                         RosController.BlockInput();
-                        Console.WriteLine("Sleeping 15s");
-                        Thread.Sleep(15000);
+                        Console.WriteLine("Sleeping 20s");
+                        Thread.Sleep(20000);
                         Console.WriteLine("Done");
                         server.rosController.InitVariables();
                         RosController.UnBlockInput();
                     }
 
-                    if (server.gameState.acceptgrUiVisible & !server.gameState.inMenu)
+                    if (server.gameState.acceptgrUiVisible & !server.gameState.inMenu & !server.gameState.isLoading)
                     {
                         // grift accept request: always click cancel
                         server.rosController.enteredRift = false;
@@ -119,7 +119,7 @@ namespace MultibotPrograms
                         Console.WriteLine("Accept Rift Dialog Detected: Click Cancel");
                     }
 
-                    if (server.gameState.cancelgriftUiVisible & !server.gameState.inMenu)
+                    if (server.gameState.cancelgriftUiVisible & !server.gameState.inMenu & !server.gameState.isLoading)
                     {
                         //click cancel ok
                         server.rosController.Pause();
@@ -132,7 +132,7 @@ namespace MultibotPrograms
                         Console.WriteLine("Rift Cancelled Dialog Detected: Click Cancel");
                     }
 
-                    if (server.gameState.firstlevelRift & !server.rosController.enteredRift & !server.gameState.inMenu)
+                    if (server.gameState.firstlevelRift & !server.rosController.enteredRift & !server.gameState.inMenu & !server.gameState.isLoading)
                     {
                         //unpause after entering rift and reinit variables
                         Thread.Sleep(1500);
@@ -142,7 +142,7 @@ namespace MultibotPrograms
                         Console.WriteLine("First Floor Rift Detected: Unpausing and Reiniting variables");
                     }
 
-                    if (server.gameState.haveUrshiActor & !server.gameState.inMenu) 
+                    if (server.gameState.haveUrshiActor & !server.gameState.inMenu & !server.gameState.isLoading) 
                     {
                         //set Urshi state
                         server.rosController.didUrshi = true;
@@ -153,6 +153,19 @@ namespace MultibotPrograms
                             server.rosController.sentUrshi = true;
                             Console.WriteLine("Sent Teleport for Urshi");
                         }
+                    }
+
+                    if (server.gameState.lastRift.ElapsedMilliseconds > 360000 ) //Detect timeout, send F7 and restart
+                    {                                                            //360 000 = 6min
+                        
+                        Console.WriteLine("Timeout detected");                        
+                        RosController.SendF7();                        
+                        Thread.Sleep(5000);
+                        server.gameState.lastRift.Restart();
+                        server.rosController.InitVariables();
+                        server.ClickRosStart();
+                        Thread.Sleep(7000);
+                        server.sendMessage("Timeout");
                     }
                 }
                 catch { }
