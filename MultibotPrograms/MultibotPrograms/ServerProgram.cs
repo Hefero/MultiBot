@@ -168,12 +168,6 @@ namespace MultibotPrograms
                         Thread.Sleep(7000);
                         server.sendMessage("Timeout");
                     }
-                    if (server.gameState.aloneInGame)
-                    {
-                        Console.WriteLine("InGame Alone Detected: Unpause and Stop application");
-                        server.rosController.Unpause();
-                        break;
-                    }
                 }
                 catch { }
             }

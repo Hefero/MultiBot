@@ -174,12 +174,6 @@ namespace MultibotPrograms
                             Console.WriteLine("Sent Teleport for Urshi");
                         }
                     }
-                    if (client.gameState.aloneInGame)
-                    {
-                        Console.WriteLine("InGame Alone Detected: Unpause and Stop application");
-                        client.rosController.Unpause();
-                        break;
-                    }
                 }
                 catch { }
             }

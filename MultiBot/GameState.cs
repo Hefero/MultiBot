@@ -28,25 +28,10 @@ namespace EnvControllers
                 try
                 {
                     _snapshot.Update();
-                    inGame = true;
-                    inMenu = false;
-                    isLoading = false;
                     return _snapshot;
                 }
                 catch
                 {
-                    if (ctx.DataSegment.LevelArea == null)
-                    {
-                        inGame = false;
-                        inMenu = true;
-                        isLoading = false;
-                    }
-                    else
-                    {
-                        inGame = true;
-                        inMenu = false;
-                        isLoading = true;
-                    }
                     return _snapshot;
                 }
                 
@@ -59,6 +44,8 @@ namespace EnvControllers
             stopwatch.Start();
             lastRift = stopwatch;
             UpdateGameState();
+            clientWidth = snapshot.Window.ClientRect.Width;
+            clientHeight = snapshot.Window.ClientRect.Height;
         }
 
         public void UpdateSnapshot() {
@@ -66,28 +53,12 @@ namespace EnvControllers
             try
             {
                 _snapshot.Update();
-                clientWidth = _snapshot.Window.ClientRect.Width;
-                clientHeight = _snapshot.Window.ClientRect.Height;
-                inGame = true;
-                inMenu = false;
-                isLoading = false;
+                this.snapshot = _snapshot;
             }
             catch
             {
-                if (ctx.DataSegment.LevelArea == null)
-                {
-                    inGame = false;
-                    inMenu = true;
-                    isLoading = false;
-                }
-                else
-                {
-                    inGame = true;
-                    inMenu = false;
-                    isLoading = true;
-                }
-            }
-            this.snapshot = _snapshot;
+
+            }            
         }
 
         public float clientWidth { get; set; }
@@ -96,21 +67,7 @@ namespace EnvControllers
         public void UpdateGameState()
         {
             UpdateSnapshot();
-            bool update1 = openriftUiVisible;    //no use yet
-            bool update2 = acceptgrUiVisible;
-            bool update3 = urshiUiVisible;       //no use yet
-            bool update4 = grcompleteUiVisible; //to do
-            bool update5 = confirmationUiVisible;
-            bool update6 = vendorUiVisible;
-            bool update7 = leavegameUiVisible;
-            bool update8 = player1UiBusyVisible;
-            bool update9 = player1UiVisible;
-            
-            bool update10 = cancelgriftUiVisible;
-            bool update11 = firstlevelRift;
-            bool update12 = haveUrshiActor;
-            bool update13 = aloneInGame;
-    }
+        }
 
         //Properties UX
         public UXControl openriftUiControl { get; set; }
@@ -124,9 +81,41 @@ namespace EnvControllers
         public UXControl player1UiBusyControl { get; set; }
 
         //State Properties
-        public bool inGame { get; set; }
-        public bool inMenu { get; set; }
-        public bool isLoading { get; set; }        
+        public bool inGame {
+
+            get {
+                return ctx.DataSegment.LocalData.IsPlayerValid;
+            }
+            set { }
+        }
+
+        public bool inMenu
+        {
+            get
+            {
+                return ctx.DataSegment.LocalData.IsStartUpGame;
+            }
+            set { }
+        }
+
+        public bool isLoading
+        {
+            get
+            {
+                if (!ctx.DataSegment.LocalData.IsPlayerValid & !ctx.DataSegment.LocalData.IsStartUpGame)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+                
+            }
+
+            set { }
+        }
+
         public Stopwatch lastRift { get; set; }
 
 
