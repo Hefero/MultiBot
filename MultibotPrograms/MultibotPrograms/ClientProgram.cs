@@ -173,9 +173,15 @@ namespace MultibotPrograms
                             Console.WriteLine("Sent Teleport for Urshi");
                         }
                     }
+                    if (client.gameState.aloneInGame)
+                    {
+                        client.rosController.Unpause();
+                        break;
+                    }
                 }
                 catch { }
             }
+            Console.ReadKey();
         }
 
     }

@@ -96,20 +96,40 @@ namespace EnvControllers
         public void UpdateGameState()
         {
             UpdateSnapshot();
-            var update0 = openriftUiVisible;    //no use yet
-            var update1 = acceptgrUiVisible;
-            var update2 = urshiUiVisible;       //no use yet
-            var update3 = grcompleteUiVisible; //to do
-            var update4 = confirmationUiVisible;
-            var update5 = vendorUiVisible;
-            var update6 = leavegameUiVisible;
-            var update7 = cancelgriftUiVisible;
-            var update8 = firstlevelRift;
-            var update9 = haveUrshiActor;
-        }
+            bool update1 = openriftUiVisible;    //no use yet
+            bool update2 = acceptgrUiVisible;
+            bool update3 = urshiUiVisible;       //no use yet
+            bool update4 = grcompleteUiVisible; //to do
+            bool update5 = confirmationUiVisible;
+            bool update6 = vendorUiVisible;
+            bool update7 = leavegameUiVisible;
+            bool update8 = player1UiBusyVisible;
+            bool update9 = player1UiVisible;
+            
+            bool update10 = cancelgriftUiVisible;
+            bool update11 = firstlevelRift;
+            bool update12 = haveUrshiActor;
+            bool update13 = aloneInGame;
+    }
 
         //Properties UX
         public UXControl openriftUiControl { get; set; }
+        public UXControl acceptgrUiControl { get; set; }
+        public UXControl urshiUiControl { get; set; }
+        public UXControl grcompleteUiControl { get; set; }
+        public UXControl confirmationUiControl { get; set; }
+        public UXControl vendorUiControl { get; set; }
+        public UXControl leavegameUiControl { get; set; }
+        public UXControl player1UiControl { get; set; }
+        public UXControl player1UiBusyControl { get; set; }
+
+        //State Properties
+        public bool inGame { get; set; }
+        public bool inMenu { get; set; }
+        public bool isLoading { get; set; }        
+        public Stopwatch lastRift { get; set; }
+
+
         public bool openriftUiVisible {
             get
             {
@@ -127,7 +147,7 @@ namespace EnvControllers
                 }
             }
         }
-        public UXControl acceptgrUiControl { get; set; }
+        
         public bool acceptgrUiVisible
         {
             get
@@ -147,7 +167,7 @@ namespace EnvControllers
                 }
             }
         }
-        public UXControl urshiUiControl { get; set; }
+        
         public bool urshiUiVisible
         {
             get
@@ -167,7 +187,7 @@ namespace EnvControllers
                 }
             }
         }
-        public UXControl grcompleteUiControl { get; set; }
+        
         public bool grcompleteUiVisible
         {
             get
@@ -187,7 +207,7 @@ namespace EnvControllers
                 }
             }
         }
-        public UXControl confirmationUiControl { get; set; }
+        
         public bool confirmationUiVisible
         {
             get
@@ -207,7 +227,7 @@ namespace EnvControllers
                 }
             }
         }
-        public UXControl vendorUiControl { get; set; }
+        
         public bool vendorUiVisible
         {
             get
@@ -227,7 +247,7 @@ namespace EnvControllers
                 }
             }
         }
-        public UXControl leavegameUiControl { get; set; }
+        
         public bool leavegameUiVisible
         {
             get
@@ -248,7 +268,7 @@ namespace EnvControllers
             }
         }
 
-        public UXControl player1UiControl { get; set; }
+        
         public bool player1UiVisible
         {
             get
@@ -259,6 +279,27 @@ namespace EnvControllers
                     {
                         player1UiControl = UXHelper.GetControl<UXControl>("Root.NormalLayer.portraits.stack.party_stack.portrait_1.Frame");
                         return player1UiControl.IsVisible();
+                    }
+                    catch { return false; }
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+
+        
+        public bool player1UiBusyVisible
+        {
+            get
+            {
+                if (inMenu == false)
+                {
+                    try
+                    {
+                        player1UiBusyControl = UXHelper.GetControl<UXControl>("Root.NormalLayer.portraits.stack.party_stack.portrait_1.busy");
+                        return player1UiBusyControl.IsVisible();
                     }
                     catch { return false; }
                 }
@@ -320,14 +361,25 @@ namespace EnvControllers
                 catch { return false; }
             }
         }
-
-        //State Properties
-        public bool inGame { get; set; }
-        public bool inMenu { get; set; }
-        public bool isLoading { get; set; }
-        public Stopwatch lastRift { get; set; }
-
-
+        public bool aloneInGame
+        {
+            get
+            {
+                try
+                {
+                    if (!player1UiVisible & !player1UiBusyVisible & !inMenu & !isLoading & inGame)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                    
+                }
+                catch { return false; }
+            }
+        }
     }
 }
 

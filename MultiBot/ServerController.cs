@@ -125,11 +125,6 @@ namespace EnvControllers
                         ClickRosStart();
                         break;
                     }
-                case "Unblock inputs":
-                    {
-                        UnBlockInput();
-                        break;
-                    }
                 default:
                         Console.WriteLine(msg.MessageString.ToString());
                     break;
@@ -203,7 +198,6 @@ namespace EnvControllers
                 UnBlockInput();                
                 rosController.Unpause();
                 rosController.InitVariables();
-                sendMessage("Unblock inputs");
                 Console.WriteLine("Go to menu routine finished");
             }
             catch
