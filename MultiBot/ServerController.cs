@@ -50,6 +50,7 @@ namespace EnvControllers
         public virtual void ReceivedMessage(object sender, Message msg)
         {
             lastMessage = msg;
+            Console.WriteLine(msg.MessageString.ToString());
             switch (msg.MessageString.ToString())
             {
                 case "StartModules":
@@ -126,8 +127,9 @@ namespace EnvControllers
                         break;
                     }
                 default:
-                        Console.WriteLine(msg.MessageString.ToString());
-                    break;
+                    {                        
+                        break;
+                    }
             }
             String timeStamp = GetTimestamp(DateTime.Now);
             Console.WriteLine(timeStamp + " Received: " + msg.MessageString.ToString());
@@ -160,52 +162,59 @@ namespace EnvControllers
         }
 
         public void GoToMenu() {
-            try
-            {                
-                rosController.Pause();                
-                Console.WriteLine("Go to menu routine started");
-                Console.WriteLine("First ESC and try to click");                
-                SendEscape();                
-                if (gameState.leavegameUiVisible == true)
-                {
-                    var xCoord = gameState.leavegameUiControl.uirect.TranslateToClientRect(gameState.clientWidth, gameState.clientHeight).Left +
-                        (gameState.leavegameUiControl.uirect.TranslateToClientRect(gameState.clientWidth, gameState.clientHeight).Width / 2);
-                    var yCoord = gameState.leavegameUiControl.uirect.TranslateToClientRect(gameState.clientWidth, gameState.clientHeight).Top +
-                        (gameState.leavegameUiControl.uirect.TranslateToClientRect(gameState.clientWidth, gameState.clientHeight).Height / 2);
-                    SetCursorPos((int)xCoord, (int)yCoord);
-                    LeftClick();
-                    Console.WriteLine("Clicked to leave");
-                }
-                else
-                {
-                    Console.WriteLine("Second ESC and try to click");
-                    SendEscape();                    
-                    if (gameState.leavegameUiVisible == true)
-                    {
-                        var xCoord = gameState.leavegameUiControl.uirect.TranslateToClientRect(gameState.clientWidth, gameState.clientHeight).Left +
-                            (gameState.leavegameUiControl.uirect.TranslateToClientRect(gameState.clientWidth, gameState.clientHeight).Width / 2);
-                        var yCoord = gameState.leavegameUiControl.uirect.TranslateToClientRect(gameState.clientWidth, gameState.clientHeight).Top +
-                            (gameState.leavegameUiControl.uirect.TranslateToClientRect(gameState.clientWidth, gameState.clientHeight).Height / 2);
-                        SetCursorPos((int)xCoord, (int)yCoord);
-                        LeftClick();
-                        Console.WriteLine("Clicked to leave");                        
-                    }
-                }
-                Thread.Sleep(200);
-                BlockInput();
-                Console.WriteLine("Sleeping 11s");
-                Thread.Sleep(11500);
-                UnBlockInput();                
-                rosController.Unpause();
-                rosController.InitVariables();
-                Console.WriteLine("Go to menu routine finished");
-            }
-            catch
+            if (!gameState.inMenu)
             {
-                UnBlockInput();
-                rosController.Unpause();
-                rosController.InitVariables();
-            }            
+                try
+                {
+                    rosController.Pause();                    
+                    Console.WriteLine("Go to menu routine started");
+                    Console.WriteLine("First ESC and try to click");
+                    int tries = 0;
+                    while (tries < 15)
+                    {
+                        if (!gameState.isLoading)
+                        {
+                            if (!gameState.inMenu)
+                            {
+                                if (!gameState.leavegameUiVisible)
+                                {
+                                    SendEscape();
+                                }
+                                if (gameState.leavegameUiVisible)
+                                {
+                                    var xCoord = gameState.leavegameUiControl.uirect.TranslateToClientRect(gameState.clientWidth, gameState.clientHeight).Left +
+                                        (gameState.leavegameUiControl.uirect.TranslateToClientRect(gameState.clientWidth, gameState.clientHeight).Width / 2);
+                                    var yCoord = gameState.leavegameUiControl.uirect.TranslateToClientRect(gameState.clientWidth, gameState.clientHeight).Top +
+                                        (gameState.leavegameUiControl.uirect.TranslateToClientRect(gameState.clientWidth, gameState.clientHeight).Height / 2);
+                                    SetCursorPos((int)xCoord, (int)yCoord);
+                                    LeftClick();
+                                    Console.WriteLine("Clicked to leave");
+                                    Thread.Sleep(500);
+                                    if (!gameState.leavegameUiVisible)
+                                    {
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+                        Thread.Sleep(500);
+                        tries++;
+                    }
+                    BlockInput();
+                    Console.WriteLine("Sleeping 11s");
+                    Thread.Sleep(11500);
+                    UnBlockInput();
+                    rosController.Unpause();
+                    rosController.InitVariables();
+                    Console.WriteLine("Go to menu routine finished");
+                }
+                catch
+                {
+                    UnBlockInput();
+                    rosController.Unpause();
+                    rosController.InitVariables();
+                }
+            }
         }
         public void TeleportToPlayer1() {
             try

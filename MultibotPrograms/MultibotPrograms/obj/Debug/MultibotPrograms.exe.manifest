@@ -49,7 +49,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>PHgUWrGMrsBFeDk3nTLbzR8bI877RRtv3M4kVyVybhY=</dsig:DigestValue>
+        <dsig:DigestValue>mNedFD3GaPUuLPMlDJ2Y2gPyh9Jbd7woUYkd49RqDuY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -61,7 +61,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>pf76kEfO/NaerFlWIy/AaLaJ4CQIQAgypx8bEOkpxKw=</dsig:DigestValue>
+        <dsig:DigestValue>As+gIgiVwVxXfkDefl92qiaIoQSGgRhdAyRmfUgxIuA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -73,7 +73,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ioIVgxkO7D7qcyu9oDXKkEJHexrmP3ExFnx/WYW+SsI=</dsig:DigestValue>
+        <dsig:DigestValue>YbYC30c+zM5FCM8MwiiuPSh78cdNCRyhSVCeIuvDTFI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -85,7 +85,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>mBTGKRlV60qrunP/knVkxhQyFgeHuoJ293IJqGXb52g=</dsig:DigestValue>
+        <dsig:DigestValue>7mvpWZOJxUjQnewis1tpHCox56+dKIkJhL3cwWRfoss=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -97,7 +97,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>TyxXmIQK9wMVtpUjhu3dakM4yW9AouNdopfeR5kFM9M=</dsig:DigestValue>
+        <dsig:DigestValue>oopNcxsiFf98aHx585n+MUn3impKiKasoMjmnsBtHds=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -109,7 +109,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>XHxDaie6jpJVm0wfHiw9BtfJjXELdiJiTt0pgttl0pA=</dsig:DigestValue>
+        <dsig:DigestValue>5ah+Z00iC2MswbTGz3Uj0c3E6LFlgn/uiLjyte3icsM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -121,19 +121,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>apvO4bHz4vasULYy00cI59xQ7nnDd2gKxkl00ESk4iQ=</dsig:DigestValue>
+        <dsig:DigestValue>Ya0Et6bg+Jla8jFInAgNHl431hyGlmVnKB7oAURhw8Q=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MultibotPrograms.exe" size="14320">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MultibotPrograms.exe" size="15856">
       <assemblyIdentity name="MultibotPrograms" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>OM82IlUOhMuYL1lb9C7b4tLbDn2eDN21x/4xHrJOwfY=</dsig:DigestValue>
+        <dsig:DigestValue>2GZDm7t6PO3BHfM9XyzLg+2hlJuMqJbgtFhcsm8qmGk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

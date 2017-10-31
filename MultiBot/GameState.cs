@@ -67,6 +67,7 @@ namespace EnvControllers
         public void UpdateGameState()
         {
             UpdateSnapshot();
+            var _intoGRift = intoGRift;
         }
 
         //Properties UX
@@ -319,7 +320,7 @@ namespace EnvControllers
         {
             get
             {
-                if (ctx.DataSegment.LevelAreaName == "Greater Rift Floor 1")
+                if (ctx.DataSegment.LevelArea.LevelAreaSNO.Value == 288482)
                 {
                     lastRift.Restart();
                     return true;
@@ -329,6 +330,34 @@ namespace EnvControllers
                     return false;
                 }
 
+            }
+        }
+        public bool intoGRift
+        {
+            get
+            {
+                uint CurrentArea = ctx.DataSegment.LevelArea.LevelAreaSNO.Value;
+                switch (CurrentArea)
+                {
+                    case 288482:
+                    case 288684:
+                    case 288686:
+                    case 288797:
+                    case 288799:
+                    case 288801:
+                    case 288803:
+                    case 288809:
+                    case 288812:
+                    case 288813:
+                        {
+                            lastRift.Restart();
+                            return true;
+                        }
+                    default:
+                        {
+                            return false;
+                        }
+                }
             }
         }
         public bool haveUrshiActor
