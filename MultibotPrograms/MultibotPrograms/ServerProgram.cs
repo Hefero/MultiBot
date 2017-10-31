@@ -97,7 +97,7 @@ namespace MultibotPrograms
                             Console.WriteLine("Rift Cancelled Dialog Detected: Click Cancel");
                         }
 
-                        if (server.gameState.firstlevelRift & !server.rosController.enteredRift & !server.gameState.inMenu & !server.gameState.isLoading)
+                        if (!server.rosController.enteredRift & server.gameState.firstlevelRift  & !server.gameState.inMenu & !server.gameState.isLoading)
                         {
                             //unpause after entering rift and reinit variables
                             Thread.Sleep(1500);
@@ -158,13 +158,13 @@ namespace MultibotPrograms
                                 isRiftStarted = riftStartedUiControl.IsVisible();
                             }
                             catch { isRiftStarted = false; }
-                            if (!isRiftStarted)
+                            if (!isRiftStarted & !server.gameState.aloneInGame)
                             {
                                 server.rosController.Pause();
                             }
                         }
 
-                        if (LogFile.LookForString(newLogLines, "Next rift in different"))
+                        if (LogFile.LookForString(newLogLines, "Next rift in different") & !server.gameState.aloneInGame)
                         {
                             //failure detected
                             server.sendMessage("Go to menu");
@@ -189,6 +189,7 @@ namespace MultibotPrograms
             Console.WriteLine("Starting Threads");
             gameStateDecider.Start();
             logFileDecider.Start();
+            Console.ReadKey();
         }
 
     }

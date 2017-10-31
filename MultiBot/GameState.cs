@@ -103,6 +103,10 @@ namespace EnvControllers
         {
             get
             {
+                if (ctx.DataSegment.LocalData.IsPlayerValid & ctx.DataSegment.LocalData.IsStartUpGame)
+                {
+                    return true;
+                }
                 if (!ctx.DataSegment.LocalData.IsPlayerValid & !ctx.DataSegment.LocalData.IsStartUpGame)
                 {
                     return true;
@@ -385,7 +389,7 @@ namespace EnvControllers
             {
                 try
                 {
-                    if (!player1UiVisible & !player1UiBusyVisible & !inMenu & !isLoading & inGame)
+                    if (inGame & !inMenu & !isLoading & !player1UiBusyVisible & !player1UiVisible & ctx.DataSegment.LocalData.PlayerCount == 1)
                     {
                         return true;
                     }
@@ -393,7 +397,6 @@ namespace EnvControllers
                     {
                         return false;
                     }
-                    
                 }
                 catch { return false; }
             }

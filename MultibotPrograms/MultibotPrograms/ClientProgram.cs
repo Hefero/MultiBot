@@ -108,7 +108,7 @@ namespace MultibotPrograms
                             Console.WriteLine("Rift Cancelled Dialog Detected: Pause, Click Cancel, and Send Start");
                         }
 
-                        if (client.gameState.firstlevelRift & !client.rosController.enteredRift & !client.gameState.inMenu & !client.gameState.isLoading)
+                        if (!client.rosController.enteredRift & client.gameState.firstlevelRift & !client.gameState.inMenu & !client.gameState.isLoading)
                         {
                             //unpause after entering rift and reinit variables
                             Thread.Sleep(1500);
@@ -150,7 +150,7 @@ namespace MultibotPrograms
                             client.rosController.enteredRift = false;
                             client.sendMessage("Client Vendor Loop Done");
                             Console.WriteLine("Vendor Loop Done Detected");
-                            if (!client.rosController.otherVendorLoopDone)
+                            if (!client.rosController.otherVendorLoopDone & !client.gameState.aloneInGame)
                             {
                                 bool isRiftStarted = false;
                                 try //check for rift started for pausing
@@ -167,7 +167,7 @@ namespace MultibotPrograms
                             Thread.Sleep(100);
                         }
 
-                        if (LogFile.LookForString(newLogLines, "Next rift in different"))
+                        if (LogFile.LookForString(newLogLines, "Next rift in different") & !client.gameState.aloneInGame)
                         {
                             //failure detected
                             client.sendMessage("Go to menu");
@@ -187,15 +187,13 @@ namespace MultibotPrograms
                             client.sendMessage("Status Check Code 20");
                         }
                     }
-
-                    catch {
-                        Console.WriteLine("logFileDecider Exception");
-                    }
+                    catch { }
                 }
             });
             Console.WriteLine("Starting Threads");
             gameStateDecider.Start();
             logFileDecider.Start();
+            Console.ReadKey();
         }
 
     }

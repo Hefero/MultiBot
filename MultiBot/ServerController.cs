@@ -192,6 +192,7 @@ namespace EnvControllers
                                     Thread.Sleep(500);
                                     if (!gameState.leavegameUiVisible)
                                     {
+                                        BlockInput();
                                         break;
                                     }
                                 }
@@ -199,8 +200,7 @@ namespace EnvControllers
                         }
                         Thread.Sleep(500);
                         tries++;
-                    }
-                    BlockInput();
+                    }                    
                     Console.WriteLine("Sleeping 11s");
                     Thread.Sleep(11500);
                     UnBlockInput();
@@ -210,6 +210,7 @@ namespace EnvControllers
                 }
                 catch
                 {
+                    Console.WriteLine("GoToMenu Exception");
                     UnBlockInput();
                     rosController.Unpause();
                     rosController.InitVariables();
