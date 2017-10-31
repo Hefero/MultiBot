@@ -121,9 +121,11 @@ namespace MultibotPrograms
                         }
 
                         if (server.gameState.lastRift.ElapsedMilliseconds > 360000) //Detect timeout, send F7 and restart
-                        {                                                            //360 000 = 6min
-
+                        {           
                             Console.WriteLine("Timeout detected");
+                            server.rosController.Pause();
+                            server.WaitStates();
+                            server.GoToMenu();
                             RosController.SendF7();
                             Thread.Sleep(5000);
                             server.gameState.lastRift.Restart();

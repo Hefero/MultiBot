@@ -174,7 +174,7 @@ namespace EnvControllers
         {
             Thread.Sleep(100);
             keybd_event(VK_F6, 0, KEYEVENTF_EXTENDEDKEY, 0);
-            Thread.Sleep(100);
+            Thread.Sleep(200);
             keybd_event(VK_F6, 0, KEYEVENTF_KEYUP, 0);
             Thread.Sleep(100);
         }
@@ -183,7 +183,7 @@ namespace EnvControllers
         {
             Thread.Sleep(100);
             keybd_event(VK_F7, 0, KEYEVENTF_EXTENDEDKEY, 0);
-            Thread.Sleep(100);
+            Thread.Sleep(200);
             keybd_event(VK_F7, 0, KEYEVENTF_KEYUP, 0);
             Thread.Sleep(100);
         }

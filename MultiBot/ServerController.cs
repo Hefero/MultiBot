@@ -50,7 +50,8 @@ namespace EnvControllers
         public virtual void ReceivedMessage(object sender, Message msg)
         {
             lastMessage = msg;
-            Console.WriteLine(msg.MessageString.ToString());
+            String timeStamp = GetTimestamp(DateTime.Now);
+            Console.WriteLine(timeStamp + " Received: " + msg.MessageString.ToString());
             switch (msg.MessageString.ToString())
             {
                 case "StartModules":
@@ -119,6 +120,9 @@ namespace EnvControllers
                 case "Timeout":
                     {
                         Console.WriteLine("Timeout Received");
+                        rosController.Pause();
+                        WaitStates();
+                        GoToMenu();
                         SendF7();
                         Thread.Sleep(5000);
                         gameState.lastRift.Restart();
@@ -131,8 +135,6 @@ namespace EnvControllers
                         break;
                     }
             }
-            String timeStamp = GetTimestamp(DateTime.Now);
-            Console.WriteLine(timeStamp + " Received: " + msg.MessageString.ToString());
         }
         public virtual void sendMessage(string message)
         {
