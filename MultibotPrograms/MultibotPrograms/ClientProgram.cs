@@ -108,7 +108,7 @@ namespace MultibotPrograms
                             Console.WriteLine("Rift Cancelled Dialog Detected: Pause, Click Cancel, and Send Start");
                         }
 
-                        if (!client.rosController.enteredRift & client.gameState.firstlevelRift & !client.gameState.inMenu & !client.gameState.isLoading)
+                        if (!client.rosController.enteredRift & client.gameState.firstlevelRift & !client.gameState.inMenu & !client.gameState.isLoading & !client.gameState.aloneInGame)
                         {
                             //unpause after entering rift and reinit variables
                             Thread.Sleep(1500);
@@ -180,7 +180,7 @@ namespace MultibotPrograms
                             | LogFile.LookForString(newLogLines, "[24] Reseting timeouts") | LogFile.LookForString(newLogLines, "[25] Reseting timeouts")
                             | LogFile.LookForString(newLogLines, "[26] Reseting timeouts") | LogFile.LookForString(newLogLines, "[27] Reseting timeouts")
                             | LogFile.LookForString(newLogLines, "[28] Reseting timeouts") | LogFile.LookForString(newLogLines, "[29] Reseting timeouts")
-                            | LogFile.LookForString(newLogLines, "[30] Reseting timeouts"))
+                            | LogFile.LookForString(newLogLines, "[30] Reseting timeouts") & !client.gameState.aloneInGame)
                         {
                             //paused detected
                             client.rosController.paused = true;
